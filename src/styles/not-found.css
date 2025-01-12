@@ -1,0 +1,22 @@
+/* styles/not-found.css */
+/* Hide the header */
+  header {
+    display: none !important;
+  }
+
+  .not-found-container {
+    @apply flex flex-col items-center justify-center min-h-screen bg-black text-white;
+  }
+  
+  .not-found-title {
+    @apply text-4xl font-bold;
+  }
+  
+  .not-found-message {
+    @apply text-gray-400 mt-4 mb-10;
+  }
+  
+  .not-found-button {
+    @apply flex items-center justify-center rounded-full bg-black text-white h-12 px-8;
+  }
+  
