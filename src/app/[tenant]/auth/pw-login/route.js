@@ -3,18 +3,15 @@ import { getSupabaseCookiesUtilClient } from "@/supabase-utils/cookiesUtilClient
 import { buildUrl } from "@/utils/url-helpers";
 
 export async function POST(request, {params} ) {
-    // Step 1:
+    const { tenant } = params;
     const formData = await request.formData();
     const email = formData.get("email");
     const password = formData.get("password");
-    // Step 2:
     const supabase = await getSupabaseCookiesUtilClient();
-    // Step 3:
     const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
     });
-    // Step 4:
     const userData = data?.user;
     if (error || 
         !userData ||
@@ -27,7 +24,7 @@ export async function POST(request, {params} ) {
         );
     }
     return NextResponse.redirect(
-        buildUrl("/safer", params.tenant, request),
+        (tenant === "safer" ? buildUrl("/safer", tenant, request) : buildUrl("/hospital", tenant, request)),
         { status: 302,}
     );
 }

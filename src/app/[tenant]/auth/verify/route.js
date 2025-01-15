@@ -25,11 +25,12 @@ export async function GET(request, { params }) {
     } else {
         if (isRecovery) {
             return NextResponse.redirect(
-                buildUrl("/safer/change-password", tenant, request)
+                (tenant === "safer" ? buildUrl("/safer/change-password", tenant, request) : 
+                    buildUrl("/hospital/change-password", tenant, request))
             );
         } else {
             return NextResponse.redirect(
-                buildUrl("/safer", tenant, request)
+                (tenant === "safer" ? buildUrl("/safer", tenant, request) : buildUrl("/hospital", tenant, request))
             );
         }
     }

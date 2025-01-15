@@ -37,7 +37,7 @@ export async function middleware(request) {
         return NextResponse.rewrite(new URL("/not-found", request.url));
     }
 
-    if (applicationPath.startsWith("/safer")) {
+    if (applicationPath.startsWith("/safer") || applicationPath.startsWith("/hospital")) {
         if (!user.user) {
             return NextResponse.redirect(buildUrl("/", tenant, request));
         } else if (!user.user.app_metadata?.tenants.includes(tenant)) {
@@ -45,7 +45,11 @@ export async function middleware(request) {
         }
     } else if (applicationPath === "/" ){
         if (user.user) {
-            return NextResponse.redirect(buildUrl("/safer", tenant, request));
+            if (tenant === "safer") {
+                return NextResponse.redirect(buildUrl("/safer", tenant, request));
+            } else {
+                return NextResponse.redirect(buildUrl("/hospital", tenant, request));   
+            }
         }
     }
 
