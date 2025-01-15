@@ -1,9 +1,9 @@
-import { TicketList } from "./TicketList";
+import { ReservationList } from "./ReservationList";
 
-export default async function TicketListPage( {params} ) {
+export default async function ReservationReqListPage( {params} ) {
     const { tenant } = await params;
     
-    const dummyTickets = [
+    const mockReservationReqs = [
         {
             id: 1,
             title: "Ideation",
@@ -26,8 +26,8 @@ export default async function TicketListPage( {params} ) {
     
     return (
         <>
-            <h2>병상 목록</h2>    
-            <TicketList tickets={dummyTickets} tenant={tenant} />
+            <h2>예약 신청 목록</h2>    
+            <ReservationList reservationReqs={mockReservationReqs} tenant={tenant} />
         </>
     );
 }

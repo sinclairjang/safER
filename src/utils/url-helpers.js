@@ -8,7 +8,6 @@ export function buildUrl(applicationPath, tenant, request) {
     const portSuffix = port && port != "443" ? `:${port}` : "";
     const { protocol } = request.nextUrl;
     const tenantUrl = `${protocol}//${hostname}${portSuffix}/`;
-    console.log("tenantUrl", tenantUrl);
     return new URL(urlPath(applicationPath, tenant), tenantUrl);
 }
 

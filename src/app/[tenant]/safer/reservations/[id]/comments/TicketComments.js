@@ -1,6 +1,6 @@
 'use client';
 import { useRef, useState, useEffect } from "react";
-import classes from "@/app/[tenant]/tickets/details/[id]/TicketDetails.module.css"
+import classes from "../TicketDetails.module.css"
 
 const dummyComments = [
     {
@@ -24,7 +24,7 @@ export function TicketComments({ id }) {
         // Simulate fetching commnets for the ticket
         async function fetchComments() {
             setLoading(true);
-            const response = await fetch(`/api/tickets/${id}/comments`);
+            const response = await fetch(`/api/safer/${id}/comments`);
             const data = await response.json();
             setComments(data);
             setLoading(false);

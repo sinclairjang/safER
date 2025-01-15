@@ -6,22 +6,18 @@ import "@/styles/custom.css";
 export default function RootLayout({ children }) {
   const [theme, setTheme] = useState("light");
 
-  // Load theme preference from localStorage when the component mounts
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") || "light";
-    setTheme(savedTheme);
-    document.documentElement.setAttribute("data-theme", savedTheme);
-  }, []);
+    // Determine theme based on the domain
+    const currentDomain = window.location.hostname; // Get the current domain
+    const isRescuerDomain = currentDomain === "safer.com"; // Check if it matches the rescuer's domain
 
-  // Toggle the theme and update localStorage
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    document.documentElement.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
-  };
+    // Set the theme based on the domain
+    const appliedTheme = isRescuerDomain ? "light" : "dark";
+    setTheme(appliedTheme);
+    document.documentElement.setAttribute("data-theme", appliedTheme);
+  }, []); // Empty dependency array ensures this runs once on mount
 
-  return (  
+  return (
     <html lang="en" data-theme={theme}>
       <head>
         <link
@@ -33,64 +29,10 @@ export default function RootLayout({ children }) {
       <body>
         <header>
           <div style={{ display: "flex", justifyContent: "flex-end", padding: "10px" }}>
-            <div className="theme-toggle">
-              <input
-                type="checkbox"
-                id="theme-toggle"
-                checked={theme === "dark"}
-                onChange={toggleTheme}
-                aria-label="Toggle dark mode"
-              />
-              <label htmlFor="theme-toggle" className="toggle-bar"></label>
-            </div>
+            {/* Header can contain more domain-specific items */}
           </div>
         </header>
         <main>{children}</main>
-        <style jsx>{`
-          /* Toggle switch styles */
-          .theme-toggle {
-            position: relative; 
-            display: inline-block;
-            width: 50px;
-            height: 25px;
-          }
-
-          .theme-toggle input {
-            display: none;
-          }
-
-          .toggle-bar {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: 0.4s;
-            border-radius: 25px;
-          }
-
-          .toggle-bar:before {
-            content: "";
-            position: absolute;
-            height: 20px;
-            width: 20px;
-            left: 4px;
-            bottom: 2.5px;
-            background-color: white;
-            transition: 0.4s;
-            border-radius: 50%;
-          }
-
-          input:checked + .toggle-bar {
-            background-color:rgb(30, 162, 185);
-          }
-
-          input:checked + .toggle-bar:before {
-            transform: translateX(24px);
-          }
-        `}</style>
       </body>
     </html>
   );

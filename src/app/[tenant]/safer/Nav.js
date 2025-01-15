@@ -29,22 +29,22 @@ export default function Nav( {tenant} ) {
         <nav>
             <ul>
                 <li>
-                    <Link role="button" href={urlPath("/home", tenant)}
-                    {...(pathname === urlPath("/tickets", tenant) ? activeProps : inactiveProps )}
+                    <Link role="button" href={urlPath("/safer", tenant)}
+                    {...(pathname === urlPath("/safer", tenant) ? activeProps : inactiveProps )}
                     >
                         병원 정보
                     </Link>
                 </li>
                 <li>
-                    <Link role="button" href={urlPath("/reservations", tenant)}
-                    {...(pathname === "/tickets/new" ? activeProps : inactiveProps )}                    
+                    <Link role="button" href={urlPath("/safer/reservations", tenant)}
+                    {...(pathname === "/safer/reservations" ? activeProps : inactiveProps )}                    
                     >
                         예약 신청 현황
                     </Link>
                 </li>
                 <li>
-                    <Link role="button" href={urlPath("/reservation-history", tenant)}
-                    {...(pathname === "/tickets/users" ? activeProps : inactiveProps )}                    
+                    <Link role="button" href={urlPath("/safer/reservation-history", tenant)}
+                    {...(pathname === "/safer/reservation-history" ? activeProps : inactiveProps )}                    
                     >
                         예약 내역
                     </Link>

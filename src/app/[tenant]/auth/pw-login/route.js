@@ -27,7 +27,7 @@ export async function POST(request, {params} ) {
         );
     }
     return NextResponse.redirect(
-        buildUrl("/tickets", params.tenant, request),
+        buildUrl("/safer", params.tenant, request),
         { status: 302,}
     );
 }

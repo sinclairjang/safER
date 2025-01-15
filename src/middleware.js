@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { getSupabaseReqResClient } from "./supabase-utils/reqResClient";
 import { TENANT_MAP } from "./tenant-map";
-import TenantName from "./app/[tenant]/tickets/TenantName";
 import { buildUrl, getHostnameAndPort } from "./utils/url-helpers";
 
 export const config = {
@@ -28,7 +27,7 @@ export async function middleware(request) {
         console.log(hostname);
         return NextResponse.rewrite(new URL("/not-found", request.url));
     } 
-
+    
     const requestedPath = request.nextUrl.pathname;    
     //const [tenant, ...restOfPath] = requestedPath.substr(1).split("/");
     //const applicationPath = "/" + restOfPath.join("/");
@@ -38,7 +37,7 @@ export async function middleware(request) {
         return NextResponse.rewrite(new URL("/not-found", request.url));
     }
 
-    if (applicationPath.startsWith("/tickets")) {
+    if (applicationPath.startsWith("/safer")) {
         if (!user.user) {
             return NextResponse.redirect(buildUrl("/", tenant, request));
         } else if (!user.user.app_metadata?.tenants.includes(tenant)) {
@@ -46,7 +45,7 @@ export async function middleware(request) {
         }
     } else if (applicationPath === "/" ){
         if (user.user) {
-            return NextResponse.redirect(buildUrl("/tickets", tenant, request));
+            return NextResponse.redirect(buildUrl("/safer", tenant, request));
         }
     }
 

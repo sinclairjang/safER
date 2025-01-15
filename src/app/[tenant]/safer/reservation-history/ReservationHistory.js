@@ -1,7 +1,7 @@
 import { urlPath } from "@/utils/url-helpers";
 import Link from "next/link";
 
-export function TicketList({ tickets, tenant }) {
+export function ReservationHistory({ reservationHistory, tenant }) {
     
     return (
         <table>
@@ -13,15 +13,15 @@ export function TicketList({ tickets, tenant }) {
                 </tr>
             </thead>
             <tbody>
-                {tickets.map((ticket) => (
-                    <tr key={ticket.id}>
-                        <td>{ticket.id}</td>
+                {reservationHistory.map((reservation) => (
+                    <tr key={reservation.id}>
+                        <td>{reservation.id}</td>
                         <td>
-                            <Link href={`tickets/details/${ticket.id}`}>
-                                {ticket.title}
+                        <Link href={urlPath(`/safer/reservation-history/${reservation.id}`, tenant)}>
+                                {reservation.title}
                             </Link>
                         </td>
-                        <td>{ticket.status}</td>
+                        <td>{reservation.status}</td>
                     </tr>
                 ))}
             </tbody>
