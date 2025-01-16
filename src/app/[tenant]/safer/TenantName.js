@@ -16,7 +16,7 @@ export default async function TenantName( {tenant} ) {
     });
 
     tenantName = data?.name ?? tenantName;
-    const logoUrl = "/samsunghospital.svg";
+    const logoUrl = "/rescuer_logo.png";
     return (
         <header style={{ marginBottom: "20px", textAlign: "center" }}>
             {/* Logo Section */}
@@ -58,7 +58,7 @@ export default async function TenantName( {tenant} ) {
                             left: "-40%", // Adjust to control the starting point
                             width: "180%", // Adjust to control underline length
                             height: "3px",
-                            backgroundColor: "orange",
+                            backgroundColor: "green",
                             content: '""', // Pseudo-element styling
                         }}
                     ></span>

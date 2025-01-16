@@ -25,8 +25,9 @@ export const Login = ({ tenant, formType = "pw-login", tenantName }) => {
             data: { subscription },
         } = supabase.auth.onAuthStateChange((event, session) => {
             if (event === "SIGNED_IN") {
+                console.log(tenant);
                 if (session.user.app_metadata.tenants?.includes(tenant)) {
-                    if (tenant === "/safer") {
+                    if (tenant === "safer") {
                         router.push(urlPath("/safer", tenant));
                     } else {
                         router.push(urlPath("/hospital", tenant));

@@ -10,7 +10,6 @@ export default function RequestReservation({ tenant }) {
     const departmentRef = useRef(null);
     const reservedByRef = useRef(null);
     const reservedBedsRef = useRef(null);
-    const [status, setStatus] = useState("pending"); // Default status
     const [isLoading, setIsLoading] = useState(false);
 
     const validateInput = () => {
@@ -63,7 +62,6 @@ export default function RequestReservation({ tenant }) {
             department,
             reserved_by: reservedBy,
             reserved_beds: parseInt(reservedBeds),
-            status,
         };
 
         setIsLoading(true);
@@ -84,8 +82,7 @@ export default function RequestReservation({ tenant }) {
         Hospital ID: ${hospitalId}\n
         Department: ${department}\n
         Reserved By: ${reservedBy}\n
-        Reserved Beds: ${reservedBeds}\n
-        Status: ${status}`);
+        Reserved Beds: ${reservedBeds}`);
 
         // Clear form after submission
         hospitalIdRef.current.value = "";
@@ -129,16 +126,6 @@ export default function RequestReservation({ tenant }) {
                     disabled={isLoading}
                     required
                 />
-                <select
-                    value={status}
-                    onChange={(e) => setStatus(e.target.value)}
-                    disabled={isLoading}
-                >
-                    <option value="pending">pending</option>
-                    <option value="approved">approved</option>
-                    <option value="rejected">rejected</option>
-                    <option value="cancelled">cancelled</option>
-                </select>
                 <button type="submit" aria-busy={isLoading}>예약 신청</button>
             </form>
         </article>

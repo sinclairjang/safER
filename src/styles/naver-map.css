@@ -1,0 +1,30 @@
+/* Full-screen container for the map page */
+.naver-map-container {
+    @apply flex flex-col items-center justify-center min-h-screen bg-gray-50;
+  }
+  
+  /* Title styling */
+  .naver-map-title {
+    @apply text-3xl font-bold text-gray-800 mb-6;
+  }
+  
+  /* Subtitle styling */
+  .naver-map-subtitle {
+    @apply text-gray-600 text-lg mb-10;
+  }
+  
+  /* Map container styling */
+  .naver-map {
+    @apply w-full max-w-5xl h-[500px] bg-gray-200 shadow-lg rounded-lg overflow-hidden;
+  }
+  
+  /* Buttons styling (if needed) */
+  .naver-map-button {
+    @apply bg-blue-500 text-white font-semibold rounded-md px-4 py-2 mt-4 hover:bg-blue-600 transition;
+  }
+  
+  /* Centered content inside the map page */
+  .naver-map-centered {
+    @apply text-center;
+  }
+  

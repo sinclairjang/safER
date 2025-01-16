@@ -1,33 +1,23 @@
+import { getSupabaseCookiesUtilClient } from "@/supabase-utils/cookiesUtilClient";
 import { ReservationList } from "./ReservationList";
+import { notFound } from "next/navigation";
 
-export default async function ReservationReqListPage( {params} ) {
+export default async function ReservationReqListPage( { params } ) {
+    const supabase = await getSupabaseCookiesUtilClient();
     const { tenant } = await params;
+    const { data: reservations, error } = await supabase
+        .from("reservations")
+        .select("*")
+        .eq("status", "pending");
     
-    const mockReservationReqs = [
-        {
-            id: 1,
-            title: "Ideation",
-            status: "Done",
-            author: "Young92",
-        },
-        {
-            id: 2,
-            title: "Organize AI-generated answers",
-            status: "In progress",
-            author: "CH1004",
-        },
-        {
-            id:3,
-            title: "Make tutorials",
-            status: "Not started",
-            author: "Young92"
-        },
-    ];
-    
+    if (error) {
+        console.error("Error fetching reservations:", error);
+        return notFound();
+    }    
+
     return (
-        <>
-            <h2>예약 신청 목록</h2>    
-            <ReservationList reservationReqs={mockReservationReqs} tenant={tenant} />
+        <>   
+            <ReservationList reservationReqs={reservations} tenant={tenant} />
         </>
     );
 }
