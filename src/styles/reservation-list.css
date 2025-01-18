@@ -8,8 +8,7 @@
     background-color: #f9f9f9;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    max-width: 1000px;
+    margin: auto;
 }
 
 /* Header styling */
@@ -28,11 +27,12 @@
 .reservation-list-subtitle {
     font-size: 1.2rem;
     color: #7f8c8d;
+    margin-bottom: 10px;
 }
 
 /* Table styling */
 .reservation-table {
-    width: 100%;
+    width: 90%;
     border-collapse: collapse;
     background-color: #fff;
     border-radius: 8px;

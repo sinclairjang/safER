@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import "@/styles/custom.css";
+import Script from "next/script";
 
 export default function RootLayout({ children }) {
   const [theme, setTheme] = useState("light");
@@ -24,14 +25,18 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
         />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body>
-        <header>
-          <div style={{ display: "flex", justifyContent: "flex-end", padding: "10px" }}>
-            {/* Header can contain more domain-specific items */}
-          </div>
-        </header>
+
+        <Script
+          strategy="beforeInteractive"
+          src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_NCP_CLIENT_ID}`}
+        />
         <main>{children}</main>
       </body>
     </html>

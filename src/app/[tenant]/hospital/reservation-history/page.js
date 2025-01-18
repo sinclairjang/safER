@@ -14,8 +14,7 @@ export default async function ReservationHistoryPage( {params} ) {
         }   
     
     return (
-        <>
-            <h2>예약 내역</h2>    
+        <> 
             <ReservationHistory reservationHistory={reservations} tenant={tenant} />
         </>
     );

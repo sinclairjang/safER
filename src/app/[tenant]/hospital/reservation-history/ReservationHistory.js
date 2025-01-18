@@ -12,7 +12,7 @@ export function ReservationHistory({ reservationHistory, tenant }) {
     
     const handleAction = async (id, action) => {
         try {
-            const response = await fetch(urlPath(`/hospital/reservations/${id}/${action}`, tenant), {
+            const response = await fetch(urlPath(`/hospital/reservation-history/${id}/${action}`, tenant), {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

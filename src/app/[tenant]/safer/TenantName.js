@@ -18,7 +18,7 @@ export default async function TenantName( {tenant} ) {
     tenantName = data?.name ?? tenantName;
     const logoUrl = "/rescuer_logo.png";
     return (
-        <header style={{ marginBottom: "20px", textAlign: "center" }}>
+        <header style={{ textAlign: "center" }}>
             {/* Logo Section */}
             {logoUrl && (
                 <img
