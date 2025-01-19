@@ -2,7 +2,7 @@
 
 import "@/styles/reservation-list.css";
 import { useState } from "react";
-import { FaCheckCircle, FaTimesCircle, FaTrash } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 import { urlPath } from "@/utils/url-helpers";
 
 export function ReservationHistory({ reservationHistory, tenant }) {
