@@ -9,6 +9,14 @@
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: auto;
+    width: 90%; /* Default to 90% width */
+    max-width: 1200px; /* Optional: To limit how wide the container can get */
+}
+
+@media (max-width: 800px) {
+    .reservation-list-container {
+        width: 700px; /* Fixed width for screens smaller than 600px */
+    }
 }
 
 /* Header styling */

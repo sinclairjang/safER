@@ -2,18 +2,16 @@
 
 import { useEffect, useState } from "react";
 import "@/styles/naver-map.css";
-import FiltersModal from "./FiltersModal"; // Your existing FiltersModal component
+import FilterPanel from "./FilterPanel";
 
-export default function NaverMapPage() {
+export default function ReservationPage() {
   const [map, setMap] = useState(null);        // Reference to the Naver map
   const [userLocation, setUserLocation] = useState(null);
   const [markers, setMarkers] = useState([]);  // Track markers to remove or update
   const [filters, setFilters] = useState({});  // Filter states (e.g., parking, 24hrs)
-  const [showModal, setShowModal] = useState(false);
 
   /**
-   * 1. Initialize the map (once) if it's not created yet and naver.maps is available.
-   * 2. Attach our custom control.
+   * Initialize the map (once) if it's not created yet and naver.maps is available.
    */
   useEffect(() => {
     if (!map && window?.naver?.maps) {
@@ -68,17 +66,17 @@ export default function NaverMapPage() {
     }
   };
 
-    /**
-   * Perform a proximity query whenever the user's location changes.
-   */
-    useEffect(() => {
-      if (userLocation) {
-        console.log("User's current location:", userLocation);
-  
-        // Replace this with your proximity query logic
-        sendProximityQuery(userLocation.latitude, userLocation.longitude, filters);
-      }
-    }, [userLocation, filters]); // Trigger when user's location or filters change
+  /**
+  * Perform a proximity query whenever the user's location changes.
+  */
+  useEffect(() => {
+    if (userLocation) {
+      console.log("User's current location:", userLocation);
+
+      // Replace this with your proximity query logic
+      sendProximityQuery(userLocation.latitude, userLocation.longitude, filters);
+    }
+  }, [userLocation, filters]); // Trigger when user's location or filters change
 
    /**
    * Simulate sending a proximity query to an API.
@@ -119,7 +117,7 @@ export default function NaverMapPage() {
   const addCustomControl = (map) => {
     // Inline HTML for our control (an anchor tag styled like a button)
     const locationBtnHtml = `
-      <a class="fa fa-filter"
+      <a class="fa fa-hospital"
         style="
           display: inline-block;
           padding: 8px 12px;
@@ -131,13 +129,13 @@ export default function NaverMapPage() {
           text-decoration: none;
           color: black;
         ">
-        조건 검색
+        safER
       </a>
     `;
 
     // Create the custom control with our HTML
     const customControl = new naver.maps.CustomControl(locationBtnHtml, {
-      position: naver.maps.Position.BOTTOM_CENTER, // You can change to TOP_LEFT, etc.
+      position: naver.maps.Position.TOP_RIGHT, // You can change to TOP_LEFT, etc.
     });
 
     // Wait until the map is initialized before attaching
@@ -214,23 +212,23 @@ export default function NaverMapPage() {
   };
 
   return (
-    <div className="naver-map-container">
-      {/* Header or Intro Section */}
-      <div className="naver-map-centered">
-        <h1 className="naver-map-title">병상 예약</h1>
-        <p className="naver-map-subtitle">조건에 맞는 근처 병원을 보여드릴게요.</p>
+    <div className="naver-map-page" style={{ display: 'flex', height: '90vh', position: 'relative' }}>
+      {/* Left side: FilterPanel */}
+      <FilterPanel />  
+
+      {/* Right side: The Map */}
+      <div className="naver-map-container" style={{ flexGrow: 1, position: 'relative' }}>
+        {/* Header or Intro Section */}
+        <div className="naver-map-centered">
+          <h1 className="naver-map-title">병상 예약</h1>
+          <p className="naver-map-subtitle">조건에 맞는 근처 병원을 보여드릴게요.</p>
+        </div>
+
+        {/* The Map Element */}
+        <div id="map" className="naver-map" />
       </div>
 
-      {/* The Map Element */}
-      <div id="map" className="naver-map" />
 
-      {/* Filters Modal */}
-      {showModal && (
-        <FiltersModal
-          onClose={() => setShowModal(false)}
-          onApply={handleApplyFilters}
-        />
-      )}
     </div>
   );
 }

@@ -73,9 +73,11 @@ export function ReservationList({ reservationReqs, tenant }) {
                             </tr>
                         ))
                     ) : (
-                        <td colSpan="6" style={{ textAlign: "center", padding: "1rem" }}>
+                        <tr>
+                            <td colSpan="6" style={{ textAlign: "center", padding: "1rem" }}>
                             모든 예약이 처리되었습니다.
-                        </td>
+                            </td>
+                        </tr>
                     )}
                 </tbody>
             </table>

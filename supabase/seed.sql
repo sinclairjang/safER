@@ -149,7 +149,21 @@ INSERT INTO "auth"."audit_log_entries" ("instance_id", "id", "payload", "created
 	('00000000-0000-0000-0000-000000000000', 'f654801d-593b-4c03-94fe-572a2b692997', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-17 08:26:10.805349+00', ''),
 	('00000000-0000-0000-0000-000000000000', '62eb249d-5963-4c5a-8187-81ec7f9f06a9', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-17 08:26:10.811392+00', ''),
 	('00000000-0000-0000-0000-000000000000', '5882616f-ae8b-410e-879b-9e2ea092d12f', '{"action":"token_refreshed","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-17 08:37:35.696189+00', ''),
-	('00000000-0000-0000-0000-000000000000', '0479b37c-f405-4088-9d80-411c4e360c61', '{"action":"token_revoked","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-17 08:37:35.696989+00', '');
+	('00000000-0000-0000-0000-000000000000', '0479b37c-f405-4088-9d80-411c4e360c61', '{"action":"token_revoked","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-17 08:37:35.696989+00', ''),
+	('00000000-0000-0000-0000-000000000000', '5d52d259-9b99-4893-8b4b-e47025282233', '{"action":"login","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"account","traits":{"provider":"email"}}', '2025-01-20 02:35:06.520434+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'ed48a47f-7904-47f9-bb4d-c8f82a1b5856', '{"action":"login","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"account","traits":{"provider":"email"}}', '2025-01-20 02:40:29.879981+00', ''),
+	('00000000-0000-0000-0000-000000000000', '23707dfb-16b6-4084-bdff-f66520871ad2', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-20 05:09:26.523073+00', ''),
+	('00000000-0000-0000-0000-000000000000', '177c7a2c-c9c6-4c4d-80a6-d4a0c7a94b0c', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-20 05:09:26.523986+00', ''),
+	('00000000-0000-0000-0000-000000000000', '73a64b48-6dbd-49dc-b96c-a6d12271e15b', '{"action":"token_refreshed","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-20 06:01:31.874845+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'fe1ccb3f-79e3-4a66-9062-798202b14a4d', '{"action":"token_revoked","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-20 06:01:31.875495+00', ''),
+	('00000000-0000-0000-0000-000000000000', '4800166b-6e35-448c-bb86-68332ad64488', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-20 06:10:00.562449+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'acf49212-0008-416f-9549-3f5d73c28a08', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-20 06:10:00.562944+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'eb7704f6-9ae9-4005-80a2-736029daf4d5', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-20 07:08:27.077433+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'c4c2829f-2fe4-48c6-8821-70016d9a6b80', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-20 07:08:27.078395+00', ''),
+	('00000000-0000-0000-0000-000000000000', '6acaadd7-e140-48a4-956d-40d7b9ba7a3d', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-20 08:06:47.837206+00', ''),
+	('00000000-0000-0000-0000-000000000000', '8b5d235b-ec42-4ed2-8c56-949e8768637c', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-20 08:06:47.838167+00', ''),
+	('00000000-0000-0000-0000-000000000000', '62df3034-6928-4791-9c07-708fd6ed095f', '{"action":"logout","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"account"}', '2025-01-20 08:33:20.759761+00', ''),
+	('00000000-0000-0000-0000-000000000000', '338102a5-2cd0-45c7-a7b2-0acde0a720ae', '{"action":"login","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"account","traits":{"provider":"email"}}', '2025-01-20 08:33:28.328507+00', '');
 
 
 --
@@ -163,8 +177,8 @@ INSERT INTO "auth"."audit_log_entries" ("instance_id", "id", "payload", "created
 --
 
 INSERT INTO "auth"."users" ("instance_id", "id", "aud", "role", "email", "encrypted_password", "email_confirmed_at", "invited_at", "confirmation_token", "confirmation_sent_at", "recovery_token", "recovery_sent_at", "email_change_token_new", "email_change", "email_change_sent_at", "last_sign_in_at", "raw_app_meta_data", "raw_user_meta_data", "is_super_admin", "created_at", "updated_at", "phone", "phone_confirmed_at", "phone_change", "phone_change_token", "phone_change_sent_at", "email_change_token_current", "email_change_confirm_status", "banned_until", "reauthentication_token", "reauthentication_sent_at", "is_sso_user", "deleted_at", "is_anonymous") VALUES
-	('00000000-0000-0000-0000-000000000000', '5cb12aad-92a7-410a-a062-44a626e1f5e8', 'authenticated', 'authenticated', 'ch1004@metabuild.com', '$2a$10$iiTdnrE4jFdjWLqnTCGBa.BVfJTDVQN1RyRekqdujiwhKrvmAaDAW', '2025-01-15 01:15:11.352728+00', NULL, '', NULL, '', NULL, '', '', NULL, '2025-01-17 07:28:10.885694+00', '{"tenants": ["safer"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-15 01:15:11.340725+00', '2025-01-17 08:26:10.813867+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false),
-	('00000000-0000-0000-0000-000000000000', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', 'authenticated', 'authenticated', 'young92@metabuild.com', '$2a$10$fBQyLHLHUFW.Ghc6xmKiyeQOhQnoQuwa.1hxMQtNQVePn3kTh7/vq', '2025-01-14 05:18:51.965275+00', NULL, '', NULL, '', NULL, '', '', NULL, '2025-01-16 01:56:05.320848+00', '{"tenants": ["samsunghospital"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-14 05:18:51.956406+00', '2025-01-17 08:37:35.698851+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false);
+	('00000000-0000-0000-0000-000000000000', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', 'authenticated', 'authenticated', 'young92@metabuild.com', '$2a$10$fBQyLHLHUFW.Ghc6xmKiyeQOhQnoQuwa.1hxMQtNQVePn3kTh7/vq', '2025-01-14 05:18:51.965275+00', NULL, '', NULL, '', NULL, '', '', NULL, '2025-01-20 02:40:29.881184+00', '{"tenants": ["samsunghospital"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-14 05:18:51.956406+00', '2025-01-20 06:01:31.876944+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false),
+	('00000000-0000-0000-0000-000000000000', '5cb12aad-92a7-410a-a062-44a626e1f5e8', 'authenticated', 'authenticated', 'ch1004@metabuild.com', '$2a$10$iiTdnrE4jFdjWLqnTCGBa.BVfJTDVQN1RyRekqdujiwhKrvmAaDAW', '2025-01-15 01:15:11.352728+00', NULL, '', NULL, '', NULL, '', '', NULL, '2025-01-20 08:33:28.329217+00', '{"tenants": ["safer"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-15 01:15:11.340725+00', '2025-01-20 08:33:28.330948+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false);
 
 
 --
@@ -187,8 +201,9 @@ INSERT INTO "auth"."identities" ("provider_id", "user_id", "identity_data", "pro
 --
 
 INSERT INTO "auth"."sessions" ("id", "user_id", "created_at", "updated_at", "factor_id", "aal", "not_after", "refreshed_at", "user_agent", "ip", "tag") VALUES
-	('4f316734-3c44-4e69-90b5-9f01c548e93e', '5cb12aad-92a7-410a-a062-44a626e1f5e8', '2025-01-17 07:28:10.885787+00', '2025-01-17 08:26:10.815227+00', NULL, 'aal1', NULL, '2025-01-17 08:26:10.815155', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', '172.18.0.1', NULL),
-	('782b50e2-de3f-4f3d-896d-202448863055', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', '2025-01-16 01:56:05.320943+00', '2025-01-17 08:37:35.699562+00', NULL, 'aal1', NULL, '2025-01-17 08:37:35.699515', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', '172.18.0.1', NULL);
+	('782b50e2-de3f-4f3d-896d-202448863055', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', '2025-01-16 01:56:05.320943+00', '2025-01-17 08:37:35.699562+00', NULL, 'aal1', NULL, '2025-01-17 08:37:35.699515', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', '172.18.0.1', NULL),
+	('14bba138-537b-4f4a-adb8-a66954cc1267', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', '2025-01-20 02:40:29.881235+00', '2025-01-20 06:01:31.877824+00', NULL, 'aal1', NULL, '2025-01-20 06:01:31.877789', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', '172.18.0.1', NULL),
+	('82e25ded-fd10-4953-8c41-7a9362e38359', '5cb12aad-92a7-410a-a062-44a626e1f5e8', '2025-01-20 08:33:28.329292+00', '2025-01-20 08:33:28.329292+00', NULL, 'aal1', NULL, NULL, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', '172.18.0.1', NULL);
 
 
 --
@@ -197,7 +212,8 @@ INSERT INTO "auth"."sessions" ("id", "user_id", "created_at", "updated_at", "fac
 
 INSERT INTO "auth"."mfa_amr_claims" ("session_id", "created_at", "updated_at", "authentication_method", "id") VALUES
 	('782b50e2-de3f-4f3d-896d-202448863055', '2025-01-16 01:56:05.323709+00', '2025-01-16 01:56:05.323709+00', 'password', 'e20b354c-ae16-437b-b579-9ba9f2937f8f'),
-	('4f316734-3c44-4e69-90b5-9f01c548e93e', '2025-01-17 07:28:10.890689+00', '2025-01-17 07:28:10.890689+00', 'password', '9b1ac604-d73f-4b98-bc89-bd25d168c996');
+	('14bba138-537b-4f4a-adb8-a66954cc1267', '2025-01-20 02:40:29.883791+00', '2025-01-20 02:40:29.883791+00', 'password', '349723f2-91a0-4c50-b845-6e773d734964'),
+	('82e25ded-fd10-4953-8c41-7a9362e38359', '2025-01-20 08:33:28.331146+00', '2025-01-20 08:33:28.331146+00', 'password', '947f1f97-98fa-4f95-a3a1-06f4a4a381cb');
 
 
 --
@@ -234,10 +250,11 @@ INSERT INTO "auth"."refresh_tokens" ("instance_id", "id", "token", "user_id", "r
 	('00000000-0000-0000-0000-000000000000', 52, 'qSqYbYHrJfO4crTvGNRuxw', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', true, '2025-01-17 03:13:21.78815+00', '2025-01-17 05:21:59.539763+00', 'JhHfXUaWVTkSRHX4kQ55Eg', '782b50e2-de3f-4f3d-896d-202448863055'),
 	('00000000-0000-0000-0000-000000000000', 54, '0hFr9ecm_Ng3fV2j66fRBg', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', true, '2025-01-17 05:21:59.54068+00', '2025-01-17 06:33:36.315103+00', 'qSqYbYHrJfO4crTvGNRuxw', '782b50e2-de3f-4f3d-896d-202448863055'),
 	('00000000-0000-0000-0000-000000000000', 57, 'hYC35O6-O2GptwNbXGb3CA', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', true, '2025-01-17 06:33:36.315992+00', '2025-01-17 07:32:25.127434+00', '0hFr9ecm_Ng3fV2j66fRBg', '782b50e2-de3f-4f3d-896d-202448863055'),
-	('00000000-0000-0000-0000-000000000000', 59, '382lWgPsdCYebC0LFHkpcw', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-17 07:28:10.888992+00', '2025-01-17 08:26:10.811928+00', NULL, '4f316734-3c44-4e69-90b5-9f01c548e93e'),
-	('00000000-0000-0000-0000-000000000000', 61, 'RpNl13SDItBUf6JPoybr3A', '5cb12aad-92a7-410a-a062-44a626e1f5e8', false, '2025-01-17 08:26:10.812749+00', '2025-01-17 08:26:10.812749+00', '382lWgPsdCYebC0LFHkpcw', '4f316734-3c44-4e69-90b5-9f01c548e93e'),
 	('00000000-0000-0000-0000-000000000000', 60, 'TXsCdcNpglxd9LPBzUkiBQ', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', true, '2025-01-17 07:32:25.128035+00', '2025-01-17 08:37:35.697436+00', 'hYC35O6-O2GptwNbXGb3CA', '782b50e2-de3f-4f3d-896d-202448863055'),
-	('00000000-0000-0000-0000-000000000000', 62, 'mwGJP7BDPsitKHh3XEKpRA', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', false, '2025-01-17 08:37:35.697968+00', '2025-01-17 08:37:35.697968+00', 'TXsCdcNpglxd9LPBzUkiBQ', '782b50e2-de3f-4f3d-896d-202448863055');
+	('00000000-0000-0000-0000-000000000000', 62, 'mwGJP7BDPsitKHh3XEKpRA', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', false, '2025-01-17 08:37:35.697968+00', '2025-01-17 08:37:35.697968+00', 'TXsCdcNpglxd9LPBzUkiBQ', '782b50e2-de3f-4f3d-896d-202448863055'),
+	('00000000-0000-0000-0000-000000000000', 64, 'TFPqGs8QMMZ1zF0ye0Lv-w', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', true, '2025-01-20 02:40:29.882569+00', '2025-01-20 06:01:31.875841+00', NULL, '14bba138-537b-4f4a-adb8-a66954cc1267'),
+	('00000000-0000-0000-0000-000000000000', 66, 'w-HvKDlP2G_bGKj7mFjVVA', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', false, '2025-01-20 06:01:31.876259+00', '2025-01-20 06:01:31.876259+00', 'TFPqGs8QMMZ1zF0ye0Lv-w', '14bba138-537b-4f4a-adb8-a66954cc1267'),
+	('00000000-0000-0000-0000-000000000000', 70, 'qvsUVd8767pwIYRUGEzrmw', '5cb12aad-92a7-410a-a062-44a626e1f5e8', false, '2025-01-20 08:33:28.330308+00', '2025-01-20 08:33:28.330308+00', NULL, '82e25ded-fd10-4953-8c41-7a9362e38359');
 
 
 --
@@ -296,10 +313,6 @@ INSERT INTO "public"."availability_filter_combos" ("id", "created_at", "care_uni
 	(20, '2025-01-19 07:21:40.693544+00', '일반', '입원실', false, 'hv14', '일반'),
 	(21, '2025-01-19 07:22:40.262948+00', '소아', '입원실', false, 'hv15', '음압'),
 	(22, '2025-01-19 07:23:11.758308+00', '소아', '입원실', false, 'hv16', '일반'),
-	(23, '2025-01-19 07:23:57.249112+00', '일반', '중환자실', true, 'hv17', '음압'),
-	(24, '2025-01-19 07:25:09.587648+00', '일반', '중환자실', true, 'hv18', '일반'),
-	(25, '2025-01-19 07:25:58.027026+00', '일반', '입원실', true, 'hv19', '음압'),
-	(26, '2025-01-19 07:26:36.363751+00', '일반', '입원실', true, 'hv21', '일반'),
 	(27, '2025-01-19 07:34:11.605676+00', '감염', '중환자실', false, 'hv22', '일반'),
 	(28, '2025-01-19 07:35:04.487665+00', '감염', '중환자실', false, 'hv23', '음압'),
 	(29, '2025-01-19 07:38:34.03962+00', '감염', '중환자실', false, 'hv24', '일반'),
@@ -309,20 +322,24 @@ INSERT INTO "public"."availability_filter_combos" ("id", "created_at", "care_uni
 	(33, '2025-01-19 07:43:24.330373+00', '소아', '입원실', false, 'hv28', NULL),
 	(34, '2025-01-19 07:46:00.590185+00', '일반', '입원실', true, 'hv29', '음압'),
 	(35, '2025-01-19 07:47:57.87483+00', '일반', '입원실', true, 'hv30', '일반'),
-	(36, '2025-01-19 07:52:24.460471+00', '일반', '중환자실', true, 'hv31', NULL),
 	(37, '2025-01-19 07:52:52.540104+00', '소아', '중환자실', false, 'hv32', NULL),
-	(38, '2025-01-19 07:53:32.477579+00', '소아', '중환자실', true, 'hv33', NULL),
 	(39, '2025-01-19 08:13:11.95018+00', '심장내과', '중환자실', false, 'hv34', NULL),
 	(40, '2025-01-19 08:14:16.088582+00', '일반', '중환자실', false, 'hv35', '음압'),
-	(41, '2025-01-19 08:14:39.769442+00', '일반', '입원실', true, 'hv36', NULL),
-	(42, '2025-01-19 08:15:10.454226+00', '소아', '입원실', true, 'hv37', ''),
 	(43, '2025-01-19 08:15:52.599096+00', '외상', '입원실', false, 'hv38', NULL),
 	(44, '2025-01-19 08:17:18.586638+00', '외상', '수술실', false, 'hv39', NULL),
 	(45, '2025-01-19 08:17:39.175097+00', '정신과', '입원실', false, 'hv40', NULL),
 	(46, '2025-01-19 08:18:03.663929+00', '일반', '입원실', false, 'hv41', '음압'),
-	(1, '2025-01-19 06:46:11.357056+00', '일반', '입원실', true, 'hvec', NULL),
 	(47, '2025-01-19 08:19:06.700383+00', '분만', '분만실', false, 'hv42', NULL),
-	(52, '2025-01-19 08:30:13.119573+00', '화상', '처치실', false, 'hv43', NULL);
+	(52, '2025-01-19 08:30:13.119573+00', '화상', '처치실', false, 'hv43', NULL),
+	(1, '2025-01-19 06:46:11.357056+00', '일반', '응급실', true, 'hvec', NULL),
+	(23, '2025-01-19 07:23:57.249112+00', '일반', '응급전용 중환자실', true, 'hv17', '음압'),
+	(24, '2025-01-19 07:25:09.587648+00', '일반', '응급전용 중환자실', true, 'hv18', '일반'),
+	(25, '2025-01-19 07:25:58.027026+00', '일반', '응급전용 입원실', true, 'hv19', '음압'),
+	(26, '2025-01-19 07:26:36.363751+00', '일반', '응급전용 입원실', true, 'hv21', '일반'),
+	(36, '2025-01-19 07:52:24.460471+00', '일반', '응급전용 중환자실', true, 'hv31', NULL),
+	(38, '2025-01-19 07:53:32.477579+00', '소아', '응급전용 중환자실', true, 'hv33', NULL),
+	(41, '2025-01-19 08:14:39.769442+00', '일반', '응급전용 입원실', true, 'hv36', NULL),
+	(42, '2025-01-19 08:15:10.454226+00', '소아', '응급전용 입원실', true, 'hv37', '');
 
 
 --
@@ -486,134 +503,134 @@ INSERT INTO "public"."hospitals" ("hpid", "dutyname", "dutytel3", "created_at", 
 -- Data for Name: hospital_bed_availability; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO "public"."hospital_bed_availability" ("hvec", "hvoc", "hvcc", "hvncc", "hvccc", "hvicc", "hvgc", "hv2", "hv3", "hv4", "hv5", "hv6", "hv7", "hv8", "hv9", "hv10", "hv11", "hv13", "hv14", "hv15", "hv16", "hv17", "hv18", "hv19", "hv21", "hv22", "hv23", "hv24", "hv25", "hv26", "hv27", "hv28", "hv29", "hv30", "hv31", "hv32", "hv33", "hv34", "hv35", "hv36", "hv37", "hv38", "hv39", "hv40", "hv41", "hv42", "hv43", "hvctayn", "hvmriayn", "hvangioayn", "hvventiayn", "hvventisoayn", "hvincuayn", "hvcrrtayn", "hvecmoayn", "hvoxyayn", "hvhypoayn", "hvamyn", "hvidate", "updated_at", "hpid") VALUES
-	(0, 0, NULL, 4, NULL, 8, 205, NULL, NULL, NULL, true, 0, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 1, 1, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 4, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:01:51', '2025-01-17 07:05:00.833196+00', 'A1100015'),
-	(-7, 29, NULL, 16, 6, 1, 357, 17, 13, NULL, true, 1, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 1, 2, NULL, 5, NULL, 3, 2, NULL, NULL, NULL, NULL, 15, 11, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T15:58:53', '2025-01-17 07:05:00.833196+00', 'A1100010'),
-	(6, 13, NULL, 9, NULL, 5, 171, NULL, NULL, NULL, true, NULL, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, 3, 1, 3, 10, NULL, NULL, NULL, NULL, 12, NULL, NULL, NULL, NULL, 1, true, false, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:11', '2025-01-17 07:05:00.833196+00', 'A1100043'),
-	(10, 4, NULL, 3, NULL, NULL, 186, 4, 5, NULL, true, NULL, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, 1, 6, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, NULL, 1, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:45', '2025-01-17 07:05:00.833196+00', 'A1100028'),
-	(2, 10, NULL, NULL, NULL, NULL, 251, 9, 8, NULL, true, 11, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 2, NULL, NULL, NULL, 6, 1, NULL, NULL, NULL, NULL, 41, 1, false, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T15:57:54', '2025-01-17 07:05:00.833196+00', 'A1100053'),
-	(2, 14, NULL, 5, 2, NULL, 96, 0, 4, NULL, true, 0, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 2, 0, NULL, NULL, 2, 0, NULL, NULL, NULL, NULL, NULL, 1, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:40', '2025-01-17 07:05:00.833196+00', 'A1120796'),
-	(10, 4, NULL, NULL, NULL, 8, 29, NULL, NULL, NULL, true, NULL, true, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 1, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:01:40', '2025-01-17 07:05:00.833196+00', 'A1100036'),
-	(13, 4, NULL, NULL, NULL, 1, 23, NULL, NULL, NULL, true, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 2, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:11', '2025-01-17 07:05:00.833196+00', 'A1100041'),
-	(12, 11, NULL, 3, NULL, NULL, 188, 5, 7, NULL, true, NULL, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 1, 2, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, 8, 1, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T15:58:15', '2025-01-17 07:05:00.833196+00', 'A1100002'),
-	(9, 4, NULL, NULL, NULL, 6, 11, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:01:39', '2025-01-17 07:05:00.833196+00', 'A1100051'),
-	(6, 2, NULL, NULL, NULL, 1, 33, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:01:41', '2025-01-17 07:05:00.833196+00', 'A1100026'),
-	(6, 12, NULL, 0, NULL, 2, 98, 0, 2, NULL, true, NULL, true, NULL, NULL, true, true, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, 2, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, 8, 2, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T15:59:38', '2025-01-17 07:05:00.833196+00', 'A1100014'),
-	(5, 0, NULL, NULL, NULL, 9, 26, NULL, NULL, NULL, true, NULL, true, NULL, NULL, false, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:29', '2025-01-17 07:05:00.833196+00', 'A1100049'),
-	(8, 7, NULL, NULL, NULL, 9, 224, NULL, NULL, NULL, true, NULL, true, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 1, 0, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 1, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T15:57:49', '2025-01-17 07:05:00.833196+00', 'A1100027'),
-	(2, 10, NULL, 1, NULL, NULL, 101, 0, 0, NULL, true, NULL, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 1, 2, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, 5, 2, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:01:57', '2025-01-17 07:05:00.833196+00', 'A1100016'),
-	(9, 7, NULL, 1, NULL, NULL, 195, -10, 0, NULL, true, NULL, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 3, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, 1, 0, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:01:04', '2025-01-17 07:05:00.833196+00', 'A1100048'),
-	(8, 6, NULL, NULL, NULL, 7, 58, NULL, NULL, NULL, true, NULL, true, NULL, NULL, false, false, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 2, 2, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:05', '2025-01-17 07:05:00.833196+00', 'A1100020'),
-	(9, 13, NULL, 2, NULL, 7, 153, NULL, NULL, NULL, true, 3, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 2, 3, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 10, 7, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:21', '2025-01-17 07:05:00.833196+00', 'A1100001'),
-	(9, 5, NULL, 4, NULL, 0, 56, NULL, NULL, NULL, true, NULL, true, NULL, NULL, NULL, false, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 1, 0, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 4, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:51', '2025-01-17 07:05:00.833196+00', 'A1100021'),
-	(7, 3, NULL, NULL, NULL, 0, 22, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:20', '2025-01-17 07:05:00.833196+00', 'A1100022'),
-	(16, 5, NULL, NULL, NULL, 5, 31, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-16T17:56:47', '2025-01-17 07:05:00.833196+00', 'A1100050'),
-	(24, 9, NULL, 9, NULL, NULL, 302, 7, 8, NULL, true, NULL, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 2, 3, NULL, NULL, NULL, 4, 0, NULL, NULL, NULL, NULL, 12, 2, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00', '2025-01-17 07:05:00.833196+00', 'A1100040'),
-	(8, 8, NULL, 0, NULL, 2, 226, 9, 4, NULL, true, NULL, true, NULL, NULL, true, true, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL, 4, 1, 2, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, 12, 1, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:08', '2025-01-17 07:05:00.833196+00', 'A1100003'),
-	(0, 18, 4, 4, 9, 8, 598, 3, 12, NULL, true, 3, true, NULL, NULL, true, true, NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 1, 3, NULL, 6, 1, 6, 3, NULL, 4, NULL, NULL, 29, 23, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T15:57:36', '2025-01-17 07:05:00.833196+00', 'A1100007'),
-	(7, 3, NULL, NULL, NULL, 5, 68, NULL, NULL, NULL, true, NULL, false, NULL, NULL, false, false, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, false, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:57', '2025-01-17 07:05:00.833196+00', 'A1100025'),
-	(7, 16, NULL, 11, 3, 1, 299, 9, 11, NULL, true, 5, true, NULL, NULL, true, true, 2, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL, NULL, 1, NULL, 8, 2, NULL, NULL, NULL, NULL, 16, 6, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:09', '2025-01-17 07:05:00.833196+00', 'A1100012'),
-	(3, 10, NULL, 0, NULL, NULL, 282, 0, 1, NULL, true, NULL, true, NULL, NULL, true, true, 4, 3, NULL, NULL, 2, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL, 3, NULL, NULL, NULL, 0, 11, NULL, NULL, NULL, 10, 2, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T15:58:01', '2025-01-17 07:05:00.833196+00', 'A1100013'),
-	(15, 8, NULL, 2, NULL, NULL, 187, 5, 8, NULL, true, NULL, true, NULL, NULL, true, true, 2, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, 2, 2, 26, NULL, NULL, NULL, 29, 1, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:01:50', '2025-01-17 07:05:00.833196+00', 'A1100008'),
-	(3, 6, NULL, NULL, NULL, 14, 130, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 1, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:03', '2025-01-17 07:05:00.833196+00', 'A1100039'),
-	(-12, 44, 3, 13, 1, NULL, 738, 3, 3, NULL, true, 0, true, NULL, NULL, true, true, NULL, NULL, 2, 1, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, -1, 1, 3, NULL, 2, 1, 5, 4, NULL, 6, NULL, NULL, 20, 7, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:01:15', '2025-01-17 07:05:00.833196+00', 'A1100009'),
-	(7, 1, NULL, NULL, NULL, 1, 69, NULL, NULL, NULL, true, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:16', '2025-01-17 07:05:00.833196+00', 'A1100019'),
-	(6, 1, NULL, NULL, NULL, 3, 15, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, 1, 2, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00', '2025-01-17 07:05:00.833196+00', 'A1100223'),
-	(14, 8, NULL, 0, NULL, NULL, 74, 0, 0, NULL, true, 0, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 8, 2, 4, 3, NULL, NULL, NULL, 0, 5, NULL, NULL, NULL, 9, 1, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:12', '2025-01-17 07:05:00.833196+00', 'A1100005'),
-	(9, 8, NULL, NULL, NULL, NULL, 36, -1, 3, NULL, true, 5, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:07', '2025-01-17 07:05:00.833196+00', 'A1100011'),
-	(8, 3, NULL, NULL, NULL, 1, 77, NULL, NULL, NULL, true, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:42', '2025-01-17 07:05:00.833196+00', 'A1100024'),
-	(7, 2, NULL, NULL, NULL, NULL, 9, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:01:38', '2025-01-17 07:05:00.833196+00', 'A1100037'),
-	(9, 8, NULL, 0, NULL, NULL, 114, 1, 7, NULL, true, NULL, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 1, 1, NULL, NULL, NULL, 3, 2, NULL, NULL, NULL, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:47', '2025-01-17 07:05:00.833196+00', 'A1100055'),
-	(10, 1, NULL, 1, NULL, 1, 19, NULL, NULL, NULL, true, NULL, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:24', '2025-01-17 07:05:00.833196+00', 'A1100054'),
-	(11, 10, NULL, 1, NULL, 15, 146, NULL, NULL, NULL, true, NULL, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, 0, 4, 1, 2, NULL, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, 21, 0, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:39', '2025-01-17 07:05:00.833196+00', 'A1100004'),
-	(-4, 14, NULL, -4, NULL, NULL, 168, 0, 2, NULL, true, 0, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7, 2, 2, NULL, NULL, NULL, 3, 1, NULL, NULL, NULL, NULL, NULL, 1, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:09', '2025-01-17 07:05:00.833196+00', 'A1121013'),
-	(9, 1, NULL, NULL, NULL, NULL, 32, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:40', '2025-01-17 07:05:00.833196+00', 'A1100023'),
-	(-18, 34, 1, 10, 0, NULL, 401, 4, 13, NULL, true, 2, true, NULL, NULL, true, true, NULL, NULL, 1, 1, 1, 1, NULL, NULL, 0, 0, NULL, 9, NULL, NULL, 9, 2, 4, 7, 8, 0, 6, 4, 30, 6, NULL, NULL, 12, 2, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:54', '2025-01-17 07:05:00.833196+00', 'A1100017'),
-	(1, 4, NULL, 1, 3, 7, 70, NULL, 0, NULL, true, 1, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 1, 1, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, 13, 2, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:45', '2025-01-17 07:05:00.833196+00', 'A1100006'),
-	(8, 6, NULL, NULL, NULL, 5, 94, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T15:58:59', '2025-01-17 07:05:00.833196+00', 'A1100029'),
-	(10, 8, NULL, NULL, NULL, NULL, 8, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:26', '2025-01-17 07:05:00.833196+00', 'A1100032'),
-	(10, 6, NULL, NULL, NULL, 8, 43, NULL, 0, NULL, true, NULL, true, NULL, 8, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, 0, 0, 5, 3, 2, 3, 2, NULL, NULL, NULL, 2, 0, NULL, 8, 2, NULL, 7, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:01:07', '2025-01-17 07:05:00.833196+00', 'A1100052'),
-	(7, 2, NULL, NULL, NULL, NULL, 49, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:49', '2025-01-17 07:05:00.833196+00', 'A1100075'),
-	(0, 3, NULL, NULL, NULL, 7, 8, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 4, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, NULL, 0, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00', '2025-01-17 07:05:00.833196+00', 'A1100044'),
-	(2, 9, NULL, 1, NULL, 2, 183, 2, NULL, NULL, true, 1, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, 2, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 3, 2, 2, 9, NULL, NULL, NULL, NULL, 20, NULL, NULL, NULL, 0, 3, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:01', '2025-01-17 07:05:00.833196+00', 'A1100035');
+INSERT INTO "public"."hospital_bed_availability" ("hvec", "hvoc", "hvcc", "hvncc", "hvccc", "hvicc", "hvgc", "hv2", "hv3", "hv4", "hv5", "hv6", "hv7", "hv8", "hv9", "hv10", "hv11", "hv13", "hv14", "hv15", "hv16", "hv17", "hv18", "hv19", "hv21", "hv22", "hv23", "hv24", "hv25", "hv26", "hv27", "hv28", "hv29", "hv30", "hv31", "hv32", "hv33", "hv34", "hv35", "hv36", "hv37", "hv38", "hv39", "hv40", "hv41", "hv42", "hv43", "hvctayn", "hvmriayn", "hvangioayn", "hvventiayn", "hvventisoayn", "hvincuayn", "hvcrrtayn", "hvecmoayn", "hvoxyayn", "hvhypoayn", "hvamyn", "hvidate", "updated_at", "hpid", "operation_rate") VALUES
+	(0, 0, NULL, 4, NULL, 8, 205, NULL, NULL, NULL, true, 0, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 1, 1, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 4, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:01:51', '2025-01-17 07:05:00.833196+00', 'A1100015', NULL),
+	(-7, 29, NULL, 16, 6, 1, 357, 17, 13, NULL, true, 1, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 1, 2, NULL, 5, NULL, 3, 2, NULL, NULL, NULL, NULL, 15, 11, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T15:58:53', '2025-01-17 07:05:00.833196+00', 'A1100010', NULL),
+	(6, 13, NULL, 9, NULL, 5, 171, NULL, NULL, NULL, true, NULL, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, 3, 1, 3, 10, NULL, NULL, NULL, NULL, 12, NULL, NULL, NULL, NULL, 1, true, false, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:11', '2025-01-17 07:05:00.833196+00', 'A1100043', NULL),
+	(10, 4, NULL, 3, NULL, NULL, 186, 4, 5, NULL, true, NULL, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, 1, 6, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, NULL, 1, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:45', '2025-01-17 07:05:00.833196+00', 'A1100028', NULL),
+	(2, 10, NULL, NULL, NULL, NULL, 251, 9, 8, NULL, true, 11, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 2, NULL, NULL, NULL, 6, 1, NULL, NULL, NULL, NULL, 41, 1, false, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T15:57:54', '2025-01-17 07:05:00.833196+00', 'A1100053', NULL),
+	(2, 14, NULL, 5, 2, NULL, 96, 0, 4, NULL, true, 0, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 2, 0, NULL, NULL, 2, 0, NULL, NULL, NULL, NULL, NULL, 1, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:40', '2025-01-17 07:05:00.833196+00', 'A1120796', NULL),
+	(10, 4, NULL, NULL, NULL, 8, 29, NULL, NULL, NULL, true, NULL, true, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 1, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:01:40', '2025-01-17 07:05:00.833196+00', 'A1100036', NULL),
+	(13, 4, NULL, NULL, NULL, 1, 23, NULL, NULL, NULL, true, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 2, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:11', '2025-01-17 07:05:00.833196+00', 'A1100041', NULL),
+	(12, 11, NULL, 3, NULL, NULL, 188, 5, 7, NULL, true, NULL, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 1, 2, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, 8, 1, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T15:58:15', '2025-01-17 07:05:00.833196+00', 'A1100002', NULL),
+	(9, 4, NULL, NULL, NULL, 6, 11, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:01:39', '2025-01-17 07:05:00.833196+00', 'A1100051', NULL),
+	(6, 2, NULL, NULL, NULL, 1, 33, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:01:41', '2025-01-17 07:05:00.833196+00', 'A1100026', NULL),
+	(6, 12, NULL, 0, NULL, 2, 98, 0, 2, NULL, true, NULL, true, NULL, NULL, true, true, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, 2, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, 8, 2, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T15:59:38', '2025-01-17 07:05:00.833196+00', 'A1100014', NULL),
+	(5, 0, NULL, NULL, NULL, 9, 26, NULL, NULL, NULL, true, NULL, true, NULL, NULL, false, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:29', '2025-01-17 07:05:00.833196+00', 'A1100049', NULL),
+	(8, 7, NULL, NULL, NULL, 9, 224, NULL, NULL, NULL, true, NULL, true, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 1, 0, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 1, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T15:57:49', '2025-01-17 07:05:00.833196+00', 'A1100027', NULL),
+	(2, 10, NULL, 1, NULL, NULL, 101, 0, 0, NULL, true, NULL, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 1, 2, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, 5, 2, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:01:57', '2025-01-17 07:05:00.833196+00', 'A1100016', NULL),
+	(9, 7, NULL, 1, NULL, NULL, 195, -10, 0, NULL, true, NULL, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 3, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, 1, 0, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:01:04', '2025-01-17 07:05:00.833196+00', 'A1100048', NULL),
+	(8, 6, NULL, NULL, NULL, 7, 58, NULL, NULL, NULL, true, NULL, true, NULL, NULL, false, false, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 2, 2, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:05', '2025-01-17 07:05:00.833196+00', 'A1100020', NULL),
+	(9, 13, NULL, 2, NULL, 7, 153, NULL, NULL, NULL, true, 3, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 2, 3, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 10, 7, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:21', '2025-01-17 07:05:00.833196+00', 'A1100001', NULL),
+	(9, 5, NULL, 4, NULL, 0, 56, NULL, NULL, NULL, true, NULL, true, NULL, NULL, NULL, false, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 1, 0, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 4, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:51', '2025-01-17 07:05:00.833196+00', 'A1100021', NULL),
+	(7, 3, NULL, NULL, NULL, 0, 22, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:20', '2025-01-17 07:05:00.833196+00', 'A1100022', NULL),
+	(16, 5, NULL, NULL, NULL, 5, 31, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-16T17:56:47', '2025-01-17 07:05:00.833196+00', 'A1100050', NULL),
+	(24, 9, NULL, 9, NULL, NULL, 302, 7, 8, NULL, true, NULL, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 2, 3, NULL, NULL, NULL, 4, 0, NULL, NULL, NULL, NULL, 12, 2, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00', '2025-01-17 07:05:00.833196+00', 'A1100040', NULL),
+	(8, 8, NULL, 0, NULL, 2, 226, 9, 4, NULL, true, NULL, true, NULL, NULL, true, true, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL, 4, 1, 2, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, 12, 1, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:08', '2025-01-17 07:05:00.833196+00', 'A1100003', NULL),
+	(0, 18, 4, 4, 9, 8, 598, 3, 12, NULL, true, 3, true, NULL, NULL, true, true, NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 1, 3, NULL, 6, 1, 6, 3, NULL, 4, NULL, NULL, 29, 23, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T15:57:36', '2025-01-17 07:05:00.833196+00', 'A1100007', NULL),
+	(7, 3, NULL, NULL, NULL, 5, 68, NULL, NULL, NULL, true, NULL, false, NULL, NULL, false, false, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, false, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:57', '2025-01-17 07:05:00.833196+00', 'A1100025', NULL),
+	(7, 16, NULL, 11, 3, 1, 299, 9, 11, NULL, true, 5, true, NULL, NULL, true, true, 2, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL, NULL, 1, NULL, 8, 2, NULL, NULL, NULL, NULL, 16, 6, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:09', '2025-01-17 07:05:00.833196+00', 'A1100012', NULL),
+	(3, 10, NULL, 0, NULL, NULL, 282, 0, 1, NULL, true, NULL, true, NULL, NULL, true, true, 4, 3, NULL, NULL, 2, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL, 3, NULL, NULL, NULL, 0, 11, NULL, NULL, NULL, 10, 2, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T15:58:01', '2025-01-17 07:05:00.833196+00', 'A1100013', NULL),
+	(15, 8, NULL, 2, NULL, NULL, 187, 5, 8, NULL, true, NULL, true, NULL, NULL, true, true, 2, 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, 2, 2, 26, NULL, NULL, NULL, 29, 1, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:01:50', '2025-01-17 07:05:00.833196+00', 'A1100008', NULL),
+	(3, 6, NULL, NULL, NULL, 14, 130, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 1, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:03', '2025-01-17 07:05:00.833196+00', 'A1100039', NULL),
+	(-12, 44, 3, 13, 1, NULL, 738, 3, 3, NULL, true, 0, true, NULL, NULL, true, true, NULL, NULL, 2, 1, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, -1, 1, 3, NULL, 2, 1, 5, 4, NULL, 6, NULL, NULL, 20, 7, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:01:15', '2025-01-17 07:05:00.833196+00', 'A1100009', NULL),
+	(7, 1, NULL, NULL, NULL, 1, 69, NULL, NULL, NULL, true, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:16', '2025-01-17 07:05:00.833196+00', 'A1100019', NULL),
+	(6, 1, NULL, NULL, NULL, 3, 15, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, 1, 2, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00', '2025-01-17 07:05:00.833196+00', 'A1100223', NULL),
+	(14, 8, NULL, 0, NULL, NULL, 74, 0, 0, NULL, true, 0, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 8, 2, 4, 3, NULL, NULL, NULL, 0, 5, NULL, NULL, NULL, 9, 1, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:12', '2025-01-17 07:05:00.833196+00', 'A1100005', NULL),
+	(9, 8, NULL, NULL, NULL, NULL, 36, -1, 3, NULL, true, 5, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:07', '2025-01-17 07:05:00.833196+00', 'A1100011', NULL),
+	(8, 3, NULL, NULL, NULL, 1, 77, NULL, NULL, NULL, true, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:42', '2025-01-17 07:05:00.833196+00', 'A1100024', NULL),
+	(7, 2, NULL, NULL, NULL, NULL, 9, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:01:38', '2025-01-17 07:05:00.833196+00', 'A1100037', NULL),
+	(9, 8, NULL, 0, NULL, NULL, 114, 1, 7, NULL, true, NULL, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 1, 1, NULL, NULL, NULL, 3, 2, NULL, NULL, NULL, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:47', '2025-01-17 07:05:00.833196+00', 'A1100055', NULL),
+	(10, 1, NULL, 1, NULL, 1, 19, NULL, NULL, NULL, true, NULL, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:24', '2025-01-17 07:05:00.833196+00', 'A1100054', NULL),
+	(11, 10, NULL, 1, NULL, 15, 146, NULL, NULL, NULL, true, NULL, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 0, NULL, 0, 4, 1, 2, NULL, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, 21, 0, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:39', '2025-01-17 07:05:00.833196+00', 'A1100004', NULL),
+	(-4, 14, NULL, -4, NULL, NULL, 168, 0, 2, NULL, true, 0, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7, 2, 2, NULL, NULL, NULL, 3, 1, NULL, NULL, NULL, NULL, NULL, 1, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:09', '2025-01-17 07:05:00.833196+00', 'A1121013', NULL),
+	(9, 1, NULL, NULL, NULL, NULL, 32, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:40', '2025-01-17 07:05:00.833196+00', 'A1100023', NULL),
+	(-18, 34, 1, 10, 0, NULL, 401, 4, 13, NULL, true, 2, true, NULL, NULL, true, true, NULL, NULL, 1, 1, 1, 1, NULL, NULL, 0, 0, NULL, 9, NULL, NULL, 9, 2, 4, 7, 8, 0, 6, 4, 30, 6, NULL, NULL, 12, 2, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:54', '2025-01-17 07:05:00.833196+00', 'A1100017', NULL),
+	(1, 4, NULL, 1, 3, 7, 70, NULL, 0, NULL, true, 1, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 1, 1, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, 13, 2, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:45', '2025-01-17 07:05:00.833196+00', 'A1100006', NULL),
+	(8, 6, NULL, NULL, NULL, 5, 94, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T15:58:59', '2025-01-17 07:05:00.833196+00', 'A1100029', NULL),
+	(10, 8, NULL, NULL, NULL, NULL, 8, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:02:26', '2025-01-17 07:05:00.833196+00', 'A1100032', NULL),
+	(10, 6, NULL, NULL, NULL, 8, 43, NULL, 0, NULL, true, NULL, true, NULL, 8, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, 0, 0, 5, 3, 2, 3, 2, NULL, NULL, NULL, 2, 0, NULL, 8, 2, NULL, 7, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:01:07', '2025-01-17 07:05:00.833196+00', 'A1100052', NULL),
+	(7, 2, NULL, NULL, NULL, NULL, 49, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:49', '2025-01-17 07:05:00.833196+00', 'A1100075', NULL),
+	(0, 3, NULL, NULL, NULL, 7, 8, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 4, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, NULL, 0, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00', '2025-01-17 07:05:00.833196+00', 'A1100044', NULL),
+	(2, 9, NULL, 1, NULL, 2, 183, 2, NULL, NULL, true, 1, true, NULL, NULL, true, true, NULL, NULL, NULL, NULL, 2, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 3, 2, 2, 9, NULL, NULL, NULL, NULL, 20, NULL, NULL, NULL, 0, 3, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-17T16:00:01', '2025-01-17 07:05:00.833196+00', 'A1100035', NULL);
 
 
 --
 -- Data for Name: hospital_location_info; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO "public"."hospital_location_info" ("hpid", "dutyaddr", "dutyemcls", "dutyemclsname", "wgs84lon", "wgs84lat") VALUES
-	('A1100048', '서울특별시 노원구 한글비석로 68, 을지병원 (하계동)', 'G006', '지역응급의료센터', 127.07000281991385, 37.636442927386746),
-	('A1100044', '서울특별시 중랑구 사가정로49길 53 (면목동)', 'G007', '지역응급의료기관', 127.08605546969358, 37.58362083896108),
-	('A1100037', '서울특별시 영등포구 시흥대로 657 (대림동, 대림성모병원)', 'G007', '지역응급의료기관', 126.90716948025135, 37.49068925436284),
-	('A1100024', '서울특별시 영등포구 도림로 156, 명지성모병원 (대림동)', 'G007', '지역응급의료기관', 126.89925446922592, 37.4938507104387),
-	('A1100046', '서울특별시 강서구 강서로 295 (내발산동)', 'G009', '응급실운영신고기관', 126.83602535156236, 37.55225379358291),
-	('A1100036', '서울특별시 강서구 공항대로 389, 부민병원 (등촌동)', 'G007', '지역응급의료기관', 126.85094950539181, 37.556940892893586),
-	('A1100148', '서울특별시 관악구 남부순환로 1860, -1,1,3,4,5층 (봉천동,  )', 'G009', '응급실운영신고기관', 126.956285774259, 37.4796247835746),
-	('A1100010', '서울특별시 강남구 일원로 81 (일원동, 삼성의료원)', 'G006', '지역응급의료센터', 127.08668245340024, 37.48851613490445),
-	('A1100021', '서울특별시 동대문구 망우로 82 (휘경동)', 'G006', '지역응급의료센터', 127.0653288266823, 37.587992001305395),
-	('A1100017', '서울특별시 종로구 대학로 101 (연건동)', 'G001', '권역응급의료센터', 126.99896308412191, 37.57966608924356),
-	('A1107402', '서울특별시 종로구 대학로 101 (연건동)', 'G009', '응급실운영신고기관', 126.997196437908, 37.5804523853297),
-	('A1100050', '서울특별시 동대문구 왕산로 259, 서울성심병원 (청량리동)', 'G007', '지역응급의료기관', 127.04983805981972, 37.58419129209865),
-	('A1100029', '서울특별시 종로구 새문안로 9, 적십자병원 (평동)', 'G007', '지역응급의료기관', 126.96699861289684, 37.56715536263689),
-	('A1100022', '서울특별시 동대문구 무학로 124 (용두동)', 'G007', '지역응급의료기관', 127.03140257525507, 37.57539886464885),
-	('A1100040', '서울특별시 동작구 보라매로5길 20 (신대방동)', 'G006', '지역응급의료센터', 126.92404876254014, 37.4937184009319),
-	('A1100223', '서울특별시 양천구 신정이펜1로 20 (신정동)', 'G007', '지역응급의료기관', 126.8331299304024, 37.51201935883779),
-	('A1100035', '서울특별시 중랑구 신내로 156 (신내동)', 'G001', '권역응급의료센터', 127.0980910949257, 37.61286931510163),
-	('A1100172', '서울특별시 강북구 도봉로 374 (번동, 서울현대병원)', 'G009', '응급실운영신고기관', 127.028504374531, 37.6402559204261),
-	('A1100028', '서울특별시 강동구 성안로 150 (길동)', 'G006', '지역응급의료센터', 127.13526354631517, 37.53598408220376),
-	('A1100054', '서울특별시 영등포구 여의대방로53길 22 (신길동, 성애병원)', 'G006', '지역응급의료센터', 126.92236733617031, 37.51205044957338),
-	('A1100032', '서울특별시 종로구 통일로 256 (무악동)', 'G007', '지역응급의료기관', 126.9577071892358, 37.57534016994642),
-	('A1100012', '서울특별시 서초구 반포대로 222 (반포동)', 'G006', '지역응급의료센터', 127.00472725970137, 37.501800804785276),
-	('A1100013', '서울특별시 성동구 왕십리로 222-1 (사근동)', 'G001', '권역응급의료센터', 127.04488284061982, 37.559944533564746),
-	('A1100051', '서울특별시 광진구 자양로 85 (자양동)', 'G007', '지역응급의료기관', 127.08360130258502, 37.535315660180416),
-	('A1100019', '서울특별시 양천구 목동로 225, 홍익병원본관 (신정동)', 'G007', '지역응급의료기관', 126.8636640030062, 37.52844147447355),
-	('A1100049', '서울특별시 금천구 시흥대로 244 (시흥동)', 'G007', '지역응급의료기관', 126.90056251863875, 37.45567063464179),
-	('A1100011', '서울특별시 영등포구 63로 10, 여의도성모병원 (여의도동)', 'G006', '지역응급의료센터', 126.93673129599131, 37.51827233800711),
-	('A1121013', '서울특별시 은평구 통일로 1021 (진관동)', 'G006', '지역응급의료센터', 126.91615048739686, 37.633608409726854),
-	('A1100047', '서울특별시 관악구 관악로 242 (봉천동)', 'G009', '응급실운영신고기관', 126.956781703053, 37.4856188363947),
-	('A1123234', '서울특별시 강남구 선릉로 404, 더드림병원 (대치동)', 'G009', '응급실운영신고기관', 127.050967336445, 37.5009902618151),
-	('A1100141', '서울특별시 강남구 남부순환로 2649, 베드로병원 (도곡동)', 'G009', '응급실운영신고기관', 127.0395873429168, 37.485612179925724),
-	('A1100076', '서울특별시 관악구 남부순환로 1449, 강남힐병원 (신림동)', 'G009', '응급실운영신고기관', 126.911648078471, 37.4816513439454),
-	('A1100043', '서울특별시 강동구 동남로 892 (상일동)', 'G001', '권역응급의료센터', 127.157084787845, 37.5520459324005),
-	('A1100006', '서울특별시 종로구 새문안로 29 (평동)', 'G006', '지역응급의료센터', 126.96793805451702, 37.568497631233825),
-	('A1121842', '서울특별시 강북구 도봉로 187, 지하1층, 2층~5층 (미아동)', 'G009', '응급실운영신고기관', 127.026184524499, 37.6254205559935),
-	('A1117285', '서울특별시 강서구 가로공원로 187, 강서케이병원 (화곡동)', 'G009', '응급실운영신고기관', 126.836699017573, 37.5373576230977),
-	('A1100002', '서울특별시 광진구 능동로 120-1 (화양동)', 'G006', '지역응급의료센터', 127.0721229093036, 37.54084479467721),
-	('A1100039', '서울특별시 송파구 송이로 123, 국립경찰병원 (가락동)', 'G007', '지역응급의료기관', 127.12348793503202, 37.496413213560785),
-	('A1100001', '서울특별시 동대문구 경희대로 23 (회기동)', 'G006', '지역응급의료센터', 127.05183223390303, 37.5938765502235),
-	('A1100014', '서울특별시 구로구 구로동로 148, 고려대부속구로병원 (구로동)', 'G001', '권역응급의료센터', 126.8847449363546, 37.49211114525054),
-	('A1100026', '서울특별시 구로구 경인로 427, 구로성심병원 (고척동)', 'G007', '지역응급의료기관', 126.86636039556485, 37.49964578669388),
-	('A1100052', '서울특별시 중구 을지로 245, 국립중앙의료원 (을지로6가)', 'G006', '지역응급의료센터', 127.00579539705473, 37.56733955813183),
-	('A1122033', '서울특별시 서초구 서초중앙로 4, 기쁨병원 (서초동)', 'G009', '응급실운영신고기관', 127.018063486739, 37.482713030212),
-	('A1100057', '서울특별시 강남구 논현로 566, 강남차병원(역삼동650-9, 606-4, 605외2필지(지하7층~지하1층, 지상2층~7층)) (역삼동)', 'G009', '응급실운영신고기관', 127.03466865188072, 37.506800025850865),
-	('A1100008', '서울특별시 성북구 고려대로 73, 고려대병원 (안암동5가)', 'G001', '권역응급의료센터', 127.02647086385966, 37.58715608002366),
-	('A1100163', '서울특별시 영등포구 영등포로 83, 한강수병원 (양평동1가)', 'G009', '응급실운영신고기관', 126.890913736375, 37.5224047841717),
-	('A1100053', '서울특별시 강동구 진황도로61길 53 (둔촌동)', 'G006', '지역응급의료센터', 127.14671886173552, 37.528220900896635),
-	('A1100027', '서울특별시 노원구 노원로 75, 한국원자력의학원 (공릉동)', 'G007', '지역응급의료기관', 127.08269315796588, 37.628815981330355),
-	('A1100055', '서울특별시 영등포구 신길로 1 (대림동, 강남성심병원)', 'G006', '지역응급의료센터', 126.9086725295, 37.4932492859),
-	('A1100038', '서울특별시 영등포구 버드나루로7길 12 (영등포동7가, 한강성심병원)', 'G009', '응급실운영신고기관', 126.91033000120589, 37.52346674579277),
-	('A1100004', '서울특별시 용산구 대사관로 59 (한남동)', 'G006', '지역응급의료센터', 127.00441798640304, 37.53384172231443),
-	('A1100063', '서울특별시 마포구 서강로 110, 지2층~6층 (신수동)', 'G009', '응급실운영신고기관', 126.933734666413, 37.5525892651719),
-	('A1100045', '서울특별시 영등포구 영등포로36길 13 (영등포동4가, 충무병원)', 'G009', '응급실운영신고기관', 126.90367981067837, 37.518848328762154),
-	('A1100015', '서울특별시 강남구 언주로 211, 강남세브란스병원 (도곡동)', 'G006', '지역응급의료센터', 127.04631254186798, 37.492806984645476),
-	('A1100007', '서울특별시 서대문구 연세로 50-1 (신촌동)', 'G006', '지역응급의료센터', 126.94082769649863, 37.56211711412639),
-	('A1100042', '서울특별시 강서구 하늘길 70 (과해동)', 'G009', '응급실운영신고기관', 126.7963653099318, 37.56199597494205),
-	('A1100152', '서울특별시 은평구 연서로 177 (갈현동)', 'G009', '응급실운영신고기관', 126.917472218592, 37.6146922208583),
-	('A1100025', '서울특별시 서대문구 연희로 272, 동신병원 본관동 (홍은동)', 'G007', '지역응급의료기관', 126.93658306608872, 37.58110428173239),
-	('A1100041', '서울특별시 관악구 남부순환로 1636, 양지병원 (신림동)', 'G006', '지역응급의료센터', 126.93253922577287, 37.48427507045319),
-	('A1100030', '서울특별시 강북구 도봉로 301 (수유동, 대한병원)', 'G009', '응급실운영신고기관', 127.02267251878474, 37.63547043209498),
-	('A1100255', '서울특별시 영등포구 당산로31길 10 (당산동3가)', 'G009', '응급실운영신고기관', 126.89561402986, 37.526858089517),
-	('A1100023', '서울특별시 은평구 통일로 873 (갈현동)', 'G007', '지역응급의료기관', 126.91955399169245, 37.62079154435882),
-	('A1100075', '서울특별시 중랑구 망우로 511, 동부제일병원 지하1~6층 (망우동)', 'G007', '지역응급의료기관', 127.1090292210168, 37.60067564592665),
-	('A1100020', '서울특별시 도봉구 우이천로 308, 한일병원 (쌍문동)', 'G006', '지역응급의료센터', 127.02902417950423, 37.64611570419094),
-	('A1100005', '서울특별시 양천구 안양천로 1071 (목동)', 'G001', '권역응급의료센터', 126.8862159683056, 37.53654282637804),
-	('A1120796', '서울특별시 강서구 공항대로 260, 이화의대부속서울병원 (마곡동)', 'G006', '지역응급의료센터', 126.8362659275, 37.557261149),
-	('A1100016', '서울특별시 노원구 동일로 1342, 상계백병원 (상계동)', 'G006', '지역응급의료센터', 127.06311619032103, 37.6485812672986),
-	('A1122381', '서울특별시 성동구 왕십리로 382 (하왕십리동)', 'G009', '응급실운영신고기관', 127.028019796271, 37.5651102845783),
-	('A1100009', '서울특별시 송파구 올림픽로43길 88, 서울아산병원 (풍납동)', 'G006', '지역응급의료센터', 127.10823825113607, 37.526563966361216),
-	('A1100003', '서울특별시 동작구 흑석로 102 (흑석동)', 'G006', '지역응급의료센터', 126.96079378447554, 37.50707428493414),
-	('A1117070', '서울특별시 은평구 서오릉로 45, 최원호병원 (녹번동)', 'G009', '응급실운영신고기관', 126.923855760856, 37.604769594378);
+INSERT INTO "public"."hospital_location_info" ("hpid", "dutyaddr", "dutyemcls", "dutyemclsname", "wgs84lon", "wgs84lat", "location") VALUES
+	('A1100048', '서울특별시 노원구 한글비석로 68, 을지병원 (하계동)', 'G006', '지역응급의료센터', 127.07000281991385, 37.636442927386746, '0101000020E6100000198A1BED7AC45F40C3723BF676D14240'),
+	('A1100044', '서울특별시 중랑구 사가정로49길 53 (면목동)', 'G007', '지역응급의료기관', 127.08605546969358, 37.58362083896108, '0101000020E610000074FECCEE81C55F400C4D7016B4CA4240'),
+	('A1100037', '서울특별시 영등포구 시흥대로 657 (대림동, 대림성모병원)', 'G007', '지역응급의료기관', 126.90716948025135, 37.49068925436284, '0101000020E6100000F86694100FBA5F4057FECDE7CEBE4240'),
+	('A1100024', '서울특별시 영등포구 도림로 156, 명지성모병원 (대림동)', 'G007', '지역응급의료기관', 126.89925446922592, 37.4938507104387, '0101000020E6100000DC069E628DB95F406538058036BF4240'),
+	('A1100046', '서울특별시 강서구 강서로 295 (내발산동)', 'G009', '응급실운영신고기관', 126.83602535156236, 37.55225379358291, '0101000020E610000095E5797081B55F40E9439740B0C64240'),
+	('A1100036', '서울특별시 강서구 공항대로 389, 부민병원 (등촌동)', 'G007', '지역응급의료기관', 126.85094950539181, 37.556940892893586, '0101000020E6100000220DEAF475B65F403964D4D649C74240'),
+	('A1100148', '서울특별시 관악구 남부순환로 1860, -1,1,3,4,5층 (봉천동,  )', 'G009', '응급실운영신고기관', 126.956285774259, 37.4796247835746, '0101000020E6100000A3843FC933BD5F40E9E64B5864BD4240'),
+	('A1100010', '서울특별시 강남구 일원로 81 (일원동, 삼성의료원)', 'G006', '지역응급의료센터', 127.08668245340024, 37.48851613490445, '0101000020E61000006E9F8F348CC55F40D17D5BB287BE4240'),
+	('A1100021', '서울특별시 동대문구 망우로 82 (휘경동)', 'G006', '지역응급의료센터', 127.0653288266823, 37.587992001305395, '0101000020E61000008A85F5582EC45F4048F5675243CB4240'),
+	('A1100017', '서울특별시 종로구 대학로 101 (연건동)', 'G001', '권역응급의료센터', 126.99896308412191, 37.57966608924356, '0101000020E6100000C10DDC02EFBF5F405EF3977F32CA4240'),
+	('A1107402', '서울특별시 종로구 대학로 101 (연건동)', 'G009', '응급실운영신고기관', 126.997196437908, 37.5804523853297, '0101000020E61000002A200211D2BF5F4029F085434CCA4240'),
+	('A1100050', '서울특별시 동대문구 왕산로 259, 서울성심병원 (청량리동)', 'G007', '지역응급의료기관', 127.04983805981972, 37.58419129209865, '0101000020E61000006541F98B30C35F40FA15BFC7C6CA4240'),
+	('A1100029', '서울특별시 종로구 새문안로 9, 적십자병원 (평동)', 'G007', '지역응급의료기관', 126.96699861289684, 37.56715536263689, '0101000020E6100000D66A264EE3BD5F406323038C98C84240'),
+	('A1100022', '서울특별시 동대문구 무학로 124 (용두동)', 'G007', '지역응급의료기관', 127.03140257525507, 37.57539886464885, '0101000020E6100000C46EF27F02C25F4042E984ABA6C94240'),
+	('A1100040', '서울특별시 동작구 보라매로5길 20 (신대방동)', 'G006', '지역응급의료센터', 126.92404876254014, 37.4937184009319, '0101000020E61000003AC16B9D23BB5F40CCB7202A32BF4240'),
+	('A1100223', '서울특별시 양천구 신정이펜1로 20 (신정동)', 'G007', '지역응급의료기관', 126.8331299304024, 37.51201935883779, '0101000020E61000006919330052B55F404890B0D989C14240'),
+	('A1100035', '서울특별시 중랑구 신내로 156 (신내동)', 'G001', '권역응급의료센터', 127.0980910949257, 37.61286931510163, '0101000020E6100000062FDF1F47C65F40AD8A708072CE4240'),
+	('A1100172', '서울특별시 강북구 도봉로 374 (번동, 서울현대병원)', 'G009', '응급실운영신고기관', 127.028504374531, 37.6402559204261, '0101000020E6100000D4190304D3C15F4076A6EFE7F3D14240'),
+	('A1100028', '서울특별시 강동구 성안로 150 (길동)', 'G006', '지역응급의료센터', 127.13526354631517, 37.53598408220376, '0101000020E6100000F0F06E28A8C85F40F11E5C209BC44240'),
+	('A1100054', '서울특별시 영등포구 여의대방로53길 22 (신길동, 성애병원)', 'G006', '지역응급의료센터', 126.92236733617031, 37.51205044957338, '0101000020E610000002F0011108BB5F40EE687FDE8AC14240'),
+	('A1100032', '서울특별시 종로구 통일로 256 (무악동)', 'G007', '지역응급의료기관', 126.9577071892358, 37.57534016994642, '0101000020E61000005C3A18134BBD5F405BFF26BFA4C94240'),
+	('A1100012', '서울특별시 서초구 반포대로 222 (반포동)', 'G006', '지역응급의료센터', 127.00472725970137, 37.501800804785276, '0101000020E61000004B7490734DC05F4062D43E023BC04240'),
+	('A1100013', '서울특별시 성동구 왕십리로 222-1 (사근동)', 'G001', '권역응급의료센터', 127.04488284061982, 37.559944533564746, '0101000020E61000004727475CDFC25F40069E3143ACC74240'),
+	('A1100051', '서울특별시 광진구 자양로 85 (자양동)', 'G007', '지역응급의료기관', 127.08360130258502, 37.535315660180416, '0101000020E61000005D2047B959C55F407AC13A3985C44240'),
+	('A1100019', '서울특별시 양천구 목동로 225, 홍익병원본관 (신정동)', 'G007', '지역응급의료기관', 126.8636640030062, 37.52844147447355, '0101000020E610000039E9614546B75F40625B61F8A3C34240'),
+	('A1100049', '서울특별시 금천구 시흥대로 244 (시흥동)', 'G007', '지역응급의료기관', 126.90056251863875, 37.45567063464179, '0101000020E6100000A363F9D0A2B95F405CC4546A53BA4240'),
+	('A1100011', '서울특별시 영등포구 63로 10, 여의도성모병원 (여의도동)', 'G006', '지역응급의료센터', 126.93673129599131, 37.51827233800711, '0101000020E6100000085BD267F3BB5F40BC147BBF56C24240'),
+	('A1121013', '서울특별시 은평구 통일로 1021 (진관동)', 'G006', '지역응급의료센터', 126.91615048739686, 37.633608409726854, '0101000020E61000006065A735A2BA5F40AB1F93141AD14240'),
+	('A1100047', '서울특별시 관악구 관악로 242 (봉천동)', 'G009', '응급실운영신고기관', 126.956781703053, 37.4856188363947, '0101000020E6100000860153E93BBD5F4083510EC228BE4240'),
+	('A1123234', '서울특별시 강남구 선릉로 404, 더드림병원 (대치동)', 'G009', '응급실운영신고기관', 127.050967336445, 37.5009902618151, '0101000020E610000083CC800C43C35F401F0EEB7220C04240'),
+	('A1100141', '서울특별시 강남구 남부순환로 2649, 베드로병원 (도곡동)', 'G009', '응급실운영신고기관', 127.0395873429168, 37.485612179925724, '0101000020E610000072CA599988C25F40FEA8378A28BE4240'),
+	('A1100076', '서울특별시 관악구 남부순환로 1449, 강남힐병원 (신림동)', 'G009', '응급실운영신고기관', 126.911648078471, 37.4816513439454, '0101000020E6100000A19F2E7158BA5F40F42851C0A6BD4240'),
+	('A1100043', '서울특별시 강동구 동남로 892 (상일동)', 'G001', '권역응급의료센터', 127.157084787845, 37.5520459324005, '0101000020E6100000939F5AAD0DCA5F4066C6EC70A9C64240'),
+	('A1100006', '서울특별시 종로구 새문안로 29 (평동)', 'G006', '지역응급의료센터', 126.96793805451702, 37.568497631233825, '0101000020E6100000162D74B2F2BD5F405A00C787C4C84240'),
+	('A1121842', '서울특별시 강북구 도봉로 187, 지하1층, 2층~5층 (미아동)', 'G009', '응급실운영신고기관', 127.026184524499, 37.6254205559935, '0101000020E61000009C18DB01ADC15F407E1EE1C70DD04240'),
+	('A1117285', '서울특별시 강서구 가로공원로 187, 강서케이병원 (화곡동)', 'G009', '응급실운영신고기관', 126.836699017573, 37.5373576230977, '0101000020E61000009144097A8CB55F40FFBA7422C8C44240'),
+	('A1100002', '서울특별시 광진구 능동로 120-1 (화양동)', 'G006', '지역응급의료센터', 127.0721229093036, 37.54084479467721, '0101000020E6100000163068A99DC45F40DCACF8663AC54240'),
+	('A1100039', '서울특별시 송파구 송이로 123, 국립경찰병원 (가락동)', 'G007', '지역응급의료기관', 127.12348793503202, 37.496413213560785, '0101000020E6100000709AF039E7C75F40DEC5DA778ABF4240'),
+	('A1100001', '서울특별시 동대문구 경희대로 23 (회기동)', 'G006', '지역응급의료센터', 127.05183223390303, 37.5938765502235, '0101000020E61000007F5F253851C35F401E89942504CC4240'),
+	('A1100014', '서울특별시 구로구 구로동로 148, 고려대부속구로병원 (구로동)', 'G001', '권역응급의료센터', 126.8847449363546, 37.49211114525054, '0101000020E610000074BC39A99FB85F40916C7D7FFDBE4240'),
+	('A1100026', '서울특별시 구로구 경인로 427, 구로성심병원 (고척동)', 'G007', '지역응급의료기관', 126.86636039556485, 37.49964578669388, '0101000020E61000000B60DF7272B75F409BB7A464F4BF4240'),
+	('A1100052', '서울특별시 중구 을지로 245, 국립중앙의료원 (을지로6가)', 'G006', '지역응급의료센터', 127.00579539705473, 37.56733955813183, '0101000020E61000005034A8F35EC05F409FF327959EC84240'),
+	('A1122033', '서울특별시 서초구 서초중앙로 4, 기쁨병원 (서초동)', 'G009', '응급실운영신고기관', 127.018063486739, 37.482713030212, '0101000020E6100000ED32C1F327C15F408A0E638AC9BD4240'),
+	('A1100057', '서울특별시 강남구 논현로 566, 강남차병원(역삼동650-9, 606-4, 605외2필지(지하7층~지하1층, 지상2층~7층)) (역삼동)', 'G009', '응급실운영신고기관', 127.03466865188072, 37.506800025850865, '0101000020E61000008B81DD0238C25F401A52C0D2DEC04240'),
+	('A1100008', '서울특별시 성북구 고려대로 73, 고려대병원 (안암동5가)', 'G001', '권역응급의료센터', 127.02647086385966, 37.58715608002366, '0101000020E6100000BEA4D9B2B1C15F40B2AC30EE27CB4240'),
+	('A1100163', '서울특별시 영등포구 영등포로 83, 한강수병원 (양평동1가)', 'G009', '응급실운영신고기관', 126.890913736375, 37.5224047841717, '0101000020E61000006B520CBB04B95F404CA5F328DEC24240'),
+	('A1100053', '서울특별시 강동구 진황도로61길 53 (둔촌동)', 'G006', '지역응급의료센터', 127.14671886173552, 37.528220900896635, '0101000020E6100000113782D763C95F40153513BE9CC34240'),
+	('A1100027', '서울특별시 노원구 노원로 75, 한국원자력의학원 (공릉동)', 'G007', '지역응급의료기관', 127.08269315796588, 37.628815981330355, '0101000020E610000040443ED84AC55F400D82C50A7DD04240'),
+	('A1100055', '서울특별시 영등포구 신길로 1 (대림동, 강남성심병원)', 'G006', '지역응급의료센터', 126.9086725295, 37.4932492859, '0101000020E6100000783ED3B027BA5F40A1DBE7CA22BF4240'),
+	('A1100038', '서울특별시 영등포구 버드나루로7길 12 (영등포동7가, 한강성심병원)', 'G009', '응급실운영신고기관', 126.91033000120589, 37.52346674579277, '0101000020E6100000CEEFC3D842BA5F409BDC54F500C34240'),
+	('A1100004', '서울특별시 용산구 대사관로 59 (한남동)', 'G006', '지역응급의료센터', 127.00441798640304, 37.53384172231443, '0101000020E610000060C7606248C05F40574AF1EC54C44240'),
+	('A1100063', '서울특별시 마포구 서강로 110, 지2층~6층 (신수동)', 'G009', '응급실운영신고기관', 126.933734666413, 37.5525892651719, '0101000020E6100000A9D80B4FC2BB5F405A04BB3EBBC64240'),
+	('A1100045', '서울특별시 영등포구 영등포로36길 13 (영등포동4가, 충무병원)', 'G009', '응급실운영신고기관', 126.90367981067837, 37.518848328762154, '0101000020E6100000D23AD8E3D5B95F4011CF3D9F69C24240'),
+	('A1100015', '서울특별시 강남구 언주로 211, 강남세브란스병원 (도곡동)', 'G006', '지역응급의료센터', 127.04631254186798, 37.492806984645476, '0101000020E6100000ED2DE1C8F6C25F4077259D4C14BF4240'),
+	('A1100007', '서울특별시 서대문구 연세로 50-1 (신촌동)', 'G006', '지역응급의료센터', 126.94082769649863, 37.56211711412639, '0101000020E61000007DE85E8536BC5F40EDD81E74F3C74240'),
+	('A1100042', '서울특별시 강서구 하늘길 70 (과해동)', 'G009', '응급실운영신고기관', 126.7963653099318, 37.56199597494205, '0101000020E6100000DD7434A6F7B25F400C6EEE7BEFC74240'),
+	('A1100152', '서울특별시 은평구 연서로 177 (갈현동)', 'G009', '응급실운영신고기관', 126.917472218592, 37.6146922208583, '0101000020E6100000D67565DDB7BA5F4094D8143CAECE4240'),
+	('A1100025', '서울특별시 서대문구 연희로 272, 동신병원 본관동 (홍은동)', 'G007', '지역응급의료기관', 126.93658306608872, 37.58110428173239, '0101000020E6100000A9B519FAF0BB5F4097CD06A061CA4240'),
+	('A1100041', '서울특별시 관악구 남부순환로 1636, 양지병원 (신림동)', 'G006', '지역응급의료센터', 126.93253922577287, 37.48427507045319, '0101000020E6100000A03B01B9AEBB5F40A9EEBAB9FCBD4240'),
+	('A1100030', '서울특별시 강북구 도봉로 301 (수유동, 대한병원)', 'G009', '응급실운영신고기관', 127.02267251878474, 37.63547043209498, '0101000020E6100000B3AC6F7773C15F4023B6591857D14240'),
+	('A1100255', '서울특별시 영등포구 당산로31길 10 (당산동3가)', 'G009', '응급실운영신고기관', 126.89561402986, 37.526858089517, '0101000020E6100000990582BD51B95F40E50DFC1570C34240'),
+	('A1100023', '서울특별시 은평구 통일로 873 (갈현동)', 'G007', '지역응급의료기관', 126.91955399169245, 37.62079154435882, '0101000020E61000006C4EFCF8D9BA5F40C653EA1876CF4240'),
+	('A1100075', '서울특별시 중랑구 망우로 511, 동부제일병원 지하1~6층 (망우동)', 'G007', '지역응급의료기관', 127.1090292210168, 37.60067564592665, '0101000020E6100000D5A4B255FAC65F401B6187F0E2CC4240'),
+	('A1100020', '서울특별시 도봉구 우이천로 308, 한일병원 (쌍문동)', 'G006', '지역응급의료센터', 127.02902417950423, 37.64611570419094, '0101000020E6100000E4703B88DBC15F404F775DEBB3D24240'),
+	('A1100005', '서울특별시 양천구 안양천로 1071 (목동)', 'G001', '권역응급의료센터', 126.8862159683056, 37.53654282637804, '0101000020E610000032442EC3B7B85F403A19726FADC44240'),
+	('A1120796', '서울특별시 강서구 공항대로 260, 이화의대부속서울병원 (마곡동)', 'G006', '지역응급의료센터', 126.8362659275, 37.557261149, '0101000020E6100000C857866185B55F40A824555554C74240'),
+	('A1100016', '서울특별시 노원구 동일로 1342, 상계백병원 (상계동)', 'G006', '지역응급의료센터', 127.06311619032103, 37.6485812672986, '0101000020E6100000B9517D180AC45F4041EC01B604D34240'),
+	('A1122381', '서울특별시 성동구 왕십리로 382 (하왕십리동)', 'G009', '응급실운영신고기관', 127.028019796271, 37.5651102845783, '0101000020E6100000F8278B13CBC15F40D372A78855C84240'),
+	('A1100009', '서울특별시 송파구 올림픽로43길 88, 서울아산병원 (풍납동)', 'G006', '지역응급의료센터', 127.10823825113607, 37.526563966361216, '0101000020E610000090332160EDC65F400163B37266C34240'),
+	('A1100003', '서울특별시 동작구 흑석로 102 (흑석동)', 'G006', '지역응급의료센터', 126.96079378447554, 37.50707428493414, '0101000020E610000071A136A57DBD5F40A53767CFE7C04240'),
+	('A1117070', '서울특별시 은평구 서오릉로 45, 최원호병원 (녹번동)', 'G009', '응급실운영신고기관', 126.923855760856, 37.604769594378, '0101000020E610000041C6E97320BB5F40FEBB0E1769CD4240');
 
 
 --
@@ -629,6 +646,12 @@ INSERT INTO "public"."hospital_location_info" ("hpid", "dutyaddr", "dutyemcls", 
 INSERT INTO "public"."service_users" ("id", "created_at", "supabase_user", "department", "job_title", "organization") VALUES
 	(1, '2025-01-14 06:41:40.311538+00', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', '소아과', '의사', '삼성서울병원'),
 	(3, '2025-01-15 01:15:58.181125+00', '5cb12aad-92a7-410a-a062-44a626e1f5e8', '현장대응단 구조대1팀', '응급구조사', '강남소방서');
+
+
+--
+-- Data for Name: spatial_ref_sys; Type: TABLE DATA; Schema: public; Owner: supabase_admin
+--
+
 
 
 --
@@ -680,7 +703,7 @@ INSERT INTO "public"."tenant_permissions" ("id", "created_at", "service_user", "
 -- Name: refresh_tokens_id_seq; Type: SEQUENCE SET; Schema: auth; Owner: supabase_auth_admin
 --
 
-SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 62, true);
+SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 70, true);
 
 
 --
