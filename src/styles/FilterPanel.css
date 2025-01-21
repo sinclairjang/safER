@@ -10,34 +10,50 @@
   
 /* Panel Header */
 .panel-header {
-  padding: 10px;
-  background-color: #d6e7ea56; /* Optional background */
+  padding: 20px 10px 10px 10px;
+  background-color: #ff000000; /* Optional background */
+}
+
+.search-ui {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Align items to the start */
+  justify-content: space-between; /* Align items to the start */
   gap: 10px; /* Add spacing between the input and button */
 }
 
-/* Search Input Field */
 .search-input {
-  flex: 1; /* Allow input to take the remaining available space */
-  padding: 8px 12px;
-  border: 1px solid #ccc;
+  flex: 1;
+  padding: 2px 2px !important;
+  border: 2px solid transparent;
   border-radius: 4px;
   font-size: 14px;
-  outline: none; /* Remove default outline */
+  outline: none;
+  margin-bottom: 0px !important;
+
+  /* Add gradient border */
+  background-image: linear-gradient(white, white),
+    linear-gradient(90deg, #ff6f61, #007bff);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+
+  transition: border-color 0.3s ease, background-size 0.3s ease;
+
+  text-align: left;
 }
 
 /* Search Button */
 .search-button {
-  padding: 8px 16px;
+  padding: 13px 16px;
   background-color: #007bff; /* Primary color */
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: px;
   transition: background-color 0.3s;
+  height: auto;
+  width: auto;
+  margin-bottom: 0px;
 }
 
 /* Button Hover Effect */
@@ -47,7 +63,7 @@
 
 /* Panel content styles */
 .panel-content {
-  padding: 16px;
+  padding: 21px;
   display: flex;
   flex-direction: column;
   flex-grow: 1; /* Take available space */
@@ -213,7 +229,7 @@
   right: -15px; /* Slightly outside the panel */
   transform: translateY(-50%); /* Adjust for centering */
   width: 30px;
-  height: 30px;
+  height: 35px;
   background-color: white; /* Match the panel's background */
   border: 1px solid #ccc; /* Light border */
   border-radius: 50%; /* Circular shape */

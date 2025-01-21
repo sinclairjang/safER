@@ -36,7 +36,18 @@ export default function Nav( {tenant} ) {
                         href={urlPath("/logout", tenant)}
                         prefetch={false}
                         className="secondary"
+                        style={{
+                            marginRight: "10px",
+                            padding: "10px 10px 10px 10px",  // Reduced padding
+                            fontSize: "15px",     // Smaller font
+                            height: "40px",       // Fixed button height
+                            lineHeight: "30px",   // Align text vertically
+                            borderRadius: "4px",  // Optional: Rounded edges
+                            display: "inline-flex",
+                            alignItems: "center",
+                          }}
                         onClick={(event) => {
+
                             console.log(event);
                             event.preventDefault();
                             supabase.auth.signOut();

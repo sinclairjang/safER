@@ -1,6 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import "@/styles/FilterPanel.css";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import ListIcon from "@mui/icons-material/List";
+import BedIcon from "@mui/icons-material/Bed";
+import VerifiedIcon from "@mui/icons-material/Verified";
+import PrecisionManufacturingIcon from "@mui/icons-material/PrecisionManufacturing";
 
 export default function FilterPanel() {
   // Whether the panel is open or collapsed
@@ -42,7 +47,7 @@ export default function FilterPanel() {
   };
 
   // Collapsed width (50px) vs. expanded (300px)
-  const panelWidth = isOpen ? 300 : 50;
+  const panelWidth = isOpen ? 300 : 13;
 
   return (
     <div
@@ -66,10 +71,11 @@ export default function FilterPanel() {
             <input
                 type="text"
                 className="search-input"
-                placeholder="검색어를 입력하세요..." /* Placeholder for search */
+                placeholder="검색 범위(km)를 입력해주세요." /* Placeholder for search */
             />
             <button className="search-button" onClick={handleSearch}>
-                검색
+              <i className="fas fa-search" aria-hidden="true"></i> {/* Search icon */}
+              <span className="sr-only">검색</span> {/* Screen reader text for accessibility */}
             </button>
             </div>
         )}
@@ -95,17 +101,17 @@ export default function FilterPanel() {
             <div className="mt-auto pt-2">
                 {step > 1 && (
                 <button className="btn btn-gray mr-2" onClick={goPrev}>
-                    Prev
+                    이전
                 </button>
                 )}
                 {step < 4 && (
                 <button className="btn btn-blue" onClick={goNext}>
-                    Next
+                    다음
                 </button>
                 )}
                 {step === 4 && (
                 <button className="btn btn-green" onClick={handleApplyFilters}>
-                    Apply
+                    예약 요청
                 </button>
                 )}
             </div>
@@ -140,13 +146,16 @@ function StepOne({ data, onChange }) {
 
   return (
     <div>
-      <h3 className="font-bold mb-2">1. 분과 선택</h3>
+      <h3 className="font-bold mb-2">
+        <ListIcon fontSize="small" style={{ marginRight: "8px" }} />  
+        분과 선택
+      </h3>
       <select
         className="w-full border p-1"
         value={data.department}
         onChange={handleDepartmentChange}
       >
-        <option value="">---Select---</option>
+        <option value="">---선택---</option>
         {departments.map((dep) => (
           <option key={dep} value={dep}>
             {dep}
@@ -167,7 +176,10 @@ function StepTwo({ data, onChange }) {
 
   return (
     <div>
-      <h3 className="font-bold mb-2">2. 병상유형</h3>
+      <h3 className="font-bold mb-2">
+        <BedIcon fontSize="small" style={{ marginRight: "7px"}} />
+        병상 유형
+      </h3>
       {bedTypes.map((type) => (
         <label key={type} className="block mb-1">
           <input
@@ -195,7 +207,10 @@ function StepThree({ data, onChange }) {
 
   return (
     <div>
-      <h3 className="font-bold mb-2">3. 필요한 조치</h3>
+      <h3 className="font-bold mb-2">
+        <VerifiedIcon fontSize="small" style={{ marginRight: "7px" }}/>
+        필요한 조치
+        </h3>
       <label className="block mb-1">
         <input
           type="checkbox"
@@ -244,7 +259,10 @@ function StepFour({ data, onChange }) {
 
   return (
     <div>
-      <h3 className="font-bold mb-2">4. 필요한 장비</h3>
+      <h3 className="font-bold mb-2">
+        <PrecisionManufacturingIcon fontSize="small" style={{ marginRight: "7px"}} />
+        필요한 장비
+      </h3>
       {equipments.map((eq) => (
         <label key={eq} className="block mb-1">
           <input
