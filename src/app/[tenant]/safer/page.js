@@ -2,13 +2,21 @@
 
 import { useEffect, useState } from "react";
 import "@/styles/naver-map.css";
-import FilterPanel from "./FilterPanel";
+import EmergencyFilterPanel from "./EmergencyFilterPanel";
+import TransferFilterPanel from "./TransferFilterPanel"
+import { ToggleButton, ToggleButtonGroup, Radio, FormControlLabel, RadioGroup, Typography } from "@mui/material";
 
 export default function ReservationPage() {
   const [map, setMap] = useState(null);        // Reference to the Naver map
   const [userLocation, setUserLocation] = useState(null);
   const [markers, setMarkers] = useState([]);  // Track markers to remove or update
   const [filters, setFilters] = useState({});  // Filter states (e.g., parking, 24hrs)
+
+  const [mode, setMode] = useState(null);
+
+  const handleModeChange = (event) => {
+    setMode(event.target.value);
+  };
 
   /**
    * Initialize the map (once) if it's not created yet and naver.maps is available.
@@ -23,7 +31,10 @@ export default function ReservationPage() {
       const newMap = new naver.maps.Map("map", mapOptions);
       setMap(newMap);
 
-      // Attach our custom control after creating the map
+      // Attach our logo control after creating the map
+      addLogoControl(newMap);
+
+      // Attach our custom control
       addCustomControl(newMap);
 
       trackUserPosition(newMap);
@@ -114,7 +125,7 @@ export default function ReservationPage() {
    * Creates and attaches a custom control (HTML button).
    * This one sets the center to NAVER Green Factory when clicked.
    */
-  const addCustomControl = (map) => {
+  const addLogoControl = (map) => {
     // Inline HTML for our control (an anchor tag styled like a button)
     const locationBtnHtml = `
       <a class="fa fa-hospital"
@@ -134,16 +145,54 @@ export default function ReservationPage() {
     `;
 
     // Create the custom control with our HTML
-    const customControl = new naver.maps.CustomControl(locationBtnHtml, {
+    const logoControl = new naver.maps.CustomControl(locationBtnHtml, {
       position: naver.maps.Position.TOP_RIGHT, // You can change to TOP_LEFT, etc.
     });
 
     // Wait until the map is initialized before attaching
     naver.maps.Event.once(map, "init", () => {
-      customControl.setMap(map);
+      logoControl.setMap(map);
 
       // Add a click event to the control element
-      naver.maps.Event.addDOMListener(customControl.getElement(), "click", () => {
+      naver.maps.Event.addDOMListener(logoControl.getElement(), "click", () => {
+        setShowModal(true);
+      });
+    });
+  };
+
+   /**
+   * Add a custom filter button to the map.
+   */
+   const addCustomControl = (map) => {
+    const filterBtnHtml = `
+      <a
+        style="
+          display: inline-block;
+          padding: 10px 15px;
+          background-color: #fff;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+          font-size: 14px;
+          text-decoration: none;
+          color: black;
+          cursor: pointer;
+        "
+      >
+        필터
+      </a>
+    `;
+
+    const filterControl = new naver.maps.CustomControl(filterBtnHtml, {
+      position: naver.maps.Position.BOTTOM_CENTER, // Adjust position on the map
+    });
+
+    // Wait until the map is initialized before attaching
+    naver.maps.Event.once(map, "init", () => {
+      filterControl.setMap(map);
+
+      // Add a click event to the control element
+      naver.maps.Event.addDOMListener(filterControl.getElement(), "click", () => {
         setShowModal(true);
       });
     });
@@ -213,9 +262,11 @@ export default function ReservationPage() {
 
   return (
     <div className="naver-map-page" style={{ display: 'flex', height: '90vh', position: 'relative' }}>
+      
       {/* Left side: FilterPanel */}
-      <FilterPanel />  
-
+      {mode === "emergency" && <EmergencyFilterPanel />}
+      {mode === "tranfer" && <TransferFilterPanel />}
+        
       {/* Right side: The Map */}
       <div className="naver-map-container" style={{ flexGrow: 1, position: 'relative' }}>
         {/* Header or Intro Section */}
