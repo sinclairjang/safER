@@ -1,22 +1,22 @@
 "use client";
 
+import React from "react";
 import { useEffect, useState } from "react";
 import "@/styles/naver-map.css";
-import EmergencyFilterPanel from "./EmergencyFilterPanel";
+import DiagnosisModal from "./DiagnosisModal";
+import EmergencyModal from "./EmergencyModal";
 import TransferFilterPanel from "./TransferFilterPanel"
-import { ToggleButton, ToggleButtonGroup, Radio, FormControlLabel, RadioGroup, Typography } from "@mui/material";
+import SearchModeModal from "./SearchModeModal";
 
 export default function ReservationPage() {
   const [map, setMap] = useState(null);        // Reference to the Naver map
   const [userLocation, setUserLocation] = useState(null);
   const [markers, setMarkers] = useState([]);  // Track markers to remove or update
-  const [filters, setFilters] = useState({});  // Filter states (e.g., parking, 24hrs)
+  const [filters, setFilters] = useState({});
+  const [showSearchModeModal, setShowSearchModeModal] = useState(false);
+  const [emergencyModalOpen, setEmergencyModalOpen] = React.useState(false); 
+  const [showTransferFilterPanel, setShowTransferFilterPanel] = React.useState(false);
 
-  const [mode, setMode] = useState(null);
-
-  const handleModeChange = (event) => {
-    setMode(event.target.value);
-  };
 
   /**
    * Initialize the map (once) if it's not created yet and naver.maps is available.
@@ -30,12 +30,12 @@ export default function ReservationPage() {
       };
       const newMap = new naver.maps.Map("map", mapOptions);
       setMap(newMap);
-
+      
+      // Attach our modal control
+      addModalControl(newMap);
       // Attach our logo control after creating the map
       addLogoControl(newMap);
 
-      // Attach our custom control
-      addCustomControl(newMap);
 
       trackUserPosition(newMap);
     }
@@ -132,13 +132,13 @@ export default function ReservationPage() {
         style="
           display: inline-block;
           padding: 8px 12px;
-          background-color: white;
-          border: 1px solid #ccc;
+          background-color: rgba(255, 255, 255, 0);
+          border: 1px tranparent #ccc;
           border-radius: 4px;
           box-shadow: 0 2px 4px rgba(0,0,0,0.2);
           font-size: 14px;
           text-decoration: none;
-          color: black;
+          color: rgb(255, 255, 255);
         ">
         safER
       </a>
@@ -146,54 +146,57 @@ export default function ReservationPage() {
 
     // Create the custom control with our HTML
     const logoControl = new naver.maps.CustomControl(locationBtnHtml, {
-      position: naver.maps.Position.TOP_RIGHT, // You can change to TOP_LEFT, etc.
+      position: naver.maps.Position.TOP_LEFT, // You can change to TOP_LEFT, etc.
     });
 
     // Wait until the map is initialized before attaching
     naver.maps.Event.once(map, "init", () => {
       logoControl.setMap(map);
-
-      // Add a click event to the control element
-      naver.maps.Event.addDOMListener(logoControl.getElement(), "click", () => {
-        setShowModal(true);
-      });
     });
   };
 
    /**
    * Add a custom filter button to the map.
    */
-   const addCustomControl = (map) => {
+   const addModalControl = (map) => {
     const filterBtnHtml = `
       <a
         style="
-          display: inline-block;
-          padding: 10px 15px;
-          background-color: #fff;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-          font-size: 14px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+          padding: 10px 12px;
+          background-color: #f9f9f9;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
           text-decoration: none;
-          color: black;
+          color: #333;
           cursor: pointer;
+          font-size: 14px;
+          font-family: 'Noto Sans KR', sans-serif; /* Modern Korean font */
+          transition: background-color 0.3s ease, box-shadow 0.3s ease;
         "
+        onmouseover="this.style.backgroundColor='#eaeaea'; this.style.boxShadow='0px 6px 8px rgba(0, 0, 0, 0.15)';"
+        onmouseout="this.style.backgroundColor='#f9f9f9'; this.style.boxShadow='0px 4px 6px rgba(0, 0, 0, 0.1)';"
       >
-        필터
+        <i class="fas fa-search" style="font-size: 16px;"></i>
+        <strong>조건 검색</strong>
       </a>
     `;
 
-    const filterControl = new naver.maps.CustomControl(filterBtnHtml, {
-      position: naver.maps.Position.BOTTOM_CENTER, // Adjust position on the map
+    const ModalControl = new naver.maps.CustomControl(filterBtnHtml, {
+      position: naver.maps.Position.TOP_RIGHT, // Adjust position on the map
     });
 
     // Wait until the map is initialized before attaching
     naver.maps.Event.once(map, "init", () => {
-      filterControl.setMap(map);
+      ModalControl.setMap(map);
 
       // Add a click event to the control element
-      naver.maps.Event.addDOMListener(filterControl.getElement(), "click", () => {
-        setShowModal(true);
+      naver.maps.Event.addDOMListener(ModalControl.getElement(), "click", () => {
+        setShowSearchModeModal(true);
       });
     });
   };
@@ -263,11 +266,8 @@ export default function ReservationPage() {
   return (
     <div className="naver-map-page" style={{ display: 'flex', height: '90vh', position: 'relative' }}>
       
-      {/* Left side: FilterPanel */}
-      {mode === "emergency" && <EmergencyFilterPanel />}
-      {mode === "tranfer" && <TransferFilterPanel />}
-        
-      {/* Right side: The Map */}
+      {showTransferFilterPanel && <TransferFilterPanel />}
+      
       <div className="naver-map-container" style={{ flexGrow: 1, position: 'relative' }}>
         {/* Header or Intro Section */}
         <div className="naver-map-centered">
@@ -277,6 +277,29 @@ export default function ReservationPage() {
 
         {/* The Map Element */}
         <div id="map" className="naver-map" />
+      
+        <React.Fragment>
+          {/* Filters Modal */}
+          <SearchModeModal
+            open={showSearchModeModal}
+            onClose={() => setShowSearchModeModal(false)}
+            onApply={(selectedMode) => {
+              console.log("Selected Mode:", selectedMode);
+              if (selectedMode === "emergency") {
+                setEmergencyModalOpen(true);
+                setShowTransferFilterPanel(false);
+              } else if (selectedMode === "transfer") {
+                setShowTransferFilterPanel(true);
+                setEmergencyModalOpen(false);
+              }
+            }}
+          />
+
+          <EmergencyModal
+            open={emergencyModalOpen}
+            onClose={() => setEmergencyModalOpen(false)}
+          />
+        </React.Fragment>
       </div>
 
 

@@ -10,6 +10,7 @@ BEGIN
         GRANT USAGE ON SCHEMA public TO chanho;
         REVOKE ALL ON SCHEMA public FROM chanho;
         GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.hospital_bed_availability TO chanho;
+        GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.hospital_bed_availability_rate TO chanho;
     END IF;
 END $$;
 
