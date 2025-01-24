@@ -24,6 +24,7 @@ export default function FormDialog({ open, onClose, onSubmit }) {
             const formJson = Object.fromEntries(formData.entries());
             const searchRadius = formJson['search-radius']; // Adjust for numeric input
             console.log(`Search Radius (km): ${searchRadius}`);
+            onSubmit(searchRadius);
             onClose();
           },
         }}

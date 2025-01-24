@@ -198,7 +198,30 @@ INSERT INTO "auth"."audit_log_entries" ("instance_id", "id", "payload", "created
 	('00000000-0000-0000-0000-000000000000', '3f4aa648-1409-4ec4-9faf-1184877b0314', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-23 06:49:28.262051+00', ''),
 	('00000000-0000-0000-0000-000000000000', '90e84256-b36d-4c02-8628-efa49315a3cd', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-23 06:49:28.319028+00', ''),
 	('00000000-0000-0000-0000-000000000000', '635d7a02-f202-46bc-b473-4734ae756b3d', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-23 08:43:17.454627+00', ''),
-	('00000000-0000-0000-0000-000000000000', '772cf5f8-20a7-42e9-acd4-a4ea590ecd3d', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-23 08:43:17.456184+00', '');
+	('00000000-0000-0000-0000-000000000000', '772cf5f8-20a7-42e9-acd4-a4ea590ecd3d', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-23 08:43:17.456184+00', ''),
+	('00000000-0000-0000-0000-000000000000', '587c1806-97f2-4da5-9638-d182a1a16556', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 00:26:17.628941+00', ''),
+	('00000000-0000-0000-0000-000000000000', '77e9fd49-e755-46f6-bdda-ae42a39a7f43', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 00:26:17.630114+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'd46c8e34-9b55-46d8-82db-bd8b6c7be004', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 00:26:17.699131+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'b309c51d-07cd-4b50-9894-743536560992', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 01:24:42.789426+00', ''),
+	('00000000-0000-0000-0000-000000000000', '2892e646-8658-43bf-9e5f-2d62d359a0b4', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 01:24:42.791148+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'f7f95e6b-8279-4fc8-a84b-8c7e85f10b50', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 02:23:06.067626+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'fe2ceae8-ced8-46ae-be8d-1d2f951da7b0', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 02:23:06.068824+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'faa44874-9759-4457-8638-3f82169b8bb5', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 03:35:48.513257+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'b8591ed0-026d-4daf-960c-bd575a4dd33d', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 03:35:48.514707+00', ''),
+	('00000000-0000-0000-0000-000000000000', '3e2f03db-c7f4-4908-8e30-a6992f52e093', '{"action":"login","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"account","traits":{"provider":"email"}}', '2025-01-24 03:48:04.14245+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'ed74ce3a-1960-46b3-9347-67e755239f7c', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 05:20:15.301472+00', ''),
+	('00000000-0000-0000-0000-000000000000', '2178d72b-c94b-4c3c-8308-441b02e38b0e', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 05:20:15.302366+00', ''),
+	('00000000-0000-0000-0000-000000000000', '6c1b92e9-ecd5-4aba-aa57-dcc5a49629ed', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 05:45:11.152262+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'd2b85e43-ace5-43e0-98e2-746e3c6fdc10', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 05:45:11.163422+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'f25ca375-7877-4838-a50c-46d338e9b6c1', '{"action":"token_refreshed","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 05:50:23.079038+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'd197efab-0d69-4ca8-bf8a-9904d8d626d0', '{"action":"token_refreshed","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 05:50:23.122985+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'd046f4a1-f2cb-42f6-ac25-58e9aee6d6a0', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 06:20:26.196999+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'ed4e5b5c-573f-473e-bfb2-f42b26db42c8', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 06:20:26.197628+00', ''),
+	('00000000-0000-0000-0000-000000000000', '9edf9f1e-4f13-4424-9c22-bf15e0921738', '{"action":"token_refreshed","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 06:50:41.640131+00', ''),
+	('00000000-0000-0000-0000-000000000000', '70dcabc4-f5c0-49a6-865e-2cb7a400c4f8', '{"action":"token_revoked","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 06:50:41.641002+00', ''),
+	('00000000-0000-0000-0000-000000000000', '9e9e2584-efe0-4595-9c4f-7a412c01b25b', '{"action":"logout","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"account"}', '2025-01-24 06:53:37.160432+00', ''),
+	('00000000-0000-0000-0000-000000000000', '1b45f407-c446-442d-848f-2a727f0a4140', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 07:18:40.061943+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'd62d8330-faaf-443d-9d02-53a42033b6fe', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 07:18:40.062565+00', '');
 
 
 --
@@ -212,8 +235,8 @@ INSERT INTO "auth"."audit_log_entries" ("instance_id", "id", "payload", "created
 --
 
 INSERT INTO "auth"."users" ("instance_id", "id", "aud", "role", "email", "encrypted_password", "email_confirmed_at", "invited_at", "confirmation_token", "confirmation_sent_at", "recovery_token", "recovery_sent_at", "email_change_token_new", "email_change", "email_change_sent_at", "last_sign_in_at", "raw_app_meta_data", "raw_user_meta_data", "is_super_admin", "created_at", "updated_at", "phone", "phone_confirmed_at", "phone_change", "phone_change_token", "phone_change_sent_at", "email_change_token_current", "email_change_confirm_status", "banned_until", "reauthentication_token", "reauthentication_sent_at", "is_sso_user", "deleted_at", "is_anonymous") VALUES
-	('00000000-0000-0000-0000-000000000000', '5cb12aad-92a7-410a-a062-44a626e1f5e8', 'authenticated', 'authenticated', 'ch1004@metabuild.com', '$2a$10$iiTdnrE4jFdjWLqnTCGBa.BVfJTDVQN1RyRekqdujiwhKrvmAaDAW', '2025-01-15 01:15:11.352728+00', NULL, '', NULL, '', NULL, '', '', NULL, '2025-01-22 03:12:56.643982+00', '{"tenants": ["safer"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-15 01:15:11.340725+00', '2025-01-23 08:43:17.460681+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false),
-	('00000000-0000-0000-0000-000000000000', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', 'authenticated', 'authenticated', 'young92@metabuild.com', '$2a$10$fBQyLHLHUFW.Ghc6xmKiyeQOhQnoQuwa.1hxMQtNQVePn3kTh7/vq', '2025-01-14 05:18:51.965275+00', NULL, '', NULL, '', NULL, '', '', NULL, '2025-01-20 02:40:29.881184+00', '{"tenants": ["samsunghospital"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-14 05:18:51.956406+00', '2025-01-21 01:03:58.132946+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false);
+	('00000000-0000-0000-0000-000000000000', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', 'authenticated', 'authenticated', 'young92@metabuild.com', '$2a$10$fBQyLHLHUFW.Ghc6xmKiyeQOhQnoQuwa.1hxMQtNQVePn3kTh7/vq', '2025-01-14 05:18:51.965275+00', NULL, '', NULL, '', NULL, '', '', NULL, '2025-01-20 02:40:29.881184+00', '{"tenants": ["samsunghospital"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-14 05:18:51.956406+00', '2025-01-24 06:50:41.642867+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false),
+	('00000000-0000-0000-0000-000000000000', '5cb12aad-92a7-410a-a062-44a626e1f5e8', 'authenticated', 'authenticated', 'ch1004@metabuild.com', '$2a$10$iiTdnrE4jFdjWLqnTCGBa.BVfJTDVQN1RyRekqdujiwhKrvmAaDAW', '2025-01-15 01:15:11.352728+00', NULL, '', NULL, '', NULL, '', '', NULL, '2025-01-24 03:48:04.143934+00', '{"tenants": ["safer"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-15 01:15:11.340725+00', '2025-01-24 07:18:40.064402+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false);
 
 
 --
@@ -236,9 +259,8 @@ INSERT INTO "auth"."identities" ("provider_id", "user_id", "identity_data", "pro
 --
 
 INSERT INTO "auth"."sessions" ("id", "user_id", "created_at", "updated_at", "factor_id", "aal", "not_after", "refreshed_at", "user_agent", "ip", "tag") VALUES
-	('782b50e2-de3f-4f3d-896d-202448863055', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', '2025-01-16 01:56:05.320943+00', '2025-01-17 08:37:35.699562+00', NULL, 'aal1', NULL, '2025-01-17 08:37:35.699515', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', '172.18.0.1', NULL),
-	('14bba138-537b-4f4a-adb8-a66954cc1267', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', '2025-01-20 02:40:29.881235+00', '2025-01-22 00:51:12.559167+00', NULL, 'aal1', NULL, '2025-01-22 00:51:12.559133', 'Next.js Middleware', '172.18.0.1', NULL),
-	('fec8b38f-8477-4fea-9118-9df6a210872c', '5cb12aad-92a7-410a-a062-44a626e1f5e8', '2025-01-22 03:12:56.644033+00', '2025-01-23 08:43:17.462751+00', NULL, 'aal1', NULL, '2025-01-23 08:43:17.46268', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', '172.18.0.1', NULL);
+	('4e7923f0-b5ae-422f-9d35-4ba59899b5e1', '5cb12aad-92a7-410a-a062-44a626e1f5e8', '2025-01-24 03:48:04.144129+00', '2025-01-24 05:45:11.175909+00', NULL, 'aal1', NULL, '2025-01-24 05:45:11.175756', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', '172.18.0.1', NULL),
+	('fec8b38f-8477-4fea-9118-9df6a210872c', '5cb12aad-92a7-410a-a062-44a626e1f5e8', '2025-01-22 03:12:56.644033+00', '2025-01-24 07:18:40.065832+00', NULL, 'aal1', NULL, '2025-01-24 07:18:40.065793', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', '172.18.0.1', NULL);
 
 
 --
@@ -246,9 +268,8 @@ INSERT INTO "auth"."sessions" ("id", "user_id", "created_at", "updated_at", "fac
 --
 
 INSERT INTO "auth"."mfa_amr_claims" ("session_id", "created_at", "updated_at", "authentication_method", "id") VALUES
-	('782b50e2-de3f-4f3d-896d-202448863055', '2025-01-16 01:56:05.323709+00', '2025-01-16 01:56:05.323709+00', 'password', 'e20b354c-ae16-437b-b579-9ba9f2937f8f'),
-	('14bba138-537b-4f4a-adb8-a66954cc1267', '2025-01-20 02:40:29.883791+00', '2025-01-20 02:40:29.883791+00', 'password', '349723f2-91a0-4c50-b845-6e773d734964'),
-	('fec8b38f-8477-4fea-9118-9df6a210872c', '2025-01-22 03:12:56.646109+00', '2025-01-22 03:12:56.646109+00', 'password', '5cf4f73d-d07a-480f-a12f-e5b6d80988b9');
+	('fec8b38f-8477-4fea-9118-9df6a210872c', '2025-01-22 03:12:56.646109+00', '2025-01-22 03:12:56.646109+00', 'password', '5cf4f73d-d07a-480f-a12f-e5b6d80988b9'),
+	('4e7923f0-b5ae-422f-9d35-4ba59899b5e1', '2025-01-24 03:48:04.147562+00', '2025-01-24 03:48:04.147562+00', 'password', 'f95b2c68-bec6-466c-a723-72905636a38f');
 
 
 --
@@ -274,28 +295,21 @@ INSERT INTO "auth"."mfa_amr_claims" ("session_id", "created_at", "updated_at", "
 --
 
 INSERT INTO "auth"."refresh_tokens" ("instance_id", "id", "token", "user_id", "revoked", "created_at", "updated_at", "parent", "session_id") VALUES
-	('00000000-0000-0000-0000-000000000000', 24, 'xPgFAvo3vp60tnUDd6jmPg', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', true, '2025-01-16 01:56:05.322349+00', '2025-01-16 03:23:11.217265+00', NULL, '782b50e2-de3f-4f3d-896d-202448863055'),
-	('00000000-0000-0000-0000-000000000000', 27, '0R0My9Im0wh0hAeoS5yuaQ', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', true, '2025-01-16 03:23:11.218019+00', '2025-01-16 05:43:24.834983+00', 'xPgFAvo3vp60tnUDd6jmPg', '782b50e2-de3f-4f3d-896d-202448863055'),
-	('00000000-0000-0000-0000-000000000000', 28, '27Oph9lsQ7TFiPXhb0ydCQ', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', true, '2025-01-16 05:43:24.836039+00', '2025-01-16 06:41:47.643913+00', '0R0My9Im0wh0hAeoS5yuaQ', '782b50e2-de3f-4f3d-896d-202448863055'),
-	('00000000-0000-0000-0000-000000000000', 30, 'qIn0W6HcMoSYIxx77v6juw', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', true, '2025-01-16 06:41:47.644564+00', '2025-01-16 07:40:06.194735+00', '27Oph9lsQ7TFiPXhb0ydCQ', '782b50e2-de3f-4f3d-896d-202448863055'),
-	('00000000-0000-0000-0000-000000000000', 31, 'Y-n00LOAQlmNQ2SRtQ8Lng', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', true, '2025-01-16 07:40:06.196447+00', '2025-01-16 08:38:08.156003+00', 'qIn0W6HcMoSYIxx77v6juw', '782b50e2-de3f-4f3d-896d-202448863055'),
-	('00000000-0000-0000-0000-000000000000', 33, 'c04WKeTGxCu7ljDWjVwU1g', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', true, '2025-01-16 08:38:08.15671+00', '2025-01-17 01:03:25.675999+00', 'Y-n00LOAQlmNQ2SRtQ8Lng', '782b50e2-de3f-4f3d-896d-202448863055'),
-	('00000000-0000-0000-0000-000000000000', 34, 'Tqb0JhOjpZYMrLSoVTJDMQ', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', true, '2025-01-17 01:03:25.676718+00', '2025-01-17 02:03:25.111448+00', 'c04WKeTGxCu7ljDWjVwU1g', '782b50e2-de3f-4f3d-896d-202448863055'),
-	('00000000-0000-0000-0000-000000000000', 37, 'JhHfXUaWVTkSRHX4kQ55Eg', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', true, '2025-01-17 02:03:25.111784+00', '2025-01-17 03:13:21.787192+00', 'Tqb0JhOjpZYMrLSoVTJDMQ', '782b50e2-de3f-4f3d-896d-202448863055'),
-	('00000000-0000-0000-0000-000000000000', 52, 'qSqYbYHrJfO4crTvGNRuxw', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', true, '2025-01-17 03:13:21.78815+00', '2025-01-17 05:21:59.539763+00', 'JhHfXUaWVTkSRHX4kQ55Eg', '782b50e2-de3f-4f3d-896d-202448863055'),
-	('00000000-0000-0000-0000-000000000000', 54, '0hFr9ecm_Ng3fV2j66fRBg', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', true, '2025-01-17 05:21:59.54068+00', '2025-01-17 06:33:36.315103+00', 'qSqYbYHrJfO4crTvGNRuxw', '782b50e2-de3f-4f3d-896d-202448863055'),
-	('00000000-0000-0000-0000-000000000000', 57, 'hYC35O6-O2GptwNbXGb3CA', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', true, '2025-01-17 06:33:36.315992+00', '2025-01-17 07:32:25.127434+00', '0hFr9ecm_Ng3fV2j66fRBg', '782b50e2-de3f-4f3d-896d-202448863055'),
-	('00000000-0000-0000-0000-000000000000', 60, 'TXsCdcNpglxd9LPBzUkiBQ', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', true, '2025-01-17 07:32:25.128035+00', '2025-01-17 08:37:35.697436+00', 'hYC35O6-O2GptwNbXGb3CA', '782b50e2-de3f-4f3d-896d-202448863055'),
-	('00000000-0000-0000-0000-000000000000', 62, 'mwGJP7BDPsitKHh3XEKpRA', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', false, '2025-01-17 08:37:35.697968+00', '2025-01-17 08:37:35.697968+00', 'TXsCdcNpglxd9LPBzUkiBQ', '782b50e2-de3f-4f3d-896d-202448863055'),
-	('00000000-0000-0000-0000-000000000000', 64, 'TFPqGs8QMMZ1zF0ye0Lv-w', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', true, '2025-01-20 02:40:29.882569+00', '2025-01-20 06:01:31.875841+00', NULL, '14bba138-537b-4f4a-adb8-a66954cc1267'),
-	('00000000-0000-0000-0000-000000000000', 66, 'w-HvKDlP2G_bGKj7mFjVVA', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', true, '2025-01-20 06:01:31.876259+00', '2025-01-21 01:03:58.130821+00', 'TFPqGs8QMMZ1zF0ye0Lv-w', '14bba138-537b-4f4a-adb8-a66954cc1267'),
-	('00000000-0000-0000-0000-000000000000', 71, 'YsFVC54MwrLggZM9_Dwrww', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', false, '2025-01-21 01:03:58.131918+00', '2025-01-21 01:03:58.131918+00', 'w-HvKDlP2G_bGKj7mFjVVA', '14bba138-537b-4f4a-adb8-a66954cc1267'),
 	('00000000-0000-0000-0000-000000000000', 80, 'L15eHOQHqGmBdc2QqPpcxQ', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-22 03:12:56.645219+00', '2025-01-22 05:09:27.727001+00', NULL, 'fec8b38f-8477-4fea-9118-9df6a210872c'),
 	('00000000-0000-0000-0000-000000000000', 81, '1a1ZYC3hZ1sr9vVWm3_Fsw', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-22 05:09:27.72825+00', '2025-01-22 06:15:13.84181+00', 'L15eHOQHqGmBdc2QqPpcxQ', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
 	('00000000-0000-0000-0000-000000000000', 82, 'CPR9c0ibRfutkfrfTe3Lvg', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-22 06:15:13.84287+00', '2025-01-22 07:13:15.218554+00', '1a1ZYC3hZ1sr9vVWm3_Fsw', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
 	('00000000-0000-0000-0000-000000000000', 83, 'B4mCqxiVg_YnDPczn6RB_w', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-22 07:13:15.219919+00', '2025-01-23 06:49:28.262574+00', 'CPR9c0ibRfutkfrfTe3Lvg', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
 	('00000000-0000-0000-0000-000000000000', 84, 'AK07Q99KGwcfM9LSJAekvQ', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-23 06:49:28.263715+00', '2025-01-23 08:43:17.457587+00', 'B4mCqxiVg_YnDPczn6RB_w', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
-	('00000000-0000-0000-0000-000000000000', 85, 'sEEifndqcUN9yFLfQX5SYA', '5cb12aad-92a7-410a-a062-44a626e1f5e8', false, '2025-01-23 08:43:17.45926+00', '2025-01-23 08:43:17.45926+00', 'AK07Q99KGwcfM9LSJAekvQ', 'fec8b38f-8477-4fea-9118-9df6a210872c');
+	('00000000-0000-0000-0000-000000000000', 85, 'sEEifndqcUN9yFLfQX5SYA', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-23 08:43:17.45926+00', '2025-01-24 00:26:17.630495+00', 'AK07Q99KGwcfM9LSJAekvQ', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
+	('00000000-0000-0000-0000-000000000000', 86, '-rN9mTbKep3zR7VoRDVhTw', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-24 00:26:17.63099+00', '2025-01-24 01:24:42.791551+00', 'sEEifndqcUN9yFLfQX5SYA', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
+	('00000000-0000-0000-0000-000000000000', 87, '1WcZEFavpFBfHgeAMV1nIA', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-24 01:24:42.792984+00', '2025-01-24 02:23:06.069219+00', '-rN9mTbKep3zR7VoRDVhTw', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
+	('00000000-0000-0000-0000-000000000000', 88, 'YokwHpnsvBcnB7cB-kFAtg', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-24 02:23:06.069953+00', '2025-01-24 03:35:48.515105+00', '1WcZEFavpFBfHgeAMV1nIA', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
+	('00000000-0000-0000-0000-000000000000', 89, 'n5c9UXZjhL3vHUiZil6QUQ', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-24 03:35:48.516318+00', '2025-01-24 05:20:15.303886+00', 'YokwHpnsvBcnB7cB-kFAtg', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
+	('00000000-0000-0000-0000-000000000000', 90, 'jYI4dndZAfj5n4YZ6yq4Gg', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-24 03:48:04.146149+00', '2025-01-24 05:45:11.165402+00', NULL, '4e7923f0-b5ae-422f-9d35-4ba59899b5e1'),
+	('00000000-0000-0000-0000-000000000000', 92, 'EQx94Cci20841ZdZncQ7fw', '5cb12aad-92a7-410a-a062-44a626e1f5e8', false, '2025-01-24 05:45:11.166902+00', '2025-01-24 05:45:11.166902+00', 'jYI4dndZAfj5n4YZ6yq4Gg', '4e7923f0-b5ae-422f-9d35-4ba59899b5e1'),
+	('00000000-0000-0000-0000-000000000000', 91, 'h0OS16uVDe9Lyz51vO1ZzQ', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-24 05:20:15.304572+00', '2025-01-24 06:20:26.202549+00', 'n5c9UXZjhL3vHUiZil6QUQ', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
+	('00000000-0000-0000-0000-000000000000', 93, 'Cbb-78sBluGsWbyXPWQSjw', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-24 06:20:26.203079+00', '2025-01-24 07:18:40.063266+00', 'h0OS16uVDe9Lyz51vO1ZzQ', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
+	('00000000-0000-0000-0000-000000000000', 95, 'CyzeEmdZXUUHkg0b4xyurg', '5cb12aad-92a7-410a-a062-44a626e1f5e8', false, '2025-01-24 07:18:40.063542+00', '2025-01-24 07:18:40.063542+00', 'Cbb-78sBluGsWbyXPWQSjw', 'fec8b38f-8477-4fea-9118-9df6a210872c');
 
 
 --
@@ -800,7 +814,7 @@ INSERT INTO "public"."tenant_permissions" ("id", "created_at", "service_user", "
 -- Name: refresh_tokens_id_seq; Type: SEQUENCE SET; Schema: auth; Owner: supabase_auth_admin
 --
 
-SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 85, true);
+SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 95, true);
 
 
 --

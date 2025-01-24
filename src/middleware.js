@@ -24,7 +24,6 @@ export async function middleware(request) {
 
     const [hostname] = getHostnameAndPort(request);
     if (hostname in TENANT_MAP === false) {
-        console.log(hostname);
         return NextResponse.rewrite(new URL("/not-found", request.url));
     } 
     

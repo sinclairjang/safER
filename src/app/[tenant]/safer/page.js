@@ -1,12 +1,12 @@
 "use client";
 
-import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Fragment } from "react";
 import "@/styles/naver-map.css";
 import DiagnosisModal from "./DiagnosisModal";
 import EmergencyModal from "./EmergencyModal";
 import TransferFilterPanel from "./TransferFilterPanel"
 import SearchModeModal from "./SearchModeModal";
+import { getSupabaseBrowserClient } from "@/supabase-utils/browserClient";
 
 export default function ReservationPage() {
   const [map, setMap] = useState(null);        // Reference to the Naver map
@@ -14,8 +14,11 @@ export default function ReservationPage() {
   const [markers, setMarkers] = useState([]);  // Track markers to remove or update
   const [filters, setFilters] = useState({});
   const [showSearchModeModal, setShowSearchModeModal] = useState(false);
-  const [emergencyModalOpen, setEmergencyModalOpen] = React.useState(false); 
-  const [showTransferFilterPanel, setShowTransferFilterPanel] = React.useState(false);
+  const [emergencyModalOpen, setEmergencyModalOpen] = useState(false); 
+  const [showTransferFilterPanel, setShowTransferFilterPanel] = useState(false);
+  const [searchRadius, setSearchRadius] = useState(null);
+
+  const supabase = getSupabaseBrowserClient();
 
   /**
    * Initialize the map (once) if it's not created yet and naver.maps is available.
@@ -34,6 +37,8 @@ export default function ReservationPage() {
       addModalControl(newMap);
       // Attach our logo control after creating the map
       addLogoControl(newMap);
+
+      addMapModeControls(newMap);
 
       trackUserPosition(newMap);
     }
@@ -76,50 +81,6 @@ export default function ReservationPage() {
   };
 
   /**
-  * Perform a proximity query whenever the user's location changes.
-  */
-  useEffect(() => {
-    if (userLocation) {
-      console.log("User's current location:", userLocation);
-
-      // Replace this with your proximity query logic
-      sendProximityQuery(userLocation.latitude, userLocation.longitude, filters);
-    }
-  }, [userLocation, filters]); // Trigger when user's location or filters change
-
-   /**
-   * Simulate sending a proximity query to an API.
-   */
-   const sendProximityQuery = (lat, lng, filters) => {
-    // Example query payload
-    const query = {
-      lat,
-      lng,
-      filters,
-    };
-
-    console.log("Sending proximity query:", query);
-
-    // // Replace with your actual API call
-    // fetch("/api/proximity-query", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(query),
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     console.log("Proximity query result:", data);
-    //     // You can update markers here based on API response
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error sending proximity query:", error);
-    //   });
-  };
-
-
-  /**
    * Creates and attaches a custom control (HTML button).
    * This one sets the center to NAVER Green Factory when clicked.
    */
@@ -141,18 +102,18 @@ export default function ReservationPage() {
         safER
       </a>
     `;
-
+ 
     // Create the custom control with our HTML
     const logoControl = new naver.maps.CustomControl(locationBtnHtml, {
-      position: naver.maps.Position.TOP_RIGHT, // You can change to TOP_LEFT, etc.
+      position: naver.maps.Position.TOP_LEFT, // You can change to TOP_LEFT, etc.
     });
-
+ 
     // Wait until the map is initialized before attaching
     naver.maps.Event.once(map, "init", () => {
       logoControl.setMap(map);
     });
   };
-
+ 
    /**
    * Add a custom filter button to the map.
    */
@@ -183,21 +144,111 @@ export default function ReservationPage() {
         <strong>조건 검색</strong>
       </div>
     `;
-
+ 
     const ModalControl = new naver.maps.CustomControl(filterBtnHtml, {
       position: naver.maps.Position.BOTTOM_CENTER, // Adjust position on the map
     });
-
+ 
     // Wait until the map is initialized before attaching
     naver.maps.Event.once(map, "init", () => {
       ModalControl.setMap(map);
-
+ 
       // Add a click event to the control element
       naver.maps.Event.addDOMListener(ModalControl.getElement(), "click", () => {
         setShowSearchModeModal(true);
       });
     });
   };
+
+  const addMapModeControls = (map) => {
+    const controlsHtml = `
+      <div style="display: flex; gap: 10px; background-color: rgba(255, 255, 255, 0.9); padding: 10px; border-radius: 8px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+        <!-- Normal Map Button -->
+        <div id="defaultMap" class="sprite-icon normal-map" style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 64px;
+          cursor: pointer;">
+          <div style="
+            width: 64px;
+            height: 34px;
+            background-image: url('https://maps-service.pstatic.net/pcweb_navermap_v5/250117-4d3a92b/assets/sprites/home.png');
+            background-position: -67px 0px;
+            background-size: 261px 188px;">
+          </div>
+          <span style="
+            margin-top: 4px;
+            font-size: 12px;
+            font-family: 'Noto Sans KR', sans-serif;
+            color: #333;
+            text-align: center;">일반지도</span>
+        </div>
+  
+        <!-- Satellite Map Button -->
+        <div id="satelliteMap" class="sprite-icon satellite-map" style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 64px;
+          cursor: pointer;">
+          <div style="
+            width: 64px;
+            height: 34px;
+            background-image: url('https://maps-service.pstatic.net/pcweb_navermap_v5/250117-4d3a92b/assets/sprites/home.png');
+            background-position: 0px -55px;
+            background-size: 261px 188px;">
+          </div>
+          <span style="
+            margin-top: 4px;
+            font-size: 12px;
+            font-family: 'Noto Sans KR', sans-serif;
+            color: #333;
+            text-align: center;">위성지도</span>
+        </div>
+      </div>
+    `;
+  
+    const MapModeControl = new naver.maps.CustomControl(controlsHtml, {
+      position: naver.maps.Position.TOP_RIGHT,
+    });
+  
+    naver.maps.Event.once(map, "init", () => {
+      MapModeControl.setMap(map);
+  
+      document.getElementById("defaultMap").addEventListener("click", () => {
+        map.setMapTypeId(naver.maps.MapTypeId.NORMAL); // Switch to Normal Map
+      });
+  
+      document.getElementById("satelliteMap").addEventListener("click", () => {
+        map.setMapTypeId(naver.maps.MapTypeId.HYBRID); // Switch to Satellite Map
+      });
+    });
+  };
+  
+
+  // /**
+  // * Perform a proximity query whenever the user's location changes.
+  // */
+  // useEffect(() => {
+  //   if (userLocation) {
+  //     console.log("User's current location:", userLocation);
+
+  //     // Replace this with your proximity query logic
+  //     sendProximityQuery(userLocation.latitude, userLocation.longitude, filters);
+  //   }
+  // }, [userLocation, filters]); // Trigger when user's location or filters change
+
+  //  const sendProximityQuery = (lat, lng, filters) => {
+  //   // Example query payload
+  //   const query = {
+  //     lat,
+  //     lng,
+  //     filters,
+  //   };
+
+  //   console.log("Sending proximity query:", query);
+  // };
 
   /**
    * Load or reload hospital markers whenever the map or filters change.
@@ -261,10 +312,51 @@ export default function ReservationPage() {
     setFilters(selectedFilters);
   };
 
+  useEffect(() => {
+    if (searchRadius && map && userLocation) {
+      // Clear any existing markers
+      markers.forEach((marker) => marker.setMap(null));
+      setMarkers([]);
+
+      console.log(userLocation);
+
+      supabase
+        .rpc("find_nearby_hospitals", {
+          user_lat: userLocation.latitude,
+          user_lon: userLocation.longitude,
+          radius_km: searchRadius
+        })
+        .then(({ data, error }) => {
+          if (error) {
+            console.error("RPC error:", error);
+            return;
+          }
+
+          if (data && Array.isArray(data)) {
+            console.log("Nearby Hospitals:", data);
+          }
+
+          const newMarkers = data.map((hospital) => {
+            const marker = new naver.maps.Marker({
+              position: new naver.maps.LatLng(hospital.wgs84lat, hospital.wgs84lon),
+              map
+            });
+            return marker;
+          });
+
+          setMarkers(newMarkers);
+        })
+    }
+  }, [searchRadius, map, userLocation])
+
+  const handleOnSubmit = (searchRadius) => {
+    setSearchRadius(searchRadius);
+  }
+
   return (
     <div className="naver-map-page" style={{ display: 'flex', height: '90vh', position: 'relative' }}>
       
-      { showTransferFilterPanel && <TransferFilterPanel map={map}/> }
+      { showTransferFilterPanel && <TransferFilterPanel map={map} /> }
       
       <div className="naver-map-container" style={{ flexGrow: 1, position: 'relative' }}>
         {/* Header or Intro Section */}
@@ -276,7 +368,7 @@ export default function ReservationPage() {
         {/* The Map Element */}
         <div id="map" className="naver-map" />
       
-        <React.Fragment>
+        <Fragment>
           {/* Filters Modal */}
           <SearchModeModal
             open={showSearchModeModal}
@@ -296,8 +388,9 @@ export default function ReservationPage() {
           <EmergencyModal
             open={emergencyModalOpen}
             onClose={() => setEmergencyModalOpen(false)}
+            onSubmit={handleOnSubmit}
           />
-        </React.Fragment>
+        </Fragment>
       </div>
 
 
