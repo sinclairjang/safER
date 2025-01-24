@@ -193,7 +193,12 @@ INSERT INTO "auth"."audit_log_entries" ("instance_id", "id", "payload", "created
 	('00000000-0000-0000-0000-000000000000', 'ed7e04e1-4139-4d44-b953-c13826bd1d6c', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-22 06:15:13.839839+00', ''),
 	('00000000-0000-0000-0000-000000000000', 'e27b38bc-b1e9-475d-84e9-e0206f2db20d', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-22 06:15:13.84135+00', ''),
 	('00000000-0000-0000-0000-000000000000', 'e1e298e3-aaf8-4b2c-bd1c-a9ee37f8a54f', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-22 07:13:15.216511+00', ''),
-	('00000000-0000-0000-0000-000000000000', '7c2cc554-5a43-4b32-bd85-845aa6789427', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-22 07:13:15.218189+00', '');
+	('00000000-0000-0000-0000-000000000000', '7c2cc554-5a43-4b32-bd85-845aa6789427', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-22 07:13:15.218189+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'f9a19a52-40d2-4b4e-a064-8518d8a93159', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-23 06:49:28.259331+00', ''),
+	('00000000-0000-0000-0000-000000000000', '3f4aa648-1409-4ec4-9faf-1184877b0314', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-23 06:49:28.262051+00', ''),
+	('00000000-0000-0000-0000-000000000000', '90e84256-b36d-4c02-8628-efa49315a3cd', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-23 06:49:28.319028+00', ''),
+	('00000000-0000-0000-0000-000000000000', '635d7a02-f202-46bc-b473-4734ae756b3d', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-23 08:43:17.454627+00', ''),
+	('00000000-0000-0000-0000-000000000000', '772cf5f8-20a7-42e9-acd4-a4ea590ecd3d', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-23 08:43:17.456184+00', '');
 
 
 --
@@ -207,7 +212,7 @@ INSERT INTO "auth"."audit_log_entries" ("instance_id", "id", "payload", "created
 --
 
 INSERT INTO "auth"."users" ("instance_id", "id", "aud", "role", "email", "encrypted_password", "email_confirmed_at", "invited_at", "confirmation_token", "confirmation_sent_at", "recovery_token", "recovery_sent_at", "email_change_token_new", "email_change", "email_change_sent_at", "last_sign_in_at", "raw_app_meta_data", "raw_user_meta_data", "is_super_admin", "created_at", "updated_at", "phone", "phone_confirmed_at", "phone_change", "phone_change_token", "phone_change_sent_at", "email_change_token_current", "email_change_confirm_status", "banned_until", "reauthentication_token", "reauthentication_sent_at", "is_sso_user", "deleted_at", "is_anonymous") VALUES
-	('00000000-0000-0000-0000-000000000000', '5cb12aad-92a7-410a-a062-44a626e1f5e8', 'authenticated', 'authenticated', 'ch1004@metabuild.com', '$2a$10$iiTdnrE4jFdjWLqnTCGBa.BVfJTDVQN1RyRekqdujiwhKrvmAaDAW', '2025-01-15 01:15:11.352728+00', NULL, '', NULL, '', NULL, '', '', NULL, '2025-01-22 03:12:56.643982+00', '{"tenants": ["safer"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-15 01:15:11.340725+00', '2025-01-22 07:13:15.221563+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false),
+	('00000000-0000-0000-0000-000000000000', '5cb12aad-92a7-410a-a062-44a626e1f5e8', 'authenticated', 'authenticated', 'ch1004@metabuild.com', '$2a$10$iiTdnrE4jFdjWLqnTCGBa.BVfJTDVQN1RyRekqdujiwhKrvmAaDAW', '2025-01-15 01:15:11.352728+00', NULL, '', NULL, '', NULL, '', '', NULL, '2025-01-22 03:12:56.643982+00', '{"tenants": ["safer"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-15 01:15:11.340725+00', '2025-01-23 08:43:17.460681+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false),
 	('00000000-0000-0000-0000-000000000000', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', 'authenticated', 'authenticated', 'young92@metabuild.com', '$2a$10$fBQyLHLHUFW.Ghc6xmKiyeQOhQnoQuwa.1hxMQtNQVePn3kTh7/vq', '2025-01-14 05:18:51.965275+00', NULL, '', NULL, '', NULL, '', '', NULL, '2025-01-20 02:40:29.881184+00', '{"tenants": ["samsunghospital"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-14 05:18:51.956406+00', '2025-01-21 01:03:58.132946+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false);
 
 
@@ -233,7 +238,7 @@ INSERT INTO "auth"."identities" ("provider_id", "user_id", "identity_data", "pro
 INSERT INTO "auth"."sessions" ("id", "user_id", "created_at", "updated_at", "factor_id", "aal", "not_after", "refreshed_at", "user_agent", "ip", "tag") VALUES
 	('782b50e2-de3f-4f3d-896d-202448863055', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', '2025-01-16 01:56:05.320943+00', '2025-01-17 08:37:35.699562+00', NULL, 'aal1', NULL, '2025-01-17 08:37:35.699515', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', '172.18.0.1', NULL),
 	('14bba138-537b-4f4a-adb8-a66954cc1267', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', '2025-01-20 02:40:29.881235+00', '2025-01-22 00:51:12.559167+00', NULL, 'aal1', NULL, '2025-01-22 00:51:12.559133', 'Next.js Middleware', '172.18.0.1', NULL),
-	('fec8b38f-8477-4fea-9118-9df6a210872c', '5cb12aad-92a7-410a-a062-44a626e1f5e8', '2025-01-22 03:12:56.644033+00', '2025-01-22 07:13:15.222896+00', NULL, 'aal1', NULL, '2025-01-22 07:13:15.222855', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', '172.18.0.1', NULL);
+	('fec8b38f-8477-4fea-9118-9df6a210872c', '5cb12aad-92a7-410a-a062-44a626e1f5e8', '2025-01-22 03:12:56.644033+00', '2025-01-23 08:43:17.462751+00', NULL, 'aal1', NULL, '2025-01-23 08:43:17.46268', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', '172.18.0.1', NULL);
 
 
 --
@@ -288,7 +293,9 @@ INSERT INTO "auth"."refresh_tokens" ("instance_id", "id", "token", "user_id", "r
 	('00000000-0000-0000-0000-000000000000', 80, 'L15eHOQHqGmBdc2QqPpcxQ', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-22 03:12:56.645219+00', '2025-01-22 05:09:27.727001+00', NULL, 'fec8b38f-8477-4fea-9118-9df6a210872c'),
 	('00000000-0000-0000-0000-000000000000', 81, '1a1ZYC3hZ1sr9vVWm3_Fsw', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-22 05:09:27.72825+00', '2025-01-22 06:15:13.84181+00', 'L15eHOQHqGmBdc2QqPpcxQ', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
 	('00000000-0000-0000-0000-000000000000', 82, 'CPR9c0ibRfutkfrfTe3Lvg', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-22 06:15:13.84287+00', '2025-01-22 07:13:15.218554+00', '1a1ZYC3hZ1sr9vVWm3_Fsw', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
-	('00000000-0000-0000-0000-000000000000', 83, 'B4mCqxiVg_YnDPczn6RB_w', '5cb12aad-92a7-410a-a062-44a626e1f5e8', false, '2025-01-22 07:13:15.219919+00', '2025-01-22 07:13:15.219919+00', 'CPR9c0ibRfutkfrfTe3Lvg', 'fec8b38f-8477-4fea-9118-9df6a210872c');
+	('00000000-0000-0000-0000-000000000000', 83, 'B4mCqxiVg_YnDPczn6RB_w', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-22 07:13:15.219919+00', '2025-01-23 06:49:28.262574+00', 'CPR9c0ibRfutkfrfTe3Lvg', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
+	('00000000-0000-0000-0000-000000000000', 84, 'AK07Q99KGwcfM9LSJAekvQ', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-23 06:49:28.263715+00', '2025-01-23 08:43:17.457587+00', 'B4mCqxiVg_YnDPczn6RB_w', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
+	('00000000-0000-0000-0000-000000000000', 85, 'sEEifndqcUN9yFLfQX5SYA', '5cb12aad-92a7-410a-a062-44a626e1f5e8', false, '2025-01-23 08:43:17.45926+00', '2025-01-23 08:43:17.45926+00', 'AK07Q99KGwcfM9LSJAekvQ', 'fec8b38f-8477-4fea-9118-9df6a210872c');
 
 
 --
@@ -793,7 +800,7 @@ INSERT INTO "public"."tenant_permissions" ("id", "created_at", "service_user", "
 -- Name: refresh_tokens_id_seq; Type: SEQUENCE SET; Schema: auth; Owner: supabase_auth_admin
 --
 
-SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 83, true);
+SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 85, true);
 
 
 --

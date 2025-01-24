@@ -17,7 +17,6 @@ export default function ReservationPage() {
   const [emergencyModalOpen, setEmergencyModalOpen] = React.useState(false); 
   const [showTransferFilterPanel, setShowTransferFilterPanel] = React.useState(false);
 
-
   /**
    * Initialize the map (once) if it's not created yet and naver.maps is available.
    */
@@ -35,7 +34,6 @@ export default function ReservationPage() {
       addModalControl(newMap);
       // Attach our logo control after creating the map
       addLogoControl(newMap);
-
 
       trackUserPosition(newMap);
     }
@@ -136,7 +134,7 @@ export default function ReservationPage() {
           border: 1px tranparent #ccc;
           border-radius: 4px;
           box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-          font-size: 14px;
+          font-size: 17px;
           text-decoration: none;
           color: rgb(255, 255, 255);
         ">
@@ -146,7 +144,7 @@ export default function ReservationPage() {
 
     // Create the custom control with our HTML
     const logoControl = new naver.maps.CustomControl(locationBtnHtml, {
-      position: naver.maps.Position.TOP_LEFT, // You can change to TOP_LEFT, etc.
+      position: naver.maps.Position.TOP_RIGHT, // You can change to TOP_LEFT, etc.
     });
 
     // Wait until the map is initialized before attaching
@@ -160,7 +158,7 @@ export default function ReservationPage() {
    */
    const addModalControl = (map) => {
     const filterBtnHtml = `
-      <a
+      <div
         style="
           display: inline-flex;
           align-items: center;
@@ -183,11 +181,11 @@ export default function ReservationPage() {
       >
         <i class="fas fa-search" style="font-size: 16px;"></i>
         <strong>조건 검색</strong>
-      </a>
+      </div>
     `;
 
     const ModalControl = new naver.maps.CustomControl(filterBtnHtml, {
-      position: naver.maps.Position.TOP_RIGHT, // Adjust position on the map
+      position: naver.maps.Position.BOTTOM_CENTER, // Adjust position on the map
     });
 
     // Wait until the map is initialized before attaching
@@ -266,7 +264,7 @@ export default function ReservationPage() {
   return (
     <div className="naver-map-page" style={{ display: 'flex', height: '90vh', position: 'relative' }}>
       
-      {showTransferFilterPanel && <TransferFilterPanel />}
+      { showTransferFilterPanel && <TransferFilterPanel map={map}/> }
       
       <div className="naver-map-container" style={{ flexGrow: 1, position: 'relative' }}>
         {/* Header or Intro Section */}

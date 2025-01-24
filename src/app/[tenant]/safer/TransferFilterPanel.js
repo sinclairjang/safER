@@ -8,7 +8,7 @@ import VerifiedIcon from "@mui/icons-material/Verified";
 import PrecisionManufacturingIcon from "@mui/icons-material/PrecisionManufacturing";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-export default function FilterPanel() {
+export default function FilterPanel({ map }) {
   // Whether the panel is open or collapsed
   const [isOpen, setIsOpen] = useState(true);
 
@@ -23,6 +23,14 @@ export default function FilterPanel() {
     isolationNeeded: false
   });
   const [stepFourData, setStepFourData] = useState({ equipment: [] });
+
+  useEffect(() => {
+    if (map) {
+      setTimeout(() => {
+        naver.maps.Event.trigger(map, "resize");
+      }, 300);
+    }
+  }, [isOpen, map]);
 
   // Handlers for step navigation
   const goNext = () => setStep((prev) => Math.min(prev + 1, 4));
@@ -47,8 +55,12 @@ export default function FilterPanel() {
     }
   };
 
-  // Collapsed width (50px) vs. expanded (300px)
-  const panelWidth = isOpen ? 300 : 13;
+  const toggleFilterPanel = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // Collapsed width (20px) vs. expanded (300px)
+  const panelWidth = isOpen ? 300 : 20;
 
   return (
     <div
@@ -56,12 +68,12 @@ export default function FilterPanel() {
       style={{
         width: panelWidth,
         position: "relative",
-        zIndex: 1
+        zIndex: 1,
       }}
     >
         <button
             className="collapse-button"
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => toggleFilterPanel()}
         >
             {isOpen ? "❮" : "❯"} {/* Left or Right arrow */}
         </button>
