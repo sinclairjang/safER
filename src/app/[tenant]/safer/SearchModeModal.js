@@ -42,12 +42,12 @@ export default function FiltersModal({ open, onClose, onApply }) {
           <FormControlLabel
             value="emergency"
             control={<Radio />}
-            label="응급실을 찾고 있어요!"
+            label="가까운 응급실 조회"
           />
           <FormControlLabel
             value="transfer"
             control={<Radio />}
-            label="다른 병원으로 전원을 해야해요."
+            label="환자 후속 조치 (입원/전원)"
           />
         </RadioGroup>
       </DialogContent>

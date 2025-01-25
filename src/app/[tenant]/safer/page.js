@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState, Fragment } from "react";
+import { createRoot } from 'react-dom/client';
 import "@/styles/naver-map.css";
 import DiagnosisModal from "./DiagnosisModal";
 import EmergencyModal from "./EmergencyModal";
 import TransferFilterPanel from "./TransferFilterPanel"
 import SearchModeModal from "./SearchModeModal";
 import { getSupabaseBrowserClient } from "@/supabase-utils/browserClient";
+import InfoWindowContent from "./InfoWindowContent";
 
 export default function ReservationPage() {
   const [map, setMap] = useState(null);        // Reference to the Naver map
@@ -17,6 +19,7 @@ export default function ReservationPage() {
   const [emergencyModalOpen, setEmergencyModalOpen] = useState(false); 
   const [showTransferFilterPanel, setShowTransferFilterPanel] = useState(false);
   const [searchRadius, setSearchRadius] = useState(null);
+  const [showDialog, setShowDialog] = useState(false);
 
   const supabase = getSupabaseBrowserClient();
 
@@ -226,85 +229,6 @@ export default function ReservationPage() {
     });
   };
   
-
-  // /**
-  // * Perform a proximity query whenever the user's location changes.
-  // */
-  // useEffect(() => {
-  //   if (userLocation) {
-  //     console.log("User's current location:", userLocation);
-
-  //     // Replace this with your proximity query logic
-  //     sendProximityQuery(userLocation.latitude, userLocation.longitude, filters);
-  //   }
-  // }, [userLocation, filters]); // Trigger when user's location or filters change
-
-  //  const sendProximityQuery = (lat, lng, filters) => {
-  //   // Example query payload
-  //   const query = {
-  //     lat,
-  //     lng,
-  //     filters,
-  //   };
-
-  //   console.log("Sending proximity query:", query);
-  // };
-
-  /**
-   * Load or reload hospital markers whenever the map or filters change.
-   */
-  useEffect(() => {
-    if (map) {
-      loadHospitalMarkers();
-    }
-  }, [map, filters]);
-
-  /**
-   * Clears existing markers and creates new ones for the filtered hospital data.
-   */
-  const loadHospitalMarkers = () => {
-    // Clear existing markers
-    markers.forEach((m) => m.setMap(null));
-    setMarkers([]);
-
-    // Example hospital data
-    const hospitalData = [
-      {
-        name: "서울병원",
-        lat: 37.5663,
-        lng: 126.9779,
-        parking: true,
-        twentyFourHours: false,
-      },
-      {
-        name: "서초병원",
-        lat: 37.5652,
-        lng: 126.9785,
-        parking: false,
-        twentyFourHours: true,
-      },
-      // Add more data as needed...
-    ];
-
-    // Apply filters
-    const filteredData = hospitalData.filter((hospital) => {
-      if (filters.parking && !hospital.parking) return false;
-      if (filters.twentyFourHours && !hospital.twentyFourHours) return false;
-      return true;
-    });
-
-    // Create new markers
-    const newMarkers = filteredData.map((hospital) => {
-      const marker = new naver.maps.Marker({
-        position: new naver.maps.LatLng(hospital.lat, hospital.lng),
-        map: map,
-      });
-      return marker;
-    });
-
-    setMarkers(newMarkers);
-  };
-
   /**
    * Called when user applies filters in the modal.
    */
@@ -341,6 +265,48 @@ export default function ReservationPage() {
               position: new naver.maps.LatLng(hospital.wgs84lat, hospital.wgs84lon),
               map
             });
+
+            const infoWindow = new naver.maps.InfoWindow({
+              content: "",
+              maxWidth: 300,
+              backgroundColor: "#fff",
+              borderColor: "#ccc",
+              borderWidth: 2,
+              
+          });
+          // // Apply filters
+          // const filteredData = hospitalData.filter((hospital) => {
+          //   if (filters.parking && !hospital.parking) return false;
+          //   if (filters.twentyFourHours && !hospital.twentyFourHours) return false;
+          //   return true;
+          // });
+
+            const InfoWindowContainer = document.createElement("div");
+            const root = createRoot(InfoWindowContainer);
+
+            root.render(
+              <InfoWindowContent
+                dutyname={hospital.dutyname}
+                dutyaddr={hospital.dutyaddr}
+                dutytel3={hospital.dutytel3}
+                distance_km={hospital.distance_km}
+                link={hospital.link || null} // If a link exists in the data
+                image="/placeholder-hospital.png"
+                marker={marker}
+              />
+            );
+
+            infoWindow.setContent(InfoWindowContainer);
+
+            // Add click listener to marker to open InfoWindow
+            naver.maps.Event.addListener(marker, "click", () => {
+                if (infoWindow.getMap()) {
+                  infoWindow.close();
+              } else {
+                  infoWindow.open(map, marker);
+              }
+            });
+
             return marker;
           });
 
@@ -352,6 +318,20 @@ export default function ReservationPage() {
   const handleOnSubmit = (searchRadius) => {
     setSearchRadius(searchRadius);
   }
+
+  // Add event listener for "reservation-click" event
+  useEffect(() => {
+    const handleOpenDialog = () => setShowDialog(true);
+    window.addEventListener("reservation-click", handleOpenDialog);
+
+    return () => {
+      window.removeEventListener("reservation-click", handleOpenDialog);
+    };
+  }, []);
+
+  const handleDialogClose = () => {
+    setShowDialog(false);
+  };
 
   return (
     <div className="naver-map-page" style={{ display: 'flex', height: '90vh', position: 'relative' }}>
@@ -389,6 +369,11 @@ export default function ReservationPage() {
             open={emergencyModalOpen}
             onClose={() => setEmergencyModalOpen(false)}
             onSubmit={handleOnSubmit}
+          />
+
+          <DiagnosisModal 
+            open={showDialog}
+            onClose={handleDialogClose}
           />
         </Fragment>
       </div>
