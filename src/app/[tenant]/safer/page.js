@@ -14,12 +14,12 @@ export default function ReservationPage() {
   const [map, setMap] = useState(null);        // Reference to the Naver map
   const [userLocation, setUserLocation] = useState(null);
   const [markers, setMarkers] = useState([]);  // Track markers to remove or update
-  const [filters, setFilters] = useState({});
   const [showSearchModeModal, setShowSearchModeModal] = useState(false);
   const [emergencyModalOpen, setEmergencyModalOpen] = useState(false); 
   const [showTransferFilterPanel, setShowTransferFilterPanel] = useState(false);
   const [searchRadius, setSearchRadius] = useState(null);
   const [showDialog, setShowDialog] = useState(false);
+  const [availabilityUnit, setAvailabilityUnit] = useState("");
 
   const supabase = getSupabaseBrowserClient();
 
@@ -100,7 +100,7 @@ export default function ReservationPage() {
           box-shadow: 0 2px 4px rgba(0,0,0,0);
           font-size: 17px;
           text-decoration: none;
-          color: rgb(0, 255, 0);
+          color: rgb(255, 255, 255);
         ">
         safER
       </a>
@@ -218,24 +218,27 @@ export default function ReservationPage() {
   
     naver.maps.Event.once(map, "init", () => {
       MapModeControl.setMap(map);
-  
+      
+      const logo = document.querySelector(".fa.fa-hospital");
+
       document.getElementById("defaultMap").addEventListener("click", () => {
         map.setMapTypeId(naver.maps.MapTypeId.NORMAL); // Switch to Normal Map
+
+        if (logo) {
+          logo.style.color = "black"; // Set the color to black for normal mode
+        }
       });
   
       document.getElementById("satelliteMap").addEventListener("click", () => {
         map.setMapTypeId(naver.maps.MapTypeId.HYBRID); // Switch to Satellite Map
+
+        if (logo) {
+          logo.style.color = "white"; // Set the color to white for satellite mode
+        }
       });
     });
   };
   
-  /**
-   * Called when user applies filters in the modal.
-   */
-  const handleApplyFilters = (selectedFilters) => {
-    setFilters(selectedFilters);
-  };
-
   useEffect(() => {
     if (searchRadius && map && userLocation) {
       // Clear any existing markers
@@ -244,74 +247,72 @@ export default function ReservationPage() {
 
       console.log(userLocation);
 
-      supabase
-        .rpc("find_nearby_hospitals", {
-          user_lat: userLocation.latitude,
-          user_lon: userLocation.longitude,
-          radius_km: searchRadius
-        })
-        .then(({ data, error }) => {
-          if (error) {
-            console.error("RPC error:", error);
-            return;
-          }
-
-          if (data && Array.isArray(data)) {
-            console.log("Nearby Hospitals:", data);
-          }
-
-          const newMarkers = data.map((hospital) => {
-            const marker = new naver.maps.Marker({
-              position: new naver.maps.LatLng(hospital.wgs84lat, hospital.wgs84lon),
-              map
+      if (availabilityUnit) {
+        // fill here...
+      } else {
+        supabase
+          .rpc("find_nearby_hospitals", {
+            user_lat: userLocation.latitude,
+            user_lon: userLocation.longitude,
+            radius_km: searchRadius
+          })
+          .then(({ data, error }) => {
+            if (error) {
+              console.error("RPC error:", error);
+              return;
+            }
+  
+            if (data && Array.isArray(data)) {
+              console.log("Nearby Hospitals:", data);
+            }
+  
+            const newMarkers = data.map((hospital) => {
+              const marker = new naver.maps.Marker({
+                position: new naver.maps.LatLng(hospital.wgs84lat, hospital.wgs84lon),
+                map
+              });
+  
+              const infoWindow = new naver.maps.InfoWindow({
+                content: "",
+                maxWidth: 300,
+                backgroundColor: "#fff",
+                borderColor: "#ccc",
+                borderWidth: 2,
+                
             });
-
-            const infoWindow = new naver.maps.InfoWindow({
-              content: "",
-              maxWidth: 300,
-              backgroundColor: "#fff",
-              borderColor: "#ccc",
-              borderWidth: 2,
-              
-          });
-          // // Apply filters
-          // const filteredData = hospitalData.filter((hospital) => {
-          //   if (filters.parking && !hospital.parking) return false;
-          //   if (filters.twentyFourHours && !hospital.twentyFourHours) return false;
-          //   return true;
-          // });
-
-            const InfoWindowContainer = document.createElement("div");
-            const root = createRoot(InfoWindowContainer);
-
-            root.render(
-              <InfoWindowContent
-                dutyname={hospital.dutyname}
-                dutyaddr={hospital.dutyaddr}
-                dutytel3={hospital.dutytel3}
-                distance_km={hospital.distance_km}
-                link={hospital.link || null} // If a link exists in the data
-                image="/placeholder-hospital.png"
-                marker={marker}
-              />
-            );
-
-            infoWindow.setContent(InfoWindowContainer);
-
-            // Add click listener to marker to open InfoWindow
-            naver.maps.Event.addListener(marker, "click", () => {
-                if (infoWindow.getMap()) {
-                  infoWindow.close();
-              } else {
-                  infoWindow.open(map, marker);
-              }
+  
+              const InfoWindowContainer = document.createElement("div");
+              const root = createRoot(InfoWindowContainer);
+  
+              root.render(
+                <InfoWindowContent
+                  dutyname={hospital.dutyname}
+                  dutyaddr={hospital.dutyaddr}
+                  dutytel3={hospital.dutytel3}
+                  distance_km={hospital.distance_km}
+                  link={hospital.link || null} // If a link exists in the data
+                  image="/placeholder-hospital.png"
+                  marker={marker}
+                />
+              );
+  
+              infoWindow.setContent(InfoWindowContainer);
+  
+              // Add click listener to marker to open InfoWindow
+              naver.maps.Event.addListener(marker, "click", () => {
+                  if (infoWindow.getMap()) {
+                    infoWindow.close();
+                } else {
+                    infoWindow.open(map, marker);
+                }
+              });
+  
+              return marker;
             });
-
-            return marker;
-          });
-
-          setMarkers(newMarkers);
-        })
+  
+            setMarkers(newMarkers);
+          })
+      }
     }
   }, [searchRadius, map, userLocation])
 
@@ -333,10 +334,15 @@ export default function ReservationPage() {
     setShowDialog(false);
   };
 
+  const handleApplyFilters = (availabilityUnit) => {
+    setAvailabilityUnit(availabilityUnit);
+    setEmergencyModalOpen(true);
+  };
+
   return (
     <div className="naver-map-page" style={{ display: 'flex', height: '90vh', position: 'relative' }}>
       
-      { showTransferFilterPanel && <TransferFilterPanel map={map} /> }
+      { showTransferFilterPanel && <TransferFilterPanel map={map} onApplyFilters={handleApplyFilters} /> }
       
       <div className="naver-map-container" style={{ flexGrow: 1, position: 'relative' }}>
         {/* Header or Intro Section */}
@@ -358,6 +364,7 @@ export default function ReservationPage() {
               if (selectedMode === "emergency") {
                 setEmergencyModalOpen(true);
                 setShowTransferFilterPanel(false);
+                setAvailabilityUnit("");
               } else if (selectedMode === "transfer") {
                 setShowTransferFilterPanel(true);
                 setEmergencyModalOpen(false);

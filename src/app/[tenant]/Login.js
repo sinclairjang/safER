@@ -64,7 +64,7 @@ export const Login = ({ tenant, formType = "pw-login", tenantName }) => {
                 <input type="hidden" name="type" value="recovery" />
             )}
 
-            <article style={{ maxWidth: "420px", margin: "auto" }}>
+            <article style={{ maxWidth: "420px", margin: "50px auto" }}>
                 
                 <header>
                     {isPasswordRecovery && <strong>Request new password</strong>}

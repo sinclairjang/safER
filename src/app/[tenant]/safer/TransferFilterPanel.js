@@ -18,7 +18,9 @@ import BedIcon from "@mui/icons-material/Bed";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import PrecisionManufacturingIcon from "@mui/icons-material/PrecisionManufacturing";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-
+import { getSupabaseBrowserClient } from "@/supabase-utils/browserClient";
+import FilterListIcon from "@mui/icons-material/FilterList";
+import Tooltip from "@mui/material/Tooltip";
 // Example sub-components from your original FilterPanel steps:
 function StepOne({ data, onChange }) {
   const departments = [
@@ -172,7 +174,9 @@ function StepFour({ data, onChange }) {
   );
 }
 
-export default function TransferFilterPanel({ map }) {
+export default function TransferFilterPanel({ map, onApplyFilters }) {
+  const supabase = getSupabaseBrowserClient();
+  
   // Control whether the panel is open or collapsed
   const [isOpen, setIsOpen] = useState(true);
 
@@ -182,11 +186,11 @@ export default function TransferFilterPanel({ map }) {
   // Data for each step
   const [stepOneData, setStepOneData] = useState({});
   const [stepTwoData, setStepTwoData] = useState({});
-  const [stepThreeData, setStepThreeData] = useState({});
+  const [stepThreeData, setStepThreeData] = useState({
+    emergencyNeeded: false,
+    isolationNeeded: false,
+  });
   const [stepFourData, setStepFourData] = useState({ equipment: [] });
-
-  // Range (from your search UI)
-  const [searchRange, setSearchRange] = useState("");
 
   // --[ Step Validation Logic Added Here ]--
   const steps = [
@@ -251,10 +255,36 @@ export default function TransferFilterPanel({ map }) {
     console.log("Step 2 Data:", stepTwoData);
     console.log("Step 3 Data:", stepThreeData);
     console.log("Step 4 Data:", stepFourData);
-    console.log("Search Range:", searchRange);
-
-    // Here you'd run your actual filter/search logic
+    
+    // Here you'd run your actual filter logic
     alert("Filters applied. Query your data with the selected filters!");
+    
+      // Prepare arguments for the RPC
+    const _care_unit = stepOneData.department || "";
+    const _bed_type = stepTwoData.bedType || "";
+    const _emergency_needed = stepThreeData.emergencyNeeded ?? false;
+    const _isolation_needed = stepThreeData.isolationNeeded ?? false;
+    
+    supabase.rpc("get_availability_units", {
+      care_unit: _care_unit,
+      bed_type: _bed_type,
+      emergency_needed: _emergency_needed,
+      isolation_needed: _isolation_needed,
+    }) 
+    .then(({data, error}) => {
+      if (error) {
+        console.error("RPC error", error);
+        return;
+      }
+      
+      if (data) {
+        console.log("Availability Units:", data) 
+        onApplyFilters(data, stepFourData.equipment);
+      } else {
+        console.log("No matching availability units found.");
+        onApplyFilters([], []); // pass an empty array as fallback
+      }
+    })
   };
 
   const toggleFilterPanel = () => {
@@ -274,6 +304,8 @@ export default function TransferFilterPanel({ map }) {
         transition: "width 0.3s ease",
         borderRight: "1px solid #ccc",
         backgroundColor: "#f8f8f8",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       <Button
@@ -305,73 +337,77 @@ export default function TransferFilterPanel({ map }) {
         {isOpen ? "❮" : "❯"}
       </Button>
 
-      {/* Header / Search Range UI */}
+
+      {/* Header */}
       {isOpen && (
         <Box p={2} sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-          <Box
-            sx={{
-              p: 1,
-              backgroundColor: "#007bff33",
-              borderRadius: "4px",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <LocationOnIcon color="primary" />
-          </Box>
-          <input
-            type="number"
-            className="search-input"
-            placeholder="검색 범위(km)"
-            value={searchRange}
-            style={{ flex: 1, padding: "8px" }}
-            onChange={(e) => setSearchRange(e.target.value)}
-          />
+          <Tooltip title="필터 설정" arrow>
+            <Box
+              sx={{
+                p: 1,
+                backgroundColor: "#007bff33",
+                borderRadius: "4px",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <FilterListIcon color="primary" />
+            </Box>
+          </Tooltip>
         </Box>
       )}
 
-      {/* Vertical Stepper */}
-      {isOpen && (
-        <Stepper activeStep={activeStep} orientation="vertical" sx={{ p: 2 }}>
-          {steps.map((step, index) => (
-            <Step key={step.label}>
-              <StepLabel>{step.label}</StepLabel>
-              <StepContent>
-                {step.content}
+     <Box
+       sx={{
+         overflowY: "auto",
+         flexGrow: 1,
+         display: "flex",
+         flexDirection: "column",
+       }}
+     >
+        {/* Vertical Stepper */}
+        {isOpen && (
+          <Stepper activeStep={activeStep} orientation="vertical" sx={{ p: 2 }}>
+            {steps.map((step, index) => (
+              <Step key={step.label}>
+                <StepLabel>{step.label}</StepLabel>
+                <StepContent>
+                  {step.content}
 
-                <Box sx={{ mb: 2, mt: 2 }}>
-                  <div>
-                    <Button
-                      disabled={index === 0}
-                      onClick={handleBack}
-                      sx={{ mr: 1 }}
-                    >
-                      이전
-                    </Button>
-                    {index === steps.length - 1 ? (
+                  <Box sx={{ mb: 2, mt: 2 }}>
+                    <div>
                       <Button
-                        variant="contained"
-                        onClick={handleApplyFilters}
+                        disabled={index === 0}
+                        onClick={handleBack}
+                        sx={{ mr: 1 }}
                       >
-                        검색
+                        이전
                       </Button>
-                    ) : (
-                      <Button
-                        variant="contained"
-                        onClick={handleNext}
-                        // Disable "다음" if current step’s input isn’t valid
-                        disabled={!steps[activeStep].validate()}
-                      >
-                        다음
-                      </Button>
-                    )}
-                  </div>
-                </Box>
-              </StepContent>
-            </Step>
-          ))}
-        </Stepper>
+                      {index === steps.length - 1 ? (
+                        <Button
+                          variant="contained"
+                          onClick={handleApplyFilters}
+                        >
+                          검색
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="contained"
+                          onClick={handleNext}
+                          // Disable "다음" if current step’s input isn’t valid
+                          disabled={!steps[activeStep].validate()}
+                        >
+                          다음
+                        </Button>
+                      )}
+                    </div>
+                  </Box>
+                </StepContent>
+              </Step>
+            ))}
+          </Stepper>
       )}
+      </Box>
     </Box>
   );
 }

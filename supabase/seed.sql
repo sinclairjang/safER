@@ -221,7 +221,46 @@ INSERT INTO "auth"."audit_log_entries" ("instance_id", "id", "payload", "created
 	('00000000-0000-0000-0000-000000000000', '70dcabc4-f5c0-49a6-865e-2cb7a400c4f8', '{"action":"token_revoked","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 06:50:41.641002+00', ''),
 	('00000000-0000-0000-0000-000000000000', '9e9e2584-efe0-4595-9c4f-7a412c01b25b', '{"action":"logout","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"account"}', '2025-01-24 06:53:37.160432+00', ''),
 	('00000000-0000-0000-0000-000000000000', '1b45f407-c446-442d-848f-2a727f0a4140', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 07:18:40.061943+00', ''),
-	('00000000-0000-0000-0000-000000000000', 'd62d8330-faaf-443d-9d02-53a42033b6fe', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 07:18:40.062565+00', '');
+	('00000000-0000-0000-0000-000000000000', 'd62d8330-faaf-443d-9d02-53a42033b6fe', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-24 07:18:40.062565+00', ''),
+	('00000000-0000-0000-0000-000000000000', '4c12b064-fde6-4c60-ada7-ab40d29a9d3e', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-25 04:41:12.561529+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'bc40402b-cdd1-47f3-abf9-23a68cffda4f', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-25 04:41:12.564022+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'bf276e65-16de-4757-92fb-3d764be96fad', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-25 04:41:12.636514+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'e4e5e914-3b30-4821-a096-b79822c75585', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-25 05:39:17.075599+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'a8346618-4263-4c8f-b7d1-29b192831c77', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-25 05:39:17.076899+00', ''),
+	('00000000-0000-0000-0000-000000000000', '09f7013c-dc3d-4f35-81e4-3f712481f9c8', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-25 06:37:24.246478+00', ''),
+	('00000000-0000-0000-0000-000000000000', '6a1b0ed0-22f3-4861-b47b-c9cd25cb2766', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-25 06:37:24.248008+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'dc9314b4-4e41-4cb9-a313-02c2daea4a84', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-25 07:35:35.189841+00', ''),
+	('00000000-0000-0000-0000-000000000000', '25ac992f-9d05-4ea7-81b9-43f59a521485', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-25 07:35:35.191534+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'fe6f7dc8-a04a-4856-8abb-85a70919fdec', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-25 08:34:02.172583+00', ''),
+	('00000000-0000-0000-0000-000000000000', '1b51be71-04ec-4f8b-83c6-26b73ad1b7aa', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-25 08:34:02.173683+00', ''),
+	('00000000-0000-0000-0000-000000000000', '2d6f0f70-9573-4a68-9bb2-23b980389096', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-25 09:32:24.678058+00', ''),
+	('00000000-0000-0000-0000-000000000000', '77cb53f7-4748-4ee0-9a80-e252157eaa71', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-25 09:32:24.679642+00', ''),
+	('00000000-0000-0000-0000-000000000000', '24560417-94d2-4d3f-ad16-ec6ab906cef0', '{"action":"login","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"account","traits":{"provider":"email"}}', '2025-01-26 04:17:57.609757+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'cc106764-ea9b-4c7f-b87c-04b3cf089a03', '{"action":"logout","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"account"}', '2025-01-26 04:20:57.595159+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'bc1fcdb3-ea05-46c8-b851-8fa45ce1df9a', '{"action":"login","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"account","traits":{"provider":"email"}}', '2025-01-26 04:21:03.438646+00', ''),
+	('00000000-0000-0000-0000-000000000000', '93f98c80-08a7-4326-a11b-db2abe32ee74', '{"action":"logout","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"account"}', '2025-01-26 04:26:11.100495+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'ccfd7749-9eb5-4e8b-9c26-0b1b1d57202c', '{"action":"login","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"account","traits":{"provider":"email"}}', '2025-01-26 04:27:15.328743+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'bf12de5e-45b6-43a7-b4aa-653757e0a9b2', '{"action":"logout","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"account"}', '2025-01-26 04:29:17.645796+00', ''),
+	('00000000-0000-0000-0000-000000000000', '811ed01a-d86a-487b-9ead-f10e6eaf8380', '{"action":"login","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"account","traits":{"provider":"email"}}', '2025-01-26 04:33:48.758216+00', ''),
+	('00000000-0000-0000-0000-000000000000', '492715c9-9751-4985-9ac1-282d9da731c0', '{"action":"logout","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"account"}', '2025-01-26 04:39:25.841867+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'bb81455e-ff17-4c4f-92e1-3871809a18c9', '{"action":"login","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"account","traits":{"provider":"email"}}', '2025-01-26 04:45:32.300455+00', ''),
+	('00000000-0000-0000-0000-000000000000', '7043893c-934c-4eec-a7bc-5384c4ff1312', '{"action":"logout","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"account"}', '2025-01-26 04:47:14.049673+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'c61c13b4-bc90-46cf-a7ea-454993212a8b', '{"action":"login","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"account","traits":{"provider":"email"}}', '2025-01-26 04:48:09.7322+00', ''),
+	('00000000-0000-0000-0000-000000000000', '934c8cf6-7100-434a-baed-cdae5e2c01c6', '{"action":"logout","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"account"}', '2025-01-26 04:49:55.321461+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'd57edbe3-fb40-45dc-8a54-a15e1c04f5e3', '{"action":"login","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"account","traits":{"provider":"email"}}', '2025-01-26 04:50:14.409519+00', ''),
+	('00000000-0000-0000-0000-000000000000', '0c6aa434-346e-42a0-b7c8-9b87798e5dcf', '{"action":"logout","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"account"}', '2025-01-26 04:50:16.193+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'ba3379c9-ca29-4d46-892d-327b9b2afb7c', '{"action":"login","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"account","traits":{"provider":"email"}}', '2025-01-26 04:50:22.573561+00', ''),
+	('00000000-0000-0000-0000-000000000000', '916ae866-27d7-4570-b30d-693da2639b01', '{"action":"login","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"account","traits":{"provider":"email"}}', '2025-01-26 04:50:46.989319+00', ''),
+	('00000000-0000-0000-0000-000000000000', '5df0b7a4-c532-47a1-917e-e60ffe82b5d2', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-26 05:48:37.87053+00', ''),
+	('00000000-0000-0000-0000-000000000000', '233148d6-64b7-434d-85a8-48aa346218af', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-26 05:48:37.872164+00', ''),
+	('00000000-0000-0000-0000-000000000000', '2281c5a6-96dc-4748-9dd9-a8de43598f04', '{"action":"token_refreshed","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-26 05:55:12.026145+00', ''),
+	('00000000-0000-0000-0000-000000000000', '9fd197bc-87a3-4f16-9bbf-6ee48bb37103', '{"action":"token_revoked","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-26 05:55:12.026697+00', ''),
+	('00000000-0000-0000-0000-000000000000', '6c150262-4c10-4b5a-bd48-22ee5cc02105', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-26 06:54:20.332654+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'd4f58849-caa4-4cb7-b123-5a6be3e2a651', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-26 06:54:20.334328+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'd812ab9a-cffc-4ace-a3d3-6d7acc6abd5d', '{"action":"token_refreshed","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-26 09:53:09.605033+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'bb8e1283-8a90-4ca8-a369-7a2a1eeb8e7d', '{"action":"token_revoked","actor_id":"f092cc72-9816-4ec5-9a6e-37d7ea46b387","actor_username":"young92@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-26 09:53:09.606746+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'd4d05849-0651-46c1-b929-b12e435d88ca', '{"action":"token_refreshed","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-26 09:53:10.398057+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'fd3dbbed-e3d1-4afa-90fa-73c3800b50df', '{"action":"token_revoked","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"token"}', '2025-01-26 09:53:10.399137+00', '');
 
 
 --
@@ -235,8 +274,8 @@ INSERT INTO "auth"."audit_log_entries" ("instance_id", "id", "payload", "created
 --
 
 INSERT INTO "auth"."users" ("instance_id", "id", "aud", "role", "email", "encrypted_password", "email_confirmed_at", "invited_at", "confirmation_token", "confirmation_sent_at", "recovery_token", "recovery_sent_at", "email_change_token_new", "email_change", "email_change_sent_at", "last_sign_in_at", "raw_app_meta_data", "raw_user_meta_data", "is_super_admin", "created_at", "updated_at", "phone", "phone_confirmed_at", "phone_change", "phone_change_token", "phone_change_sent_at", "email_change_token_current", "email_change_confirm_status", "banned_until", "reauthentication_token", "reauthentication_sent_at", "is_sso_user", "deleted_at", "is_anonymous") VALUES
-	('00000000-0000-0000-0000-000000000000', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', 'authenticated', 'authenticated', 'young92@metabuild.com', '$2a$10$fBQyLHLHUFW.Ghc6xmKiyeQOhQnoQuwa.1hxMQtNQVePn3kTh7/vq', '2025-01-14 05:18:51.965275+00', NULL, '', NULL, '', NULL, '', '', NULL, '2025-01-20 02:40:29.881184+00', '{"tenants": ["samsunghospital"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-14 05:18:51.956406+00', '2025-01-24 06:50:41.642867+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false),
-	('00000000-0000-0000-0000-000000000000', '5cb12aad-92a7-410a-a062-44a626e1f5e8', 'authenticated', 'authenticated', 'ch1004@metabuild.com', '$2a$10$iiTdnrE4jFdjWLqnTCGBa.BVfJTDVQN1RyRekqdujiwhKrvmAaDAW', '2025-01-15 01:15:11.352728+00', NULL, '', NULL, '', NULL, '', '', NULL, '2025-01-24 03:48:04.143934+00', '{"tenants": ["safer"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-15 01:15:11.340725+00', '2025-01-24 07:18:40.064402+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false);
+	('00000000-0000-0000-0000-000000000000', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', 'authenticated', 'authenticated', 'young92@metabuild.com', '$2a$10$fBQyLHLHUFW.Ghc6xmKiyeQOhQnoQuwa.1hxMQtNQVePn3kTh7/vq', '2025-01-14 05:18:51.965275+00', NULL, '', NULL, '', NULL, '', '', NULL, '2025-01-26 04:50:46.990338+00', '{"tenants": ["samsunghospital"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-14 05:18:51.956406+00', '2025-01-26 09:53:09.609943+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false),
+	('00000000-0000-0000-0000-000000000000', '5cb12aad-92a7-410a-a062-44a626e1f5e8', 'authenticated', 'authenticated', 'ch1004@metabuild.com', '$2a$10$iiTdnrE4jFdjWLqnTCGBa.BVfJTDVQN1RyRekqdujiwhKrvmAaDAW', '2025-01-15 01:15:11.352728+00', NULL, '', NULL, '', NULL, '', '', NULL, '2025-01-26 04:50:22.57905+00', '{"tenants": ["safer"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-15 01:15:11.340725+00', '2025-01-26 09:53:10.401207+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false);
 
 
 --
@@ -259,8 +298,8 @@ INSERT INTO "auth"."identities" ("provider_id", "user_id", "identity_data", "pro
 --
 
 INSERT INTO "auth"."sessions" ("id", "user_id", "created_at", "updated_at", "factor_id", "aal", "not_after", "refreshed_at", "user_agent", "ip", "tag") VALUES
-	('4e7923f0-b5ae-422f-9d35-4ba59899b5e1', '5cb12aad-92a7-410a-a062-44a626e1f5e8', '2025-01-24 03:48:04.144129+00', '2025-01-24 05:45:11.175909+00', NULL, 'aal1', NULL, '2025-01-24 05:45:11.175756', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', '172.18.0.1', NULL),
-	('fec8b38f-8477-4fea-9118-9df6a210872c', '5cb12aad-92a7-410a-a062-44a626e1f5e8', '2025-01-22 03:12:56.644033+00', '2025-01-24 07:18:40.065832+00', NULL, 'aal1', NULL, '2025-01-24 07:18:40.065793', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', '172.18.0.1', NULL);
+	('c4dc5fb1-70ff-4e74-af2e-f747e79a1b0e', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', '2025-01-26 04:50:46.990422+00', '2025-01-26 09:53:09.611692+00', NULL, 'aal1', NULL, '2025-01-26 09:53:09.611635', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', '172.18.0.1', NULL),
+	('5448d731-86ed-44b4-823d-074efddf952c', '5cb12aad-92a7-410a-a062-44a626e1f5e8', '2025-01-26 04:50:22.579117+00', '2025-01-26 09:53:10.401895+00', NULL, 'aal1', NULL, '2025-01-26 09:53:10.401838', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', '172.18.0.1', NULL);
 
 
 --
@@ -268,8 +307,8 @@ INSERT INTO "auth"."sessions" ("id", "user_id", "created_at", "updated_at", "fac
 --
 
 INSERT INTO "auth"."mfa_amr_claims" ("session_id", "created_at", "updated_at", "authentication_method", "id") VALUES
-	('fec8b38f-8477-4fea-9118-9df6a210872c', '2025-01-22 03:12:56.646109+00', '2025-01-22 03:12:56.646109+00', 'password', '5cf4f73d-d07a-480f-a12f-e5b6d80988b9'),
-	('4e7923f0-b5ae-422f-9d35-4ba59899b5e1', '2025-01-24 03:48:04.147562+00', '2025-01-24 03:48:04.147562+00', 'password', 'f95b2c68-bec6-466c-a723-72905636a38f');
+	('5448d731-86ed-44b4-823d-074efddf952c', '2025-01-26 04:50:22.580688+00', '2025-01-26 04:50:22.580688+00', 'password', 'f3ffe6cb-8366-4adf-86bb-54e8bef8e282'),
+	('c4dc5fb1-70ff-4e74-af2e-f747e79a1b0e', '2025-01-26 04:50:46.992848+00', '2025-01-26 04:50:46.992848+00', 'password', '62f65955-321c-4669-89e7-8ce1796cbb75');
 
 
 --
@@ -295,21 +334,13 @@ INSERT INTO "auth"."mfa_amr_claims" ("session_id", "created_at", "updated_at", "
 --
 
 INSERT INTO "auth"."refresh_tokens" ("instance_id", "id", "token", "user_id", "revoked", "created_at", "updated_at", "parent", "session_id") VALUES
-	('00000000-0000-0000-0000-000000000000', 80, 'L15eHOQHqGmBdc2QqPpcxQ', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-22 03:12:56.645219+00', '2025-01-22 05:09:27.727001+00', NULL, 'fec8b38f-8477-4fea-9118-9df6a210872c'),
-	('00000000-0000-0000-0000-000000000000', 81, '1a1ZYC3hZ1sr9vVWm3_Fsw', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-22 05:09:27.72825+00', '2025-01-22 06:15:13.84181+00', 'L15eHOQHqGmBdc2QqPpcxQ', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
-	('00000000-0000-0000-0000-000000000000', 82, 'CPR9c0ibRfutkfrfTe3Lvg', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-22 06:15:13.84287+00', '2025-01-22 07:13:15.218554+00', '1a1ZYC3hZ1sr9vVWm3_Fsw', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
-	('00000000-0000-0000-0000-000000000000', 83, 'B4mCqxiVg_YnDPczn6RB_w', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-22 07:13:15.219919+00', '2025-01-23 06:49:28.262574+00', 'CPR9c0ibRfutkfrfTe3Lvg', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
-	('00000000-0000-0000-0000-000000000000', 84, 'AK07Q99KGwcfM9LSJAekvQ', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-23 06:49:28.263715+00', '2025-01-23 08:43:17.457587+00', 'B4mCqxiVg_YnDPczn6RB_w', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
-	('00000000-0000-0000-0000-000000000000', 85, 'sEEifndqcUN9yFLfQX5SYA', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-23 08:43:17.45926+00', '2025-01-24 00:26:17.630495+00', 'AK07Q99KGwcfM9LSJAekvQ', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
-	('00000000-0000-0000-0000-000000000000', 86, '-rN9mTbKep3zR7VoRDVhTw', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-24 00:26:17.63099+00', '2025-01-24 01:24:42.791551+00', 'sEEifndqcUN9yFLfQX5SYA', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
-	('00000000-0000-0000-0000-000000000000', 87, '1WcZEFavpFBfHgeAMV1nIA', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-24 01:24:42.792984+00', '2025-01-24 02:23:06.069219+00', '-rN9mTbKep3zR7VoRDVhTw', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
-	('00000000-0000-0000-0000-000000000000', 88, 'YokwHpnsvBcnB7cB-kFAtg', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-24 02:23:06.069953+00', '2025-01-24 03:35:48.515105+00', '1WcZEFavpFBfHgeAMV1nIA', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
-	('00000000-0000-0000-0000-000000000000', 89, 'n5c9UXZjhL3vHUiZil6QUQ', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-24 03:35:48.516318+00', '2025-01-24 05:20:15.303886+00', 'YokwHpnsvBcnB7cB-kFAtg', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
-	('00000000-0000-0000-0000-000000000000', 90, 'jYI4dndZAfj5n4YZ6yq4Gg', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-24 03:48:04.146149+00', '2025-01-24 05:45:11.165402+00', NULL, '4e7923f0-b5ae-422f-9d35-4ba59899b5e1'),
-	('00000000-0000-0000-0000-000000000000', 92, 'EQx94Cci20841ZdZncQ7fw', '5cb12aad-92a7-410a-a062-44a626e1f5e8', false, '2025-01-24 05:45:11.166902+00', '2025-01-24 05:45:11.166902+00', 'jYI4dndZAfj5n4YZ6yq4Gg', '4e7923f0-b5ae-422f-9d35-4ba59899b5e1'),
-	('00000000-0000-0000-0000-000000000000', 91, 'h0OS16uVDe9Lyz51vO1ZzQ', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-24 05:20:15.304572+00', '2025-01-24 06:20:26.202549+00', 'n5c9UXZjhL3vHUiZil6QUQ', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
-	('00000000-0000-0000-0000-000000000000', 93, 'Cbb-78sBluGsWbyXPWQSjw', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-24 06:20:26.203079+00', '2025-01-24 07:18:40.063266+00', 'h0OS16uVDe9Lyz51vO1ZzQ', 'fec8b38f-8477-4fea-9118-9df6a210872c'),
-	('00000000-0000-0000-0000-000000000000', 95, 'CyzeEmdZXUUHkg0b4xyurg', '5cb12aad-92a7-410a-a062-44a626e1f5e8', false, '2025-01-24 07:18:40.063542+00', '2025-01-24 07:18:40.063542+00', 'Cbb-78sBluGsWbyXPWQSjw', 'fec8b38f-8477-4fea-9118-9df6a210872c');
+	('00000000-0000-0000-0000-000000000000', 109, 'yXB5ZOLS6irF63WQYV4aKw', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-26 04:50:22.57969+00', '2025-01-26 05:48:37.873056+00', NULL, '5448d731-86ed-44b4-823d-074efddf952c'),
+	('00000000-0000-0000-0000-000000000000', 110, '5xTkECqDhwZtcWJQ65ESAA', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', true, '2025-01-26 04:50:46.991195+00', '2025-01-26 05:55:12.02712+00', NULL, 'c4dc5fb1-70ff-4e74-af2e-f747e79a1b0e'),
+	('00000000-0000-0000-0000-000000000000', 111, 'JdGQFIC0lksblIn_aRJBNw', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-26 05:48:37.876106+00', '2025-01-26 06:54:20.335088+00', 'yXB5ZOLS6irF63WQYV4aKw', '5448d731-86ed-44b4-823d-074efddf952c'),
+	('00000000-0000-0000-0000-000000000000', 112, 'IXfi5REeppLYsMAxDwrVWQ', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', true, '2025-01-26 05:55:12.027505+00', '2025-01-26 09:53:09.60718+00', '5xTkECqDhwZtcWJQ65ESAA', 'c4dc5fb1-70ff-4e74-af2e-f747e79a1b0e'),
+	('00000000-0000-0000-0000-000000000000', 114, 'KSzz-ToF-s9fE2-fiB8uKQ', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', false, '2025-01-26 09:53:09.608694+00', '2025-01-26 09:53:09.608694+00', 'IXfi5REeppLYsMAxDwrVWQ', 'c4dc5fb1-70ff-4e74-af2e-f747e79a1b0e'),
+	('00000000-0000-0000-0000-000000000000', 113, 'DY_5NR0gzBNI5mzVYYQY9g', '5cb12aad-92a7-410a-a062-44a626e1f5e8', true, '2025-01-26 06:54:20.335989+00', '2025-01-26 09:53:10.400073+00', 'JdGQFIC0lksblIn_aRJBNw', '5448d731-86ed-44b4-823d-074efddf952c'),
+	('00000000-0000-0000-0000-000000000000', 115, 'QSaANPBFffvei3y1KJYJzQ', '5cb12aad-92a7-410a-a062-44a626e1f5e8', false, '2025-01-26 09:53:10.400407+00', '2025-01-26 09:53:10.400407+00', 'DY_5NR0gzBNI5mzVYYQY9g', '5448d731-86ed-44b4-823d-074efddf952c');
 
 
 --
@@ -346,55 +377,55 @@ INSERT INTO "auth"."refresh_tokens" ("instance_id", "id", "token", "user_id", "r
 -- Data for Name: availability_filter_combos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO "public"."availability_filter_combos" ("id", "created_at", "care_unit", "facility", "emergency_care", "availability_unit", "isolation_type") VALUES
-	(2, '2025-01-19 07:00:06.038811+00', '외과', '수술실', false, 'hvoc', NULL),
-	(3, '2025-01-19 07:00:45.454972+00', '흉부외과', '수술실', false, 'hvoc', NULL),
-	(4, '2025-01-19 07:01:30.76541+00', '정형외과', '수술실', false, 'hvoc', NULL),
-	(5, '2025-01-19 07:02:06.499379+00', '신경외과', '수술실', false, 'hvoc', NULL),
-	(6, '2025-01-19 07:03:22.346911+00', '신경', '중환자실', false, 'hvcc', NULL),
-	(7, '2025-01-19 07:05:04.320346+00', '신생아', '중환자실', false, 'hvncc', NULL),
-	(8, '2025-01-19 07:05:25.688844+00', '흉부외과', '중환자실', false, 'hvccc', NULL),
-	(9, '2025-01-19 07:07:14.776284+00', '일반', '중환자', false, 'hvicc', NULL),
-	(10, '2025-01-19 07:07:42.66857+00', '일반', '입원실', false, 'hvgc', NULL),
-	(11, '2025-01-19 07:08:31.717394+00', '내과', '중환자실', false, 'hv2', NULL),
-	(12, '2025-01-19 07:09:04.859273+00', '외과', '중환자실', false, 'hv3', NULL),
-	(13, '2025-01-19 07:09:33.319685+00', '정형외과', '입원실', false, 'hv4', NULL),
-	(14, '2025-01-19 07:13:40.291985+00', '신경과', '입원실', false, 'hv5', NULL),
-	(15, '2025-01-19 07:14:24.923799+00', '신경외과', '중환자실', false, 'hv6', NULL),
-	(16, '2025-01-19 07:15:59.315829+00', '약물', '중환자실', false, 'hv7', NULL),
-	(17, '2025-01-19 07:17:11.810987+00', '화상', '중환자실', false, 'hv8', NULL),
-	(18, '2025-01-19 07:17:56.366236+00', '외상', '중환자실', false, 'hv9', NULL),
-	(19, '2025-01-19 07:21:17.177714+00', '일반', '입원실', false, 'hv13', '음압'),
-	(20, '2025-01-19 07:21:40.693544+00', '일반', '입원실', false, 'hv14', '일반'),
-	(21, '2025-01-19 07:22:40.262948+00', '소아', '입원실', false, 'hv15', '음압'),
-	(22, '2025-01-19 07:23:11.758308+00', '소아', '입원실', false, 'hv16', '일반'),
-	(27, '2025-01-19 07:34:11.605676+00', '감염', '중환자실', false, 'hv22', '일반'),
-	(28, '2025-01-19 07:35:04.487665+00', '감염', '중환자실', false, 'hv23', '음압'),
-	(29, '2025-01-19 07:38:34.03962+00', '감염', '중환자실', false, 'hv24', '일반'),
-	(30, '2025-01-19 07:39:17.302061+00', '감염', '입원실', false, 'hv25', '일반'),
-	(31, '2025-01-19 07:40:10.778792+00', '감염', '입원실', false, 'hv26', '일반'),
-	(32, '2025-01-19 07:42:57.805853+00', '감염', '입원실', false, 'hv27', '일반'),
-	(33, '2025-01-19 07:43:24.330373+00', '소아', '입원실', false, 'hv28', NULL),
-	(34, '2025-01-19 07:46:00.590185+00', '일반', '입원실', true, 'hv29', '음압'),
-	(35, '2025-01-19 07:47:57.87483+00', '일반', '입원실', true, 'hv30', '일반'),
-	(37, '2025-01-19 07:52:52.540104+00', '소아', '중환자실', false, 'hv32', NULL),
-	(39, '2025-01-19 08:13:11.95018+00', '심장내과', '중환자실', false, 'hv34', NULL),
-	(40, '2025-01-19 08:14:16.088582+00', '일반', '중환자실', false, 'hv35', '음압'),
-	(43, '2025-01-19 08:15:52.599096+00', '외상', '입원실', false, 'hv38', NULL),
-	(44, '2025-01-19 08:17:18.586638+00', '외상', '수술실', false, 'hv39', NULL),
-	(45, '2025-01-19 08:17:39.175097+00', '정신과', '입원실', false, 'hv40', NULL),
-	(46, '2025-01-19 08:18:03.663929+00', '일반', '입원실', false, 'hv41', '음압'),
-	(47, '2025-01-19 08:19:06.700383+00', '분만', '분만실', false, 'hv42', NULL),
-	(52, '2025-01-19 08:30:13.119573+00', '화상', '처치실', false, 'hv43', NULL),
-	(1, '2025-01-19 06:46:11.357056+00', '일반', '응급실', true, 'hvec', NULL),
-	(23, '2025-01-19 07:23:57.249112+00', '일반', '응급전용 중환자실', true, 'hv17', '음압'),
-	(24, '2025-01-19 07:25:09.587648+00', '일반', '응급전용 중환자실', true, 'hv18', '일반'),
-	(25, '2025-01-19 07:25:58.027026+00', '일반', '응급전용 입원실', true, 'hv19', '음압'),
-	(26, '2025-01-19 07:26:36.363751+00', '일반', '응급전용 입원실', true, 'hv21', '일반'),
-	(36, '2025-01-19 07:52:24.460471+00', '일반', '응급전용 중환자실', true, 'hv31', NULL),
-	(38, '2025-01-19 07:53:32.477579+00', '소아', '응급전용 중환자실', true, 'hv33', NULL),
-	(41, '2025-01-19 08:14:39.769442+00', '일반', '응급전용 입원실', true, 'hv36', NULL),
-	(42, '2025-01-19 08:15:10.454226+00', '소아', '응급전용 입원실', true, 'hv37', '');
+INSERT INTO "public"."availability_filter_combos" ("id", "created_at", "care_unit", "facility", "emergency_care", "availability_unit", "isolation_type", "isolation_care") VALUES
+	(38, '2025-01-19 07:53:32.477579+00', '소아', '응급전용 중환자실', true, 'hv33', NULL, false),
+	(39, '2025-01-19 08:13:11.95018+00', '심장내과', '중환자실', false, 'hv34', NULL, false),
+	(40, '2025-01-19 08:14:16.088582+00', '일반', '중환자실', false, 'hv35', '음압', true),
+	(41, '2025-01-19 08:14:39.769442+00', '일반', '응급전용 입원실', true, 'hv36', NULL, false),
+	(42, '2025-01-19 08:15:10.454226+00', '소아', '응급전용 입원실', true, 'hv37', NULL, false),
+	(43, '2025-01-19 08:15:52.599096+00', '외상', '입원실', false, 'hv38', NULL, false),
+	(44, '2025-01-19 08:17:18.586638+00', '외상', '수술실', false, 'hv39', NULL, false),
+	(1, '2025-01-19 06:46:11.357056+00', '일반', '응급실', true, 'hvec', NULL, false),
+	(2, '2025-01-19 07:00:06.038811+00', '외과', '수술실', false, 'hvoc', NULL, false),
+	(3, '2025-01-19 07:00:45.454972+00', '흉부외과', '수술실', false, 'hvoc', NULL, false),
+	(4, '2025-01-19 07:01:30.76541+00', '정형외과', '수술실', false, 'hvoc', NULL, false),
+	(5, '2025-01-19 07:02:06.499379+00', '신경외과', '수술실', false, 'hvoc', NULL, false),
+	(6, '2025-01-19 07:03:22.346911+00', '신경', '중환자실', false, 'hvcc', NULL, false),
+	(7, '2025-01-19 07:05:04.320346+00', '신생아', '중환자실', false, 'hvncc', NULL, false),
+	(8, '2025-01-19 07:05:25.688844+00', '흉부외과', '중환자실', false, 'hvccc', NULL, false),
+	(9, '2025-01-19 07:07:14.776284+00', '일반', '중환자', false, 'hvicc', NULL, false),
+	(10, '2025-01-19 07:07:42.66857+00', '일반', '입원실', false, 'hvgc', NULL, false),
+	(11, '2025-01-19 07:08:31.717394+00', '내과', '중환자실', false, 'hv2', NULL, false),
+	(12, '2025-01-19 07:09:04.859273+00', '외과', '중환자실', false, 'hv3', NULL, false),
+	(13, '2025-01-19 07:09:33.319685+00', '정형외과', '입원실', false, 'hv4', NULL, false),
+	(14, '2025-01-19 07:13:40.291985+00', '신경과', '입원실', false, 'hv5', NULL, false),
+	(15, '2025-01-19 07:14:24.923799+00', '신경외과', '중환자실', false, 'hv6', NULL, false),
+	(16, '2025-01-19 07:15:59.315829+00', '약물', '중환자실', false, 'hv7', NULL, false),
+	(17, '2025-01-19 07:17:11.810987+00', '화상', '중환자실', false, 'hv8', NULL, false),
+	(18, '2025-01-19 07:17:56.366236+00', '외상', '중환자실', false, 'hv9', NULL, false),
+	(19, '2025-01-19 07:21:17.177714+00', '일반', '입원실', false, 'hv13', '음압', true),
+	(20, '2025-01-19 07:21:40.693544+00', '일반', '입원실', false, 'hv14', '일반', true),
+	(21, '2025-01-19 07:22:40.262948+00', '소아', '입원실', false, 'hv15', '음압', true),
+	(22, '2025-01-19 07:23:11.758308+00', '소아', '입원실', false, 'hv16', '일반', true),
+	(23, '2025-01-19 07:23:57.249112+00', '일반', '응급전용 중환자실', true, 'hv17', '음압', true),
+	(24, '2025-01-19 07:25:09.587648+00', '일반', '응급전용 중환자실', true, 'hv18', '일반', true),
+	(25, '2025-01-19 07:25:58.027026+00', '일반', '응급전용 입원실', true, 'hv19', '음압', true),
+	(26, '2025-01-19 07:26:36.363751+00', '일반', '응급전용 입원실', true, 'hv21', '일반', true),
+	(27, '2025-01-19 07:34:11.605676+00', '감염', '중환자실', false, 'hv22', '일반', true),
+	(28, '2025-01-19 07:35:04.487665+00', '감염', '중환자실', false, 'hv23', '음압', true),
+	(29, '2025-01-19 07:38:34.03962+00', '감염', '중환자실', false, 'hv24', '일반', true),
+	(30, '2025-01-19 07:39:17.302061+00', '감염', '입원실', false, 'hv25', '일반', true),
+	(31, '2025-01-19 07:40:10.778792+00', '감염', '입원실', false, 'hv26', '일반', true),
+	(32, '2025-01-19 07:42:57.805853+00', '감염', '입원실', false, 'hv27', '일반', true),
+	(33, '2025-01-19 07:43:24.330373+00', '소아', '입원실', false, 'hv28', NULL, false),
+	(34, '2025-01-19 07:46:00.590185+00', '일반', '입원실', true, 'hv29', '음압', true),
+	(35, '2025-01-19 07:47:57.87483+00', '일반', '입원실', true, 'hv30', '일반', true),
+	(36, '2025-01-19 07:52:24.460471+00', '일반', '응급전용 중환자실', true, 'hv31', NULL, false),
+	(37, '2025-01-19 07:52:52.540104+00', '소아', '중환자실', false, 'hv32', NULL, false),
+	(45, '2025-01-19 08:17:39.175097+00', '정신과', '입원실', false, 'hv40', NULL, false),
+	(46, '2025-01-19 08:18:03.663929+00', '일반', '입원실', false, 'hv41', '음압', true),
+	(47, '2025-01-19 08:19:06.700383+00', '분만', '분만실', false, 'hv42', NULL, false),
+	(52, '2025-01-19 08:30:13.119573+00', '화상', '처치실', false, 'hv43', NULL, false);
 
 
 --
@@ -814,7 +845,7 @@ INSERT INTO "public"."tenant_permissions" ("id", "created_at", "service_user", "
 -- Name: refresh_tokens_id_seq; Type: SEQUENCE SET; Schema: auth; Owner: supabase_auth_admin
 --
 
-SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 95, true);
+SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 115, true);
 
 
 --
