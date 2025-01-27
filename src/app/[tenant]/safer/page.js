@@ -23,10 +23,9 @@ export default function ReservationPage() {
   const [showTransferFilterPanel, setShowTransferFilterPanel] = useState(false);
   const [searchRadius, setSearchRadius] = useState(null);
   const [circle, setCircle] = useState(null);
-  const [showDialog, setShowDialog] = useState(false);
+  const [showDiagnosisModal, setShowDiagnosisModal] = useState(false);
   const [availabilityUnits, setAvailabilityUnits] = useState([]);
   const [equipments, setEquipments] = useState([]);
-  // State for showing a snackbar message
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
 
@@ -376,9 +375,9 @@ export default function ReservationPage() {
   // Add event listener for "reservation-click" event
   useEffect(() => {
     const handleReservationClicked = () => {
-      setShowDialog(true);
+      setShowDiagnosisModal(true);
 
-      
+
     }
     window.addEventListener("reservation-click", handleReservationClicked);
 
@@ -388,7 +387,8 @@ export default function ReservationPage() {
   }, []);
 
   const handleDiagnosisModalClose = () => {
-    setShowDialog(false);
+    setShowDiagnosisModal(false);
+    
   };
 
   const handleApplyFilters = (availabilityUnits, equipments) => {
@@ -437,7 +437,7 @@ export default function ReservationPage() {
           />
 
           <DiagnosisModal 
-            open={showDialog}
+            open={showDiagnosisModal}
             onClose={handleDiagnosisModalClose}
           />
         </Fragment>
