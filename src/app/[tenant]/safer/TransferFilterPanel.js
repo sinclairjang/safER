@@ -17,7 +17,6 @@ import ListIcon from "@mui/icons-material/List";
 import BedIcon from "@mui/icons-material/Bed";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import PrecisionManufacturingIcon from "@mui/icons-material/PrecisionManufacturing";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { getSupabaseBrowserClient } from "@/supabase-utils/browserClient";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import Tooltip from "@mui/material/Tooltip";
@@ -214,16 +213,14 @@ export default function TransferFilterPanel({ map, onApplyFilters }) {
       label: "응급 / 격리",
       content: <StepThree data={stepThreeData} onChange={setStepThreeData} />,
       validate: () => {
-        // Require at least one checkbox be true
-        return stepThreeData.emergencyNeeded || stepThreeData.isolationNeeded;
+        return true;
       },
     },
     {
       label: "장비 선택",
       content: <StepFour data={stepFourData} onChange={setStepFourData} />,
       validate: () => {
-        // Require at least one piece of equipment be selected
-        return stepFourData.equipment && stepFourData.equipment.length > 0;
+        return true;
       },
     },
   ];
@@ -256,20 +253,11 @@ export default function TransferFilterPanel({ map, onApplyFilters }) {
     console.log("Step 3 Data:", stepThreeData);
     console.log("Step 4 Data:", stepFourData);
     
-    // Here you'd run your actual filter logic
-    alert("Filters applied. Query your data with the selected filters!");
-    
-      // Prepare arguments for the RPC
-    const _care_unit = stepOneData.department || "";
-    const _bed_type = stepTwoData.bedType || "";
-    const _emergency_needed = stepThreeData.emergencyNeeded ?? false;
-    const _isolation_needed = stepThreeData.isolationNeeded ?? false;
-    
     supabase.rpc("get_availability_units", {
-      care_unit: _care_unit,
-      bed_type: _bed_type,
-      emergency_needed: _emergency_needed,
-      isolation_needed: _isolation_needed,
+      _care_unit: stepOneData.department,
+      _bed_type: stepTwoData.bedType,
+      _emergency_needed: stepThreeData.emergencyNeeded,
+      _isolation_needed: stepThreeData.isolationNeeded,
     }) 
     .then(({data, error}) => {
       if (error) {

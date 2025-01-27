@@ -1,19 +1,8 @@
-alter table "public"."hospital_bed_availability" disable row level security;
-
-alter table "public"."hospital_location_info" disable row level security;
-
-alter table "public"."hospitals" disable row level security;
-
 set check_function_bodies = off;
 
-CREATE OR REPLACE FUNCTION public.find_nearby_hospitals_optionally_filtered(
-  user_lat double precision, 
-  user_lon double precision, 
-  radius_km double precision, 
-  availability_units text[] DEFAULT NULL::text[], 
-  equip_list text[] DEFAULT NULL::text[]
-) RETURNS json
-LANGUAGE plpgsql
+CREATE OR REPLACE FUNCTION public.find_nearby_hospitals_optionally_filtered(user_lat double precision, user_lon double precision, radius_km double precision, availability_units text[] DEFAULT NULL::text[], equip_list text[] DEFAULT NULL::text[])
+ RETURNS json
+ LANGUAGE plpgsql
 AS $function$
 DECLARE
   dynamic_cond text := '';
@@ -127,6 +116,7 @@ BEGIN
 
   RETURN result_json;
 END;
-$function$;
+$function$
+;
 
 

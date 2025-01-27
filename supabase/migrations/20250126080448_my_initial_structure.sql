@@ -2,7 +2,11 @@ alter table "public"."availability_filter_combos" add column "isolation_care" bo
 
 set check_function_bodies = off;
 
-CREATE OR REPLACE FUNCTION public.get_availability_units(_care_unit text, _bed_type text, _emergency_needed boolean, _isolation_needed boolean)
+CREATE OR REPLACE FUNCTION public.get_availability_units(
+  _care_unit text, 
+  _bed_type text, 
+  _emergency_needed boolean,
+  _isolation_needed boolean)
  RETURNS text[]
  LANGUAGE sql
  STABLE

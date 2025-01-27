@@ -9,6 +9,8 @@ export default function InfoWindowContent({
   link,
   image,
   marker,
+  availabilityUnits,
+  hospitalData,
 }) {
     const handleCancel = () => {
             if (marker) {
@@ -106,6 +108,28 @@ export default function InfoWindowContent({
                     color="text.secondary">
                     거리: {distance_km.toFixed(2)} km
                 </Typography>
+                {availabilityUnits && availabilityUnits.length > 0 && (
+                <Box sx={{ mt: 2 }}>
+                    <Typography variant="body2" sx={{ fontWeight: "bold", mb: 1 }}>
+                    병상 및 장비 현황:
+                    </Typography>
+                    {availabilityUnits.map((unit) => (
+                    <Typography
+                        key={unit}
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{ mb: 0.5 }}
+                    >
+                        {unit}:{" "}
+                        {typeof hospitalData[unit] === "boolean"
+                        ? hospitalData[unit]
+                            ? "가능"
+                            : "불가능"
+                        : `${hospitalData[unit]} 병상`}
+                    </Typography>
+                    ))}
+                </Box>
+                )}
             </Box>
                 {link && (
                     <Button
