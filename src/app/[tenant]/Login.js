@@ -64,18 +64,18 @@ export const Login = ({ tenant, formType = "pw-login", tenantName }) => {
                 <input type="hidden" name="type" value="recovery" />
             )}
 
-            <article style={{ maxWidth: "420px", margin: "50px auto" }}>
+            <article style={{ maxWidth: "420px", margin: "50px auto", paddingTop: "50px", paddingBottom: "30px" }}>
                 
-                <header>
+                <header style={{ marginBottom: "10px"}}>
                     {isPasswordRecovery && <strong>Request new password</strong>}
-                    {!isPasswordRecovery && <strong>Login</strong>}
+                    {!isPasswordRecovery && <strong>로그인</strong>}
                     <div style={{ display: "block", fontSize: "1em" }}>
                         {tenantName}
                     </div>
                 </header>
                 
                 <fieldset>
-                    <label htmlFor="email">
+                    <label htmlFor="email" style={{ marginTop: "10px" }}>
                         Email{" "}
                         <input
                             ref={emailInputRef}
@@ -87,7 +87,7 @@ export const Login = ({ tenant, formType = "pw-login", tenantName }) => {
                     </label>
                     
                     {isPasswordLogin && (
-                    <label htmlFor="password" style={{ marginTop: "20px" }}>
+                    <label htmlFor="password" style={{ marginTop: "10px" }}>
                         Password
                         <input
                             ref={passwordInputRef}
@@ -134,6 +134,7 @@ export const Login = ({ tenant, formType = "pw-login", tenantName }) => {
                                 pathname: urlPath('/', tenant),
                                 query: { magicLink: "yes" },
                             }}
+                            style={{ marginBottom: "10px" }}
                         >
                             일회용 로그인
                         </Link>
@@ -154,6 +155,17 @@ export const Login = ({ tenant, formType = "pw-login", tenantName }) => {
                         비밀번호를 잊어버리셨나요?
                     </Link>
                 )}
+
+                <Link
+                    href={urlPath("/register", tenant)}
+                    style={{
+                        textAlign: "center",
+                        display: "block",
+                        marginTop: "1em",
+                    }}
+                >
+                    계정 생성
+                </Link>
             </article>
         </form>
     );

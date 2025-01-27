@@ -375,11 +375,15 @@ export default function ReservationPage() {
 
   // Add event listener for "reservation-click" event
   useEffect(() => {
-    const handleOpenDialog = () => setShowDialog(true);
-    window.addEventListener("reservation-click", handleOpenDialog);
+    const handleReservationClicked = () => {
+      setShowDialog(true);
+
+      
+    }
+    window.addEventListener("reservation-click", handleReservationClicked);
 
     return () => {
-      window.removeEventListener("reservation-click", handleOpenDialog);
+      window.removeEventListener("reservation-click", handleReservationClicked);
     };
   }, []);
 

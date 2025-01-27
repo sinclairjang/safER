@@ -1,4 +1,4 @@
-create extension if not exists "postgis" with schema "public" version '3.3.2';
+create extension if not exists "postgis" with schema "public";
 
 alter table "public"."hospital_bed_availability" add column "operation_rate" integer;
 

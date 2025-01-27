@@ -53,7 +53,7 @@ export default function FullScreenDialog({ open, onClose }) {
         break;
       case "condition":
         if (!value) {
-          error = "상태 설명을 입력해주세요.";
+          error = "환자의 상태를 알려주세요.";
         } else if (sqlInjectionRegex.test(value)) {
           error = "상태 설명에 사용할 수 없는 문자가 포함되어 있습니다.";
         }
@@ -230,7 +230,14 @@ export default function FullScreenDialog({ open, onClose }) {
           fullWidth
           variant="outlined"
           multiline
-          rows={2}
+          rows={6}
+          sx={{
+            mb: 2,
+            "& .MuiInputBase-root": {
+              fontSize: "1rem", // Adjust font size if needed
+              lineHeight: "1.5", // Adjust line spacing
+            },
+          }}
           value={values.notes}
           onChange={handleChange}
           error={Boolean(errors.notes)}
