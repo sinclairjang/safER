@@ -42,9 +42,16 @@ export default function FormDialog({ open, onClose, onSubmit }) {
             id="search-radius"
             name="search-radius"
             label="검색 범위(km)를 설정해주세요"
-            type="number"
+            type="number" // Changed from "number" to "text" to allow maxLength
             fullWidth
             variant="standard"
+            slotProps={{
+              htmlInput: {
+                min: 0,
+                max: 500,
+                step: 1,
+              },
+            }}
           />
         </DialogContent>
         <DialogActions>

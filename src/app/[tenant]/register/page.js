@@ -33,7 +33,7 @@ export default async function Registration({ params }) {
                     </label>
                     <label htmlFor="password" style={{ marginTop: "10px" }}>
                         비밀번호 설정{" "}
-                        <input type="password" style={{ marginTop: "10px" }} required />
+                        <input type="password" id="password" name="password" style={{ marginTop: "10px" }} required />
                     </label>
                 </fieldset>
                 <button type="submit">계정 생성</button>

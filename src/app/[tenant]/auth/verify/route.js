@@ -7,11 +7,12 @@ export async function GET(request, { params }) {
     const { tenant } = await params; 
     const hashed_token = searchParams.get("hashed_token");
     const isRecovery = searchParams.get("type") === "recovery";
-    
+    const isSignUp = searchParams.get("type") === "signup";
     const supabase = await getSupabaseCookiesUtilClient();
     
     let verifyType = "magiclink";
     if (isRecovery) verifyType = "recovery";
+    else if (isSignUp) verifyType = "signup";
     
     const { error } = await supabase.auth.verifyOtp({
         type: verifyType,
