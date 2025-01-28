@@ -811,12 +811,6 @@ INSERT INTO "public"."hospital_location_info" ("hpid", "dutyaddr", "dutyemcls", 
 
 
 --
--- Data for Name: patient_assessments; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
 -- Data for Name: reservations; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -830,6 +824,18 @@ INSERT INTO "public"."service_users" ("id", "created_at", "supabase_user", "depa
 	(3, '2025-01-15 01:15:58.181125+00', '5cb12aad-92a7-410a-a062-44a626e1f5e8', '현장대응단 구조대1팀', '응급구조사', '강남소방서', '박찬호'),
 	(1, '2025-01-14 06:41:40.311538+00', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', '소아과', '의사', '삼성서울병원', '장진영'),
 	(7, '2025-01-28 08:21:55.111438+00', '83c661dc-106e-438e-aefc-ff767d205af1', NULL, NULL, NULL, '유용희');
+
+
+--
+-- Data for Name: patient_assessments; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- Data for Name: patients; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
 
 
 --

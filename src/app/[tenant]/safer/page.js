@@ -3,14 +3,13 @@
 import { useEffect, useState, Fragment } from "react";
 import { createRoot } from 'react-dom/client';
 import "@/styles/naver-map.css";
-import DiagnosisModal from "./DiagnosisModal";
-import EmergencyModal from "./EmergencyModal";
-import TransferFilterPanel from "./TransferFilterPanel"
-import SearchModeModal from "./SearchModeModal";
+import DiagnosisModal from "./widgets/DiagnosisModal";
+import EmergencyModal from "./widgets/EmergencyModal";
+import TransferFilterPanel from "./widgets/TransferFilterPanel"
+import SearchModeModal from "./widgets/SearchModeModal";
 import { getSupabaseBrowserClient } from "@/supabase-utils/browserClient";
-import InfoWindowContent from "./InfoWindowContent";
+import InfoWindowContent from "./widgets/InfoWindowContent";
 import { Snackbar, Alert } from "@mui/material";
-import ReactDOMServer from "react-dom/server";
 import MyLocationIcon from "@mui/icons-material/MyLocation";
 
 export default function ReservationPage() {

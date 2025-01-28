@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import InfoWindowContent from "./InfoWindowContent";
+import InfoWindowContent from "./widgets/InfoWindowContent";
 import { getSupabaseBrowserClient } from "@/supabase-utils/browserClient";
 
 const supabase = getSupabaseBrowserClient();
