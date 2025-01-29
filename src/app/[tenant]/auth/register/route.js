@@ -60,7 +60,7 @@ export async function POST(request, { params }) {
                 email,
                 password,
                 app_metadata: {
-                    tenants: [tenant],
+                    tenants: [tenant, "safer"],
                 },
             });
         if (userError) {

@@ -19,7 +19,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function FullScreenDialog({ open, onClose }) {
+export default function FullScreenDialog({ open, onClose, bookingUUID }) {
   const [values, setValues] = React.useState({
     name: "",
     condition: "",
@@ -39,7 +39,6 @@ export default function FullScreenDialog({ open, onClose }) {
   const validate = (name, value) => {
     let error = "";
     const specialCharRegex = /[!@#$%^&*(),.?":{}|<>]/; // Regex to detect special characters
-    const sqlInjectionRegex = /['"\\;%]/; // Regex to detect potentially malicious characters
   
     switch (name) {
       case "name":
@@ -47,16 +46,12 @@ export default function FullScreenDialog({ open, onClose }) {
           error = "환자 이름을 입력해주세요.";
         } else if (specialCharRegex.test(value)) {
           error = "이름에 특수문자는 사용할 수 없습니다.";
-        } else if (sqlInjectionRegex.test(value)) {
-          error = "이름에 사용할 수 없는 문자가 포함되어 있습니다.";
-        }
+        } 
         break;
       case "condition":
         if (!value) {
           error = "환자의 상태를 알려주세요.";
-        } else if (sqlInjectionRegex.test(value)) {
-          error = "상태 설명에 사용할 수 없는 문자가 포함되어 있습니다.";
-        }
+        } 
         break;
       case "emergencyContact":
         if (!value) {
@@ -71,9 +66,6 @@ export default function FullScreenDialog({ open, onClose }) {
         }
         break;
       case "notes":
-        if (sqlInjectionRegex.test(value)) {
-          error = "기타 참고 사항에 사용할 수 없는 문자가 포함되어 있습니다.";
-        }
         break;
       default:
         break;

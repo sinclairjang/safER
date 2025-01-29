@@ -11,6 +11,7 @@ import { getSupabaseBrowserClient } from "@/supabase-utils/browserClient";
 import InfoWindowContent from "./widgets/InfoWindowContent";
 import { Snackbar, Alert } from "@mui/material";
 import MyLocationIcon from "@mui/icons-material/MyLocation";
+import { v4 as uuidv4 } from 'uuid';
 
 export default function ReservationPage() {
   const [map, setMap] = useState(null);        // Reference to the Naver map
@@ -27,6 +28,8 @@ export default function ReservationPage() {
   const [equipments, setEquipments] = useState([]);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
+  const [bookingUUID, setBookingUUID] = useState(null);
+  const [selectedReservation, setSelectedReservation] = useState(null);
 
   const handleCloseSnackbar = () => {
     setSnackbarOpen(false);
@@ -371,23 +374,32 @@ export default function ReservationPage() {
     setSearchRadius(searchRadius);
   }
 
-  // Add event listener for "reservation-click" event
   useEffect(() => {
-    const handleReservationClicked = () => {
-      setShowDiagnosisModal(true);
+    const handleReservationClicked = (event) => {
+        console.log(event);
+        const { hospitalId, bedCode, reservationId, numberOfBeds } = event.detail || {};
 
+        // Store the reservation details in state
+        setSelectedReservation({
+          hospitalId,
+          bedCode,
+          reservationId,
+          numberOfBeds,
+        });
 
-    }
+        // Open the modal
+        setShowDiagnosisModal(true);
+    };
+
     window.addEventListener("reservation-click", handleReservationClicked);
 
     return () => {
-      window.removeEventListener("reservation-click", handleReservationClicked);
+        window.removeEventListener("reservation-click", handleReservationClicked);
     };
-  }, []);
+}, []);
 
   const handleDiagnosisModalClose = () => {
     setShowDiagnosisModal(false);
-    
   };
 
   const handleApplyFilters = (availabilityUnits, equipments) => {
@@ -438,6 +450,7 @@ export default function ReservationPage() {
           <DiagnosisModal 
             open={showDiagnosisModal}
             onClose={handleDiagnosisModalClose}
+            bookingUUID={bookingUUID}
           />
         </Fragment>
       </div>
@@ -446,7 +459,7 @@ export default function ReservationPage() {
         open={snackbarOpen} 
         autoHideDuration={6000} 
         onClose={handleCloseSnackbar}
-        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
       >
         <Alert onClose={handleCloseSnackbar} severity="warning" sx={{ width: '100%' }}>
           {snackbarMessage}

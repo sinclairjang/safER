@@ -156,16 +156,20 @@ export const Login = ({ tenant, formType = "pw-login", tenantName }) => {
                     </Link>
                 )}
 
-                <Link
-                    href={urlPath("/register", tenant)}
-                    style={{
-                        textAlign: "center",
-                        display: "block",
-                        marginTop: "1em",
-                    }}
-                >
-                    계정 생성
-                </Link>
+                {tenant !== "safer" ? 
+                    <Link
+                        href={urlPath("/register", tenant)}
+                        style={{
+                            textAlign: "center",
+                            display: "block",
+                            marginTop: "1em",
+                        }}
+                    >
+                        계정 생성
+                    </Link>
+                    : 
+                    ""
+                }
             </article>
         </form>
     );
