@@ -29,6 +29,7 @@ export default function ReservationPage() {
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarSuccessFlag, setSnackbarSuccessFlag] = useState(false);
   const [selectedReservation, setSelectedReservation] = useState(null);
+  const [activateSearch, setActivateSearch] = useState(false);
 
   const handleCloseSnackbar = () => {
     setSnackbarOpen(false);
@@ -255,7 +256,7 @@ export default function ReservationPage() {
   };
   
   useEffect(() => {
-    if (searchRadius && map && userLocation) {
+    if (activateSearch && searchRadius && map && userLocation) {
       // Clear any existing markers
       markers.forEach((marker) => marker.setMap(null));
       setMarkers([]);
@@ -313,8 +314,9 @@ export default function ReservationPage() {
             }
           })
       }
+      setActivateSearch(false);
     }
-  }, [searchRadius, map, userLocation])
+  }, [activateSearch, map, userLocation])
 
     // Place or update the user marker whenever map or userLocation changes
   useEffect(() => {
@@ -371,6 +373,7 @@ export default function ReservationPage() {
 
   const handleEmergencyModalSubmit = (searchRadius) => {
     setSearchRadius(searchRadius);
+    setActivateSearch(true);
   }
 
   useEffect(() => {
