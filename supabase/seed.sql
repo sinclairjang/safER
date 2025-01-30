@@ -354,7 +354,14 @@ INSERT INTO "auth"."audit_log_entries" ("instance_id", "id", "payload", "created
 	('00000000-0000-0000-0000-000000000000', '5e064eb6-668b-422e-949b-54c6e1b174f6', '{"action":"token_refreshed","actor_id":"1c663348-a8c8-4a35-b3c0-3cc17197f043","actor_username":"you_h@gangnamdream.com","actor_via_sso":false,"log_type":"token"}', '2025-01-30 10:42:41.164805+00', ''),
 	('00000000-0000-0000-0000-000000000000', 'c1bb6321-e462-438e-987c-3e1d0f7b3ed0', '{"action":"token_revoked","actor_id":"1c663348-a8c8-4a35-b3c0-3cc17197f043","actor_username":"you_h@gangnamdream.com","actor_via_sso":false,"log_type":"token"}', '2025-01-30 10:42:41.165243+00', ''),
 	('00000000-0000-0000-0000-000000000000', '8ab6bef3-f664-431a-a993-08812948fae9', '{"action":"token_refreshed","actor_id":"ee14b162-ea0a-4183-9690-173c8836b92d","actor_username":"stronghyuk@samsunghospital.com","actor_via_sso":false,"log_type":"token"}', '2025-01-30 11:39:42.118536+00', ''),
-	('00000000-0000-0000-0000-000000000000', '39ac4ba2-23c4-4f5c-a45c-786232a38780', '{"action":"token_revoked","actor_id":"ee14b162-ea0a-4183-9690-173c8836b92d","actor_username":"stronghyuk@samsunghospital.com","actor_via_sso":false,"log_type":"token"}', '2025-01-30 11:39:42.119857+00', '');
+	('00000000-0000-0000-0000-000000000000', '39ac4ba2-23c4-4f5c-a45c-786232a38780', '{"action":"token_revoked","actor_id":"ee14b162-ea0a-4183-9690-173c8836b92d","actor_username":"stronghyuk@samsunghospital.com","actor_via_sso":false,"log_type":"token"}', '2025-01-30 11:39:42.119857+00', ''),
+	('00000000-0000-0000-0000-000000000000', '3f2dcce0-1351-43e0-9d1b-8959780352c8', '{"action":"login","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"account","traits":{"provider":"email"}}', '2025-01-30 11:47:28.242648+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'fb929afc-5250-45b0-a69a-88aaf8aa5645', '{"action":"token_refreshed","actor_id":"1c663348-a8c8-4a35-b3c0-3cc17197f043","actor_username":"you_h@gangnamdream.com","actor_via_sso":false,"log_type":"token"}', '2025-01-30 11:47:56.679199+00', ''),
+	('00000000-0000-0000-0000-000000000000', '53fd3869-e43d-4ee4-a268-492855f0232d', '{"action":"token_revoked","actor_id":"1c663348-a8c8-4a35-b3c0-3cc17197f043","actor_username":"you_h@gangnamdream.com","actor_via_sso":false,"log_type":"token"}', '2025-01-30 11:47:56.679682+00', ''),
+	('00000000-0000-0000-0000-000000000000', '1cc0db9e-1eb3-4497-a080-bc9ca2052829', '{"action":"token_refreshed","actor_id":"1c663348-a8c8-4a35-b3c0-3cc17197f043","actor_username":"you_h@gangnamdream.com","actor_via_sso":false,"log_type":"token"}', '2025-01-30 11:47:56.736124+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'f6cab985-3d4d-4b27-9db9-514565fe5bf7', '{"action":"logout","actor_id":"1c663348-a8c8-4a35-b3c0-3cc17197f043","actor_username":"you_h@gangnamdream.com","actor_via_sso":false,"log_type":"account"}', '2025-01-30 11:59:58.17417+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'b2f871f4-7eb3-46bd-8f8a-4775e7248a75', '{"action":"login","actor_id":"5cb12aad-92a7-410a-a062-44a626e1f5e8","actor_username":"ch1004@metabuild.com","actor_via_sso":false,"log_type":"account","traits":{"provider":"email"}}', '2025-01-30 12:00:04.239364+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'dd24d1e5-b28b-4f32-81b4-579ffcccb192', '{"action":"login","actor_id":"ee14b162-ea0a-4183-9690-173c8836b92d","actor_username":"stronghyuk@samsunghospital.com","actor_via_sso":false,"log_type":"account","traits":{"provider":"email"}}', '2025-01-30 12:03:10.133156+00', '');
 
 
 --
@@ -368,12 +375,12 @@ INSERT INTO "auth"."audit_log_entries" ("instance_id", "id", "payload", "created
 --
 
 INSERT INTO "auth"."users" ("instance_id", "id", "aud", "role", "email", "encrypted_password", "email_confirmed_at", "invited_at", "confirmation_token", "confirmation_sent_at", "recovery_token", "recovery_sent_at", "email_change_token_new", "email_change", "email_change_sent_at", "last_sign_in_at", "raw_app_meta_data", "raw_user_meta_data", "is_super_admin", "created_at", "updated_at", "phone", "phone_confirmed_at", "phone_change", "phone_change_token", "phone_change_sent_at", "email_change_token_current", "email_change_confirm_status", "banned_until", "reauthentication_token", "reauthentication_sent_at", "is_sso_user", "deleted_at", "is_anonymous") VALUES
+	('00000000-0000-0000-0000-000000000000', '1c663348-a8c8-4a35-b3c0-3cc17197f043', 'authenticated', 'authenticated', 'you_h@gangnamdream.com', '$2a$10$Q79kIMK3U.z0oJOEoNvtbuTqiQ3KGdIzyt24PJV5/nnTRATA0VCDq', '2025-01-29 04:46:36.186558+00', NULL, '', '2025-01-29 04:46:22.597084+00', '', NULL, '', '', NULL, '2025-01-29 04:47:30.958194+00', '{"tenants": ["gangnamdream", "safer"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-29 04:46:22.567512+00', '2025-01-30 11:47:56.681588+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false),
 	('00000000-0000-0000-0000-000000000000', 'f092cc72-9816-4ec5-9a6e-37d7ea46b387', 'authenticated', 'authenticated', 'young92@metabuild.com', '$2a$10$fBQyLHLHUFW.Ghc6xmKiyeQOhQnoQuwa.1hxMQtNQVePn3kTh7/vq', '2025-01-14 05:18:51.965275+00', NULL, '', NULL, '', NULL, '', '', NULL, '2025-01-26 04:50:46.990338+00', '{"tenants": ["samsunghospital", "safer"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-14 05:18:51.956406+00', '2025-01-27 08:42:22.887941+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false),
-	('00000000-0000-0000-0000-000000000000', '5cb12aad-92a7-410a-a062-44a626e1f5e8', 'authenticated', 'authenticated', 'ch1004@metabuild.com', '$2a$10$iiTdnrE4jFdjWLqnTCGBa.BVfJTDVQN1RyRekqdujiwhKrvmAaDAW', '2025-01-15 01:15:11.352728+00', NULL, '', NULL, '', NULL, '', '', NULL, '2025-01-28 05:49:31.599552+00', '{"tenants": ["safer"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-15 01:15:11.340725+00', '2025-01-29 04:04:46.504434+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false),
+	('00000000-0000-0000-0000-000000000000', '5cb12aad-92a7-410a-a062-44a626e1f5e8', 'authenticated', 'authenticated', 'ch1004@metabuild.com', '$2a$10$iiTdnrE4jFdjWLqnTCGBa.BVfJTDVQN1RyRekqdujiwhKrvmAaDAW', '2025-01-15 01:15:11.352728+00', NULL, '', NULL, '', NULL, '', '', NULL, '2025-01-30 12:00:04.240276+00', '{"tenants": ["safer"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-15 01:15:11.340725+00', '2025-01-30 12:00:04.242958+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false),
+	('00000000-0000-0000-0000-000000000000', 'ee14b162-ea0a-4183-9690-173c8836b92d', 'authenticated', 'authenticated', 'stronghyuk@samsunghospital.com', '$2a$10$dPg4R8q.PPnYCR1LYIcS3.J3jS8ZbxyrakLUkBZz7MXdxD0vTBSDu', '2025-01-30 05:43:59.003376+00', NULL, '', '2025-01-30 05:43:47.093671+00', '', NULL, '', '', NULL, '2025-01-30 12:03:10.133892+00', '{"tenants": ["samsunghospital", "safer"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-30 05:43:47.064631+00', '2025-01-30 12:03:10.135438+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false),
 	('00000000-0000-0000-0000-000000000000', '558bbf23-6c02-405f-9964-965f3b6c3d84', 'authenticated', 'authenticated', 'sinclairjang@gmail.com', '$2a$10$iM7DibIGn4YnOYr/NGeg/edEHf3wcizOHd72ihtUk9ODhPqTxvWSi', '2025-01-30 04:59:47.627221+00', NULL, '', NULL, '', NULL, '', '', NULL, NULL, '{"tenants": ["safer"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-30 04:59:47.614726+00', '2025-01-30 04:59:47.627335+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false),
-	('00000000-0000-0000-0000-000000000000', 'c12495c5-5e00-45bf-9bb2-92e99d22cc06', 'authenticated', 'authenticated', 'kks@kyungheehospital.com', '$2a$10$/WwAEjd9FYJh1RNRm3zJfu6lor05ZDPMPCkc9vB9wnjGcmuwctqHu', '2025-01-29 06:21:02.544745+00', NULL, '', '2025-01-29 06:20:44.972045+00', '', NULL, '', '', NULL, '2025-01-29 06:21:02.547286+00', '{"tenants": ["kyungheehospital", "safer"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-29 06:20:44.943486+00', '2025-01-30 10:42:38.477306+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false),
-	('00000000-0000-0000-0000-000000000000', '1c663348-a8c8-4a35-b3c0-3cc17197f043', 'authenticated', 'authenticated', 'you_h@gangnamdream.com', '$2a$10$Q79kIMK3U.z0oJOEoNvtbuTqiQ3KGdIzyt24PJV5/nnTRATA0VCDq', '2025-01-29 04:46:36.186558+00', NULL, '', '2025-01-29 04:46:22.597084+00', '', NULL, '', '', NULL, '2025-01-29 04:47:30.958194+00', '{"tenants": ["gangnamdream", "safer"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-29 04:46:22.567512+00', '2025-01-30 10:42:41.16638+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false),
-	('00000000-0000-0000-0000-000000000000', 'ee14b162-ea0a-4183-9690-173c8836b92d', 'authenticated', 'authenticated', 'stronghyuk@samsunghospital.com', '$2a$10$dPg4R8q.PPnYCR1LYIcS3.J3jS8ZbxyrakLUkBZz7MXdxD0vTBSDu', '2025-01-30 05:43:59.003376+00', NULL, '', '2025-01-30 05:43:47.093671+00', '', NULL, '', '', NULL, '2025-01-30 05:43:59.00594+00', '{"tenants": ["samsunghospital", "safer"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-30 05:43:47.064631+00', '2025-01-30 11:39:42.122565+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false);
+	('00000000-0000-0000-0000-000000000000', 'c12495c5-5e00-45bf-9bb2-92e99d22cc06', 'authenticated', 'authenticated', 'kks@kyungheehospital.com', '$2a$10$/WwAEjd9FYJh1RNRm3zJfu6lor05ZDPMPCkc9vB9wnjGcmuwctqHu', '2025-01-29 06:21:02.544745+00', NULL, '', '2025-01-29 06:20:44.972045+00', '', NULL, '', '', NULL, '2025-01-29 06:21:02.547286+00', '{"tenants": ["kyungheehospital", "safer"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2025-01-29 06:20:44.943486+00', '2025-01-30 10:42:38.477306+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL, false);
 
 
 --
@@ -401,9 +408,10 @@ INSERT INTO "auth"."identities" ("provider_id", "user_id", "identity_data", "pro
 
 INSERT INTO "auth"."sessions" ("id", "user_id", "created_at", "updated_at", "factor_id", "aal", "not_after", "refreshed_at", "user_agent", "ip", "tag") VALUES
 	('203530aa-240a-4566-96dc-f99242fe174e', 'ee14b162-ea0a-4183-9690-173c8836b92d', '2025-01-30 05:43:59.006001+00', '2025-01-30 11:39:42.123511+00', NULL, 'aal1', NULL, '2025-01-30 11:39:42.123473', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', '172.18.0.1', NULL),
-	('fbf3d3a5-35cf-4a36-b7de-b6a06d1470d0', '1c663348-a8c8-4a35-b3c0-3cc17197f043', '2025-01-29 04:46:36.189789+00', '2025-01-29 06:16:59.546925+00', NULL, 'aal1', NULL, '2025-01-29 06:16:59.546861', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', '172.18.0.1', NULL),
-	('0cf03fed-d6c3-43d6-9bde-f9328e978410', 'c12495c5-5e00-45bf-9bb2-92e99d22cc06', '2025-01-29 06:21:02.547325+00', '2025-01-30 10:42:38.478006+00', NULL, 'aal1', NULL, '2025-01-30 10:42:38.477963', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', '172.18.0.1', NULL),
-	('67c68e22-7e9e-41da-a47e-332bd1fdf3c2', '1c663348-a8c8-4a35-b3c0-3cc17197f043', '2025-01-29 04:47:30.958244+00', '2025-01-30 10:42:41.166904+00', NULL, 'aal1', NULL, '2025-01-30 10:42:41.166871', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', '172.18.0.1', NULL);
+	('504aaa1f-ac5f-487d-9f8a-78bbac1f7bbc', '5cb12aad-92a7-410a-a062-44a626e1f5e8', '2025-01-30 11:47:28.243922+00', '2025-01-30 11:47:28.243922+00', NULL, 'aal1', NULL, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', '172.18.0.1', NULL),
+	('1386df23-e3ea-4f89-8675-cdff04798ce3', '5cb12aad-92a7-410a-a062-44a626e1f5e8', '2025-01-30 12:00:04.240329+00', '2025-01-30 12:00:04.240329+00', NULL, 'aal1', NULL, NULL, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', '172.18.0.1', NULL),
+	('45deedc0-11ca-4f27-832e-932f20c018f8', 'ee14b162-ea0a-4183-9690-173c8836b92d', '2025-01-30 12:03:10.133952+00', '2025-01-30 12:03:10.133952+00', NULL, 'aal1', NULL, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', '172.18.0.1', NULL),
+	('0cf03fed-d6c3-43d6-9bde-f9328e978410', 'c12495c5-5e00-45bf-9bb2-92e99d22cc06', '2025-01-29 06:21:02.547325+00', '2025-01-30 10:42:38.478006+00', NULL, 'aal1', NULL, '2025-01-30 10:42:38.477963', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', '172.18.0.1', NULL);
 
 
 --
@@ -411,10 +419,11 @@ INSERT INTO "auth"."sessions" ("id", "user_id", "created_at", "updated_at", "fac
 --
 
 INSERT INTO "auth"."mfa_amr_claims" ("session_id", "created_at", "updated_at", "authentication_method", "id") VALUES
-	('fbf3d3a5-35cf-4a36-b7de-b6a06d1470d0', '2025-01-29 04:46:36.192431+00', '2025-01-29 04:46:36.192431+00', 'otp', '05b350cb-8b57-435f-95c7-eaae21197d5e'),
-	('67c68e22-7e9e-41da-a47e-332bd1fdf3c2', '2025-01-29 04:47:30.960875+00', '2025-01-29 04:47:30.960875+00', 'password', '017f92e1-da6c-43b3-8cde-90a398cb8e35'),
 	('0cf03fed-d6c3-43d6-9bde-f9328e978410', '2025-01-29 06:21:02.549586+00', '2025-01-29 06:21:02.549586+00', 'otp', 'a722c3b5-a35a-4505-9f72-7bf51ca6bf63'),
-	('203530aa-240a-4566-96dc-f99242fe174e', '2025-01-30 05:43:59.008385+00', '2025-01-30 05:43:59.008385+00', 'otp', '404456c3-3329-4dcf-ac8c-c0750ae8c321');
+	('203530aa-240a-4566-96dc-f99242fe174e', '2025-01-30 05:43:59.008385+00', '2025-01-30 05:43:59.008385+00', 'otp', '404456c3-3329-4dcf-ac8c-c0750ae8c321'),
+	('504aaa1f-ac5f-487d-9f8a-78bbac1f7bbc', '2025-01-30 11:47:28.246656+00', '2025-01-30 11:47:28.246656+00', 'password', '8252f951-da65-4eab-83b4-9d6e7d7d539b'),
+	('1386df23-e3ea-4f89-8675-cdff04798ce3', '2025-01-30 12:00:04.243637+00', '2025-01-30 12:00:04.243637+00', 'password', '5589df9b-5614-4033-82e7-e5d456f204e0'),
+	('45deedc0-11ca-4f27-832e-932f20c018f8', '2025-01-30 12:03:10.135743+00', '2025-01-30 12:03:10.135743+00', 'password', '2e5f56fb-6500-4064-b8c1-d2718cbdbeff');
 
 
 --
@@ -440,27 +449,18 @@ INSERT INTO "auth"."mfa_amr_claims" ("session_id", "created_at", "updated_at", "
 --
 
 INSERT INTO "auth"."refresh_tokens" ("instance_id", "id", "token", "user_id", "revoked", "created_at", "updated_at", "parent", "session_id") VALUES
-	('00000000-0000-0000-0000-000000000000', 133, '89zR_7_ZrXwkEWrPHkYNwA', '1c663348-a8c8-4a35-b3c0-3cc17197f043', true, '2025-01-29 04:47:30.959562+00', '2025-01-29 06:16:56.16282+00', NULL, '67c68e22-7e9e-41da-a47e-332bd1fdf3c2'),
-	('00000000-0000-0000-0000-000000000000', 132, '2I-IhenY7bnps0nzuIE3Uw', '1c663348-a8c8-4a35-b3c0-3cc17197f043', true, '2025-01-29 04:46:36.190715+00', '2025-01-29 06:16:59.545196+00', NULL, 'fbf3d3a5-35cf-4a36-b7de-b6a06d1470d0'),
-	('00000000-0000-0000-0000-000000000000', 135, '6mcbz_5Gn-UXpnY9WByStQ', '1c663348-a8c8-4a35-b3c0-3cc17197f043', false, '2025-01-29 06:16:59.545477+00', '2025-01-29 06:16:59.545477+00', '2I-IhenY7bnps0nzuIE3Uw', 'fbf3d3a5-35cf-4a36-b7de-b6a06d1470d0'),
 	('00000000-0000-0000-0000-000000000000', 136, 'fOKRQWykej4pk5ICikKDAg', 'c12495c5-5e00-45bf-9bb2-92e99d22cc06', true, '2025-01-29 06:21:02.548434+00', '2025-01-29 08:30:39.40336+00', NULL, '0cf03fed-d6c3-43d6-9bde-f9328e978410'),
-	('00000000-0000-0000-0000-000000000000', 134, 'j22NO2tamuBq1flE8pk4og', '1c663348-a8c8-4a35-b3c0-3cc17197f043', true, '2025-01-29 06:16:56.16378+00', '2025-01-29 09:02:06.482574+00', '89zR_7_ZrXwkEWrPHkYNwA', '67c68e22-7e9e-41da-a47e-332bd1fdf3c2'),
-	('00000000-0000-0000-0000-000000000000', 138, 'KEahtCsNZgT5Jx98mW6nyw', '1c663348-a8c8-4a35-b3c0-3cc17197f043', true, '2025-01-29 09:02:06.482848+00', '2025-01-29 10:00:13.748577+00', 'j22NO2tamuBq1flE8pk4og', '67c68e22-7e9e-41da-a47e-332bd1fdf3c2'),
-	('00000000-0000-0000-0000-000000000000', 139, 'v4BJ-nlWa2rU0H2drsUQqg', '1c663348-a8c8-4a35-b3c0-3cc17197f043', true, '2025-01-29 10:00:13.750166+00', '2025-01-30 05:42:11.715827+00', 'KEahtCsNZgT5Jx98mW6nyw', '67c68e22-7e9e-41da-a47e-332bd1fdf3c2'),
-	('00000000-0000-0000-0000-000000000000', 140, '7LVp6tYLHslVXCAVJZRrSQ', '1c663348-a8c8-4a35-b3c0-3cc17197f043', true, '2025-01-30 05:42:11.716928+00', '2025-01-30 06:42:48.992384+00', 'v4BJ-nlWa2rU0H2drsUQqg', '67c68e22-7e9e-41da-a47e-332bd1fdf3c2'),
-	('00000000-0000-0000-0000-000000000000', 142, 'B7-plsZ4CEDvN6_TBEYZIg', '1c663348-a8c8-4a35-b3c0-3cc17197f043', true, '2025-01-30 06:42:48.99323+00', '2025-01-30 07:40:54.53145+00', '7LVp6tYLHslVXCAVJZRrSQ', '67c68e22-7e9e-41da-a47e-332bd1fdf3c2'),
 	('00000000-0000-0000-0000-000000000000', 141, '5s53gS--yA1-C_ltfbg6yQ', 'ee14b162-ea0a-4183-9690-173c8836b92d', true, '2025-01-30 05:43:59.007021+00', '2025-01-30 08:15:07.714529+00', NULL, '203530aa-240a-4566-96dc-f99242fe174e'),
-	('00000000-0000-0000-0000-000000000000', 143, 'yafaS5JChX5UAg60L2bljQ', '1c663348-a8c8-4a35-b3c0-3cc17197f043', true, '2025-01-30 07:40:54.532295+00', '2025-01-30 08:39:03.869942+00', 'B7-plsZ4CEDvN6_TBEYZIg', '67c68e22-7e9e-41da-a47e-332bd1fdf3c2'),
-	('00000000-0000-0000-0000-000000000000', 145, 'Qf8utumb5KT-NVAWd5GQWg', '1c663348-a8c8-4a35-b3c0-3cc17197f043', true, '2025-01-30 08:39:03.870285+00', '2025-01-30 09:37:22.778313+00', 'yafaS5JChX5UAg60L2bljQ', '67c68e22-7e9e-41da-a47e-332bd1fdf3c2'),
 	('00000000-0000-0000-0000-000000000000', 144, 'NCEKCfQYyWQneWDS7pjJFQ', 'ee14b162-ea0a-4183-9690-173c8836b92d', true, '2025-01-30 08:15:07.715087+00', '2025-01-30 09:40:52.45208+00', '5s53gS--yA1-C_ltfbg6yQ', '203530aa-240a-4566-96dc-f99242fe174e'),
 	('00000000-0000-0000-0000-000000000000', 137, 'DoU1x5utObsqTduNraNzDw', 'c12495c5-5e00-45bf-9bb2-92e99d22cc06', true, '2025-01-29 08:30:39.404235+00', '2025-01-30 09:43:10.39966+00', 'fOKRQWykej4pk5ICikKDAg', '0cf03fed-d6c3-43d6-9bde-f9328e978410'),
 	('00000000-0000-0000-0000-000000000000', 147, 'osiC0_YRLLjxk-9R-l1zWQ', 'ee14b162-ea0a-4183-9690-173c8836b92d', true, '2025-01-30 09:40:52.452753+00', '2025-01-30 10:41:29.36471+00', 'NCEKCfQYyWQneWDS7pjJFQ', '203530aa-240a-4566-96dc-f99242fe174e'),
 	('00000000-0000-0000-0000-000000000000', 148, '1mQCF78SqEGkby8MBnMQEA', 'c12495c5-5e00-45bf-9bb2-92e99d22cc06', true, '2025-01-30 09:43:10.399965+00', '2025-01-30 10:42:38.476161+00', 'DoU1x5utObsqTduNraNzDw', '0cf03fed-d6c3-43d6-9bde-f9328e978410'),
 	('00000000-0000-0000-0000-000000000000', 150, 'TgPJdTNeVaEFFDGgIYWG1Q', 'c12495c5-5e00-45bf-9bb2-92e99d22cc06', false, '2025-01-30 10:42:38.476474+00', '2025-01-30 10:42:38.476474+00', '1mQCF78SqEGkby8MBnMQEA', '0cf03fed-d6c3-43d6-9bde-f9328e978410'),
-	('00000000-0000-0000-0000-000000000000', 146, '3OmmROZO8sIdh7GqjngJNg', '1c663348-a8c8-4a35-b3c0-3cc17197f043', true, '2025-01-30 09:37:22.781768+00', '2025-01-30 10:42:41.165666+00', 'Qf8utumb5KT-NVAWd5GQWg', '67c68e22-7e9e-41da-a47e-332bd1fdf3c2'),
-	('00000000-0000-0000-0000-000000000000', 151, 'cQrKep73Xst3rRtx0lmCTg', '1c663348-a8c8-4a35-b3c0-3cc17197f043', false, '2025-01-30 10:42:41.165861+00', '2025-01-30 10:42:41.165861+00', '3OmmROZO8sIdh7GqjngJNg', '67c68e22-7e9e-41da-a47e-332bd1fdf3c2'),
 	('00000000-0000-0000-0000-000000000000', 149, 'L20YU1K6rd7FJOTsrpKW4w', 'ee14b162-ea0a-4183-9690-173c8836b92d', true, '2025-01-30 10:41:29.365448+00', '2025-01-30 11:39:42.120578+00', 'osiC0_YRLLjxk-9R-l1zWQ', '203530aa-240a-4566-96dc-f99242fe174e'),
-	('00000000-0000-0000-0000-000000000000', 152, 'KFMFp45arfwcsW6nbpVamw', 'ee14b162-ea0a-4183-9690-173c8836b92d', false, '2025-01-30 11:39:42.121293+00', '2025-01-30 11:39:42.121293+00', 'L20YU1K6rd7FJOTsrpKW4w', '203530aa-240a-4566-96dc-f99242fe174e');
+	('00000000-0000-0000-0000-000000000000', 152, 'KFMFp45arfwcsW6nbpVamw', 'ee14b162-ea0a-4183-9690-173c8836b92d', false, '2025-01-30 11:39:42.121293+00', '2025-01-30 11:39:42.121293+00', 'L20YU1K6rd7FJOTsrpKW4w', '203530aa-240a-4566-96dc-f99242fe174e'),
+	('00000000-0000-0000-0000-000000000000', 153, 'wnne2SRUkeoX2Lguv7f1Ww', '5cb12aad-92a7-410a-a062-44a626e1f5e8', false, '2025-01-30 11:47:28.245369+00', '2025-01-30 11:47:28.245369+00', NULL, '504aaa1f-ac5f-487d-9f8a-78bbac1f7bbc'),
+	('00000000-0000-0000-0000-000000000000', 155, 'usF0n3yDmi9SdzR1epkUQg', '5cb12aad-92a7-410a-a062-44a626e1f5e8', false, '2025-01-30 12:00:04.241645+00', '2025-01-30 12:00:04.241645+00', NULL, '1386df23-e3ea-4f89-8675-cdff04798ce3'),
+	('00000000-0000-0000-0000-000000000000', 156, 'raXjLu1EQgdqlf7PBLiS3A', 'ee14b162-ea0a-4183-9690-173c8836b92d', false, '2025-01-30 12:03:10.134707+00', '2025-01-30 12:03:10.134707+00', NULL, '45deedc0-11ca-4f27-832e-932f20c018f8');
 
 
 --
@@ -916,7 +916,8 @@ INSERT INTO "public"."reservations" ("bed_code", "reserved_beds", "requested_at"
 	('hvicc', 1, '2025-01-30 10:52:40.987198+00', '2025-01-30 10:59:14.26721+00', NULL, NULL, '2025-01-30 10:59:14.26721+00', 'approved', 'A1100010', '8089b0c8-ad38-44cd-beb0-3c46daa6e35b', 9),
 	('hvicc', 1, '2025-01-30 11:33:44.167524+00', NULL, NULL, NULL, '2025-01-30 11:33:44.167524+00', 'pending', 'A1100010', 'aab52eff-9908-4538-b787-22df713279ee', 9),
 	('hvicc', 1, '2025-01-30 11:37:41.106049+00', NULL, NULL, NULL, '2025-01-30 11:37:41.106049+00', 'pending', 'A1100010', '1760a6ef-cea9-4994-b1bd-871f0b37d089', 9),
-	('hvicc', 1, '2025-01-30 10:55:52.464677+00', '2025-01-30 11:40:46.490876+00', NULL, NULL, '2025-01-30 11:40:46.490876+00', 'approved', 'A1100010', '4a3b1956-6c8e-4869-829b-7671dc61325f', 9);
+	('hvicc', 1, '2025-01-30 10:55:52.464677+00', '2025-01-30 11:40:46.490876+00', NULL, NULL, '2025-01-30 11:40:46.490876+00', 'approved', 'A1100010', '4a3b1956-6c8e-4869-829b-7671dc61325f', 9),
+	('hvicc', 1, '2025-01-30 11:57:04.435543+00', NULL, '2025-01-30 12:03:28.625593+00', NULL, '2025-01-30 12:03:28.625593+00', 'rejected', 'A1100010', 'ceda9e7f-1886-4da0-b77c-e985bf7ebbfb', 3);
 
 
 --
@@ -927,7 +928,8 @@ INSERT INTO "public"."patient_assessments" ("id", "patient_reg_number", "conditi
 	(23, NULL, '미끄러짐으로 인한 낙상', '01028605110', '19:52:00', '', '2025-01-30 10:52:40.987198+00', 9, '8089b0c8-ad38-44cd-beb0-3c46daa6e35b', NULL, '정용화'),
 	(24, NULL, '미끄러짐으로 인한 낙상', '01028605110', '19:52:00', '부부', '2025-01-30 10:55:52.464677+00', 9, '4a3b1956-6c8e-4869-829b-7671dc61325f', NULL, '신성지'),
 	(25, NULL, '미끄러짐으로 인한 낙상', '01028605110', '19:52:00', '', '2025-01-30 11:33:44.167524+00', 9, 'aab52eff-9908-4538-b787-22df713279ee', NULL, '남영희'),
-	(26, NULL, '미끄러짐으로 인한 낙상', '01028605110', '19:52:00', '', '2025-01-30 11:37:41.106049+00', 9, '1760a6ef-cea9-4994-b1bd-871f0b37d089', NULL, '유재석');
+	(26, NULL, '미끄러짐으로 인한 낙상', '01028605110', '19:52:00', '', '2025-01-30 11:37:41.106049+00', 9, '1760a6ef-cea9-4994-b1bd-871f0b37d089', NULL, '유재석'),
+	(27, NULL, '낙상', '01028605110', '20:56:00', '', '2025-01-30 11:57:04.435543+00', 3, 'ceda9e7f-1886-4da0-b77c-e985bf7ebbfb', NULL, '강명희');
 
 
 --
@@ -995,7 +997,7 @@ INSERT INTO "public"."tenant_permissions" ("id", "created_at", "service_user", "
 -- Name: refresh_tokens_id_seq; Type: SEQUENCE SET; Schema: auth; Owner: supabase_auth_admin
 --
 
-SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 152, true);
+SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 156, true);
 
 
 --
@@ -1023,7 +1025,7 @@ SELECT pg_catalog.setval('"public"."hospital_emergency_info_info_id_seq"', 1, fa
 -- Name: patient_assessments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"public"."patient_assessments_id_seq"', 26, true);
+SELECT pg_catalog.setval('"public"."patient_assessments_id_seq"', 27, true);
 
 
 --

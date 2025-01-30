@@ -297,7 +297,7 @@ export default function ReservationPage() {
             user_lon: userLocation.lng,
             radius_km: searchRadius,
             availability_units: ['hvec'],
-            equip_list: []
+            equip_list: null
           })
           .then(({ data, error }) => {
             if (error) {
