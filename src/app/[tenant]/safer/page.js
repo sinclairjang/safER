@@ -11,7 +11,6 @@ import { getSupabaseBrowserClient } from "@/supabase-utils/browserClient";
 import InfoWindowContent from "./widgets/InfoWindowContent";
 import { Snackbar, Alert } from "@mui/material";
 import MyLocationIcon from "@mui/icons-material/MyLocation";
-import { v4 as uuidv4 } from 'uuid';
 
 export default function ReservationPage() {
   const [map, setMap] = useState(null);        // Reference to the Naver map
@@ -28,7 +27,7 @@ export default function ReservationPage() {
   const [equipments, setEquipments] = useState([]);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
-  const [bookingUUID, setBookingUUID] = useState(null);
+  const [snackbarSuccessFlag, setSnackbarSuccessFlag] = useState(false);
   const [selectedReservation, setSelectedReservation] = useState(null);
 
   const handleCloseSnackbar = () => {
@@ -396,7 +395,47 @@ export default function ReservationPage() {
     return () => {
         window.removeEventListener("reservation-click", handleReservationClicked);
     };
-}, []);
+  }, []);
+
+  const handleDiagnosisModalSumbit = async (patientData) => {
+    if (!selectedReservation) {
+      console.error("No reservation selected!");
+      setSnackbarMessage("예약할 병상을 선택해주세요.");
+      setSnackbarOpen(true);
+      return;
+    }
+  
+    const { hospitalId, bedCode, reservationId, numberOfBeds } = selectedReservation;
+    const { patient_reg_number, name, condition, emergencyContact, eta, notes } = patientData;
+    console.log(patientData);
+    try {
+      const { error } = await supabase.rpc("insert_reservation_and_assessment", {
+        reservation_id: reservationId,
+        hospital_id: hospitalId,
+        bed_code: bedCode,
+        reserved_beds: numberOfBeds,
+        patient_name: name ? name : null,
+        patient_reg_number: patient_reg_number ? patient_reg_number : null,
+        condition: condition,
+        emergency_contact: emergencyContact,
+        eta: eta,
+        notes: notes,
+      });
+  
+      if (error) throw error;
+  
+      setSnackbarMessage("병상 예약과 환자 평가가 성공적으로 등록되었습니다.");
+      setSnackbarSuccessFlag(true);
+      setSnackbarOpen(true);
+      setShowDiagnosisModal(false);
+    } catch (err) {
+      console.error("Transaction failed:", err);
+      setSnackbarMessage("예약 및 환자 평가 요청에 실패했습니다.");
+      setSnackbarOpen(true);
+    }
+  };
+  
+
 
   const handleDiagnosisModalClose = () => {
     setShowDiagnosisModal(false);
@@ -406,6 +445,11 @@ export default function ReservationPage() {
     setAvailabilityUnits(availabilityUnits);
     setEquipments(equipments);
     setEmergencyModalOpen(true);
+  };
+
+  const handleExited = () => {
+    console.log('Snackbar has exited');
+    setSnackbarSuccessFlag(false);
   };
 
   return (
@@ -450,7 +494,7 @@ export default function ReservationPage() {
           <DiagnosisModal 
             open={showDiagnosisModal}
             onClose={handleDiagnosisModalClose}
-            bookingUUID={bookingUUID}
+            onSubmit={handleDiagnosisModalSumbit}
           />
         </Fragment>
       </div>
@@ -459,9 +503,10 @@ export default function ReservationPage() {
         open={snackbarOpen} 
         autoHideDuration={6000} 
         onClose={handleCloseSnackbar}
+        TransitionProps={{ onExited: handleExited }}
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
       >
-        <Alert onClose={handleCloseSnackbar} severity="warning" sx={{ width: '100%' }}>
+        <Alert onClose={handleCloseSnackbar} severity={snackbarSuccessFlag ? "success" : "warning"} sx={{ width: '100%' }}>
           {snackbarMessage}
         </Alert>
       </Snackbar>            
