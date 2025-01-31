@@ -456,7 +456,7 @@ export default function ReservationPage() {
   };
 
   return (
-    <div className="naver-map-page" style={{ display: 'flex', height: '90vh', position: 'relative' }}>
+    <div className="naver-map-page" style={{ display: 'flex', height: '110vh', position: 'relative' }}>
       
       { showTransferFilterPanel && <TransferFilterPanel map={map} onApplyFilters={handleApplyFilters} /> }
       
@@ -507,7 +507,7 @@ export default function ReservationPage() {
         autoHideDuration={6000} 
         onClose={handleCloseSnackbar}
         TransitionProps={{ onExited: handleExited }}
-        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
       >
         <Alert onClose={handleCloseSnackbar} severity={snackbarSuccessFlag ? "success" : "warning"} sx={{ width: '100%' }}>
           {snackbarMessage}
@@ -533,7 +533,7 @@ export default function ReservationPage() {
 
       const InfoWindowContainer = document.createElement("div");
       const root = createRoot(InfoWindowContainer);
-
+      console.log(availabilityUnits);
       root.render(
         <InfoWindowContent
           dutyname={hospital.dutyname}

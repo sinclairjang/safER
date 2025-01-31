@@ -4,20 +4,19 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { getSupabaseBrowserClient } from "@/supabase-utils/browserClient";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { urlPath } from "@/utils/url-helpers";
+import { BottomNavigation, BottomNavigationAction, Paper } from "@mui/material";
+import { Hotel, History, Event, ExitToApp } from "@mui/icons-material";
 
-export default function Nav( {tenant} ) {
+export default function Nav({ tenant }) {
     const pathname = usePathname();
-    const activeProps = { className: "contrast" };
-    const inactiveProps = { className: "secondary outline" };
     const supabase = getSupabaseBrowserClient();
     const router = useRouter();
+    const [value, setValue] = useState(pathname);
 
     useEffect(() => {
-        const {
-            data: { subscription },
-        } = supabase.auth.onAuthStateChange((event, session) => {
+        const { data: { subscription } } = supabase.auth.onAuthStateChange((event) => {
             if (event === "SIGNED_OUT") {
                 router.push(`/`);
             }
@@ -26,46 +25,42 @@ export default function Nav( {tenant} ) {
     }, []);
 
     return (
-        <nav>
-            <ul>
-                <li>
-                    <Link role="button" href={urlPath("/hospital", tenant)}
-                    {...(pathname === urlPath("/hospital", tenant) ? activeProps : inactiveProps )}
-                    >
-                        병원 정보
-                    </Link>
-                </li>
-                <li>
-                    <Link role="button" href={urlPath("/hospital/reservations", tenant)}
-                    {...(pathname === "/hospital/reservations" ? activeProps : inactiveProps )}                    
-                    >
-                        예약 신청 현황
-                    </Link>
-                </li>
-                <li>
-                    <Link role="button" href={urlPath("/hospital/reservation-history", tenant)}
-                    {...(pathname === "/hospital/reservation-history" ? activeProps : inactiveProps )}                    
-                    >
-                        예약 내역
-                    </Link>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <Link
-                        role="button"
-                        href={urlPath("/logout", tenant)}
-                        prefetch={false}
-                        className="secondary"
-                        onClick={(event) => {
-                            console.log(event);
-                            event.preventDefault();
-                            supabase.auth.signOut();
-                        }}>
-                            나가기
-                    </Link>
-                </li>
-            </ul>
-        </nav>
+        <Paper sx={{ position: "fixed", bottom: 0, left: 0, right: 0, zIndex: 1000 }} elevation={3}>
+            <BottomNavigation
+                value={value}
+                onChange={(_, newValue) => setValue(newValue)}
+                showLabels
+            >
+                <BottomNavigationAction
+                    label="병상 가동 현황"
+                    icon={<Hotel />}
+                    component={Link}
+                    href={urlPath("/hospital", tenant)}
+                    value={urlPath("/hospital", tenant)}
+                />
+                <BottomNavigationAction
+                    label="예약 신청 현황"
+                    icon={<Event />}
+                    component={Link}
+                    href={urlPath("/hospital/reservations", tenant)}
+                    value={urlPath("/hospital/reservations", tenant)}
+                />
+                <BottomNavigationAction
+                    label="예약 내역"
+                    icon={<History />}
+                    component={Link}
+                    href={urlPath("/hospital/reservation-history", tenant)}
+                    value={urlPath("/hospital/reservation-history", tenant)}
+                />
+                <BottomNavigationAction
+                    label="나가기"
+                    icon={<ExitToApp />}
+                    onClick={(event) => {
+                        event.preventDefault();
+                        supabase.auth.signOut();
+                    }}
+                />
+            </BottomNavigation>
+        </Paper>
     );
 }

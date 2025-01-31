@@ -1,61 +1,13 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { getSupabaseBrowserClient } from "@/supabase-utils/browserClient";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-import { urlPath } from "@/utils/url-helpers";
+import { Divider } from "@mui/material";
 
-export default function Nav( {tenant} ) {
-    const pathname = usePathname();
-    const activeProps = { className: "contrast" };
-    const inactiveProps = { className: "secondary outline" };
-    const supabase = getSupabaseBrowserClient();
-    const router = useRouter();
 
-    useEffect(() => {
-        const {
-            data: { subscription },
-        } = supabase.auth.onAuthStateChange((event, session) => {
-            if (event === "SIGNED_OUT") {
-                router.push(`/`);
-            }
-        });
-        return () => subscription.unsubscribe();
-    }, []);
+export default function Nav() {
 
     return (
-        <nav>
-            <ul>
-            </ul>
-            <ul>
-                <li>
-                    <Link
-                        role="button"
-                        href={urlPath("/logout", tenant)}
-                        prefetch={false}
-                        className="secondary"
-                        style={{
-                            marginRight: "10px",
-                            padding: "10px 10px 10px 10px",  // Reduced padding
-                            fontSize: "15px",     // Smaller font
-                            height: "40px",       // Fixed button height
-                            lineHeight: "30px",   // Align text vertically
-                            borderRadius: "4px",  // Optional: Rounded edges
-                            display: "inline-flex",
-                            alignItems: "center",
-                          }}
-                        onClick={(event) => {
-
-                            console.log(event);
-                            event.preventDefault();
-                            supabase.auth.signOut();
-                        }}>
-                            나가기
-                    </Link>
-                </li>
-            </ul>
+        <nav style={{ display: "flex", justifyContent: "flex-end", padding: "10px" }}>
+                <Divider />
         </nav>
     );
 }

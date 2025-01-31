@@ -38,6 +38,26 @@
     margin-bottom: 10px;
 }
 
+/* ✅ Alternate Row Colors */
+.reservation-table tbody tr:nth-child(odd) {
+    background-color: #f8f9fa; /* Light gray for odd rows */
+}
+
+.reservation-table tbody tr:nth-child(even) {
+    background-color: #ffffff; /* White for even rows */
+}
+
+
+/* ✅ Make text darker for better contrast */
+.reservation-table tbody tr td {
+    color: #34495e; /* Darker text */
+}
+
+/* ✅ Hover Effect for Better Interaction */
+.reservation-table tbody tr:hover {
+    background-color: #e9ecef !important; /* Slightly darker hover effect */
+}
+
 /* Table styling */
 .reservation-table {
     width: 90%;
@@ -45,6 +65,7 @@
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
+    
 }
 
 .reservation-table thead {
@@ -57,6 +78,8 @@
     padding: 12px 15px;
     text-align: left;
     border-bottom: 1px solid #e0e0e0;
+    word-wrap: break-word; /* ✅ Ensures long text wraps properly */
+    white-space: normal; /* ✅ Allows text to wrap instead of overflowing */
 }
 
 .reservation-table th {
@@ -64,10 +87,56 @@
     font-weight: 600;
 }
 
-.reservation-row {
-    color: #4b5155;
-    text-decoration: none;
-    font-weight: bold;
+/* Adjust specific column widths */
+.reservation-table th:nth-child(1), /* 예약 코드 */
+.reservation-table td:nth-child(1) {
+    min-width: 100px;
+    max-width: 200px;
+    white-space: nowrap; /* ✅ Prevents reservation IDs from breaking */
+    overflow: scroll;
+    text-overflow: scroll;
+}
+
+.reservation-table th:nth-child(2), /* 요청 병실 */
+.reservation-table td:nth-child(2) {
+    min-width: 120px;
+    max-width: 250px;
+}
+
+.reservation-table th:nth-child(3), /* 요청 병상 개수 */
+.reservation-table td:nth-child(3) {
+    min-width: 150px;
+    max-width: 250px;
+}
+
+.reservation-table th:nth-child(5), /* 신청자 */
+.reservation-table td:nth-child(5) {
+    min-width: 80px;
+    max-width: 300px;
+}
+
+.reservation-table th:nth-child(6), /* 대기 시간 */
+.reservation-table td:nth-child(6) {
+    min-width: 100px;
+    text-align: center;
+}
+
+.reservation-table th:nth-child(7), /* Actions */
+.reservation-table td:nth-child(7) {
+    width: 120px;
+    text-align: center;
+}
+
+/* Allow table to be responsive */
+@media (max-width: 800px) {
+    .reservation-table {
+        font-size: 0.9rem;
+    }
+
+    .reservation-table th,
+    .reservation-table td {
+        padding: 8px;
+    }
 }
 
 .reservation-table tbody tr:hover {
@@ -76,17 +145,17 @@
 
 /* Status styling */
 .status-approved {
-    color: #2ecc71;
+    color: #2ecc71 !important;
     font-weight: bold;
 }
 
-.status-in-cancelled {
-    color: #f39c12;
+.status-cancelled {
+    color: #f39c12 !important;
     font-weight: bold;
 }
 
 .status-rejected {
-    color: #e74c3c;
+    color: #e74c3c !important;
     font-weight: bold;
 }
 
@@ -132,4 +201,28 @@
 
 .reject-icon:hover {
     transform: scale(1.2);
+}
+
+.note-icon {
+    font-size: 1.5rem;
+    color: #3498db; /* Blue color for note */
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.note-icon:hover {
+    transform: scale(1.2);
+    color: #2980b9;
+}
+
+.edit-icon {
+    font-size: 1.5rem;
+    color: #f39c12; /* Orange color for edit */
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.edit-icon:hover {
+    transform: scale(1.2);
+    color: #e67e22;
 }

@@ -4,72 +4,65 @@ export default async function TenantName({ tenant }) {
     let tenantName = "Unknown";
     const supabase = await getSupabaseCookiesUtilClient();
     const selection = await supabase
-      .from("tenants")
-      .select("name")
-      .eq("id", tenant)
-      .single();
+        .from("tenants")
+        .select("name") // Fetch logo_url if available
+        .eq("id", tenant)
+        .single();
     const { data, error } = selection;
-    console.log({
-      tenant,
-      data,
-      error,
-    });
-  
+
+    console.log({ tenant, data, error });
+
     tenantName = data?.name ?? tenantName;
-    const logoUrl = "/rescuer_logo.png";
-  
+    
+    // Use the tenant's logo if available, otherwise use a generated placeholder
+    const logoUrl = data?.logo_url 
+        ? data.logo_url 
+        : `https://api.dicebear.com/7.x/identicon/svg?seed=${encodeURIComponent(tenantName)}`;
+
     return (
-      <header
-        style={{
-          textAlign: "center",
-          padding: "10px 0", // Reduce padding inside the header
-          height: "auto", // Allow the header height to adjust dynamically
-        }}
-      >
-        {/* Logo Section */}
-        {logoUrl && (
-          <img
-            src={logoUrl}
-            alt={`${tenantName} logo`}
-            style={{
-              width: "100px", // Reduced size for smaller display
-              height: "100px",
-              marginBottom: "5px", // Less space between logo and tenant name
-              objectFit: "contain",
-            }}
-          />
-        )}
-        {/* Tenant Name Section */}
-        <div
-          style={{
-            display: "block",
-            padding: "5px 10px", // Reduce padding around the tenant name
-            fontSize: "1em", // Slightly smaller font size
-            marginTop: "5px", // Reduce space between logo and name section
-          }}
-        >
-          <strong
-            style={{
-              marginLeft: "1ex",
-              display: "inline-block",
-              position: "relative",
-            }}
-          >
-            {tenantName}
-            <span
-              style={{
-                position: "absolute",
-                bottom: "-3px", // Adjust underline position
-                left: "-20%", // Adjust starting point
-                width: "140%", // Shorten underline length
-                height: "2px", // Thin underline
-                backgroundColor: "green",
-                content: '""',
-              }}
-            ></span>
-          </strong>
-        </div>
-      </header>
+        <header style={{ marginBottom: "20px", textAlign: "center" }}>
+            {/* Logo Section */}
+            <img
+                src={logoUrl}
+                alt={`${tenantName} logo`}
+                style={{
+                    width: "150px",
+                    height: "150px",
+                    marginBottom: "10px",
+                    objectFit: "contain",
+                    borderRadius: "10px", // Optional: rounded corners for a better look
+                }}
+            />
+            {/* Tenant Name Section */}
+            <div
+                style={{
+                    display: "block",
+                    padding: "10px 15px",
+                    fontSize: "1.2em",
+                    marginTop: "10px",
+                }}
+            >
+                <strong
+                    style={{
+                        marginLeft: "1ex",
+                        display: "inline-block",
+                        position: "relative",
+                    }}
+                >
+                    {tenantName}
+                    <span
+                        style={{
+                            position: "absolute",
+                            bottom: "-5px",
+                            left: "-25%",
+                            width: "150%",
+                            height: "3px",
+                            backgroundColor: "green",
+                            content: '""',
+                        }}
+                    ></span>
+                </strong>
+            </div>
+        </header>
     );
-  }
-  
+}

@@ -1,17 +1,28 @@
-// ReservationHistory.js
 "use client";
 
 import "@/styles/reservation-list.css";
 import { useState, useEffect } from "react";
-import { FaTrash } from "react-icons/fa";
 import { urlPath } from "@/utils/url-helpers";
 import { getSupabaseBrowserClient } from "@/supabase-utils/browserClient";
+import { getHospitalByTenant } from "@/utils/getHospitalByTenant";
+import { FaStickyNote, FaEdit } from "react-icons/fa"; // ✅ Note icon
+import ReasonModal from "./ReasonModal"; // ✅ Import new modal
 
 export function ReservationHistory({ reservationHistory, tenant }) {
     const [reservations, setReservations] = useState(reservationHistory);
+    const [selectedReservation, setSelectedReservation] = useState(null); // ✅ Track selected reservation
+    const [modalOpen, setModalOpen] = useState(false); // ✅ Modal state
+    const [isEditing, setIsEditing] = useState(false); // ✅ Edit mode state
 
     const supabase = getSupabaseBrowserClient();
+    
     useEffect(() => {
+        const hpid = getHospitalByTenant(tenant)
+        if (!hpid) {
+            console.log("다음 작업을 위해서는 hpid가 필요합니다.");
+            return null;
+        }
+
         const fetchReservations = async () => {
             try {
                 const { data, error } = await supabase.rpc("fetch_processed_reservations_with_beds");
@@ -57,7 +68,8 @@ export function ReservationHistory({ reservationHistory, tenant }) {
                 {
                     event: "UPDATE",
                     schema: "public",
-                    table: "hospital_bed_availability"
+                    table: "hospital_bed_availability",
+                    filter: `hpid=eq.${hpid}`
                 },
                 async (payload) => {
                     console.log("Bed availability change detected in history:", payload);
@@ -94,6 +106,24 @@ export function ReservationHistory({ reservationHistory, tenant }) {
         }
     };
 
+    const handleOpenViewModal = (reservation) => {
+        setSelectedReservation(reservation);
+        setIsEditing(false); // View mode
+        setModalOpen(true);
+    };
+
+    const handleOpenEditModal = (reservation) => {
+        setSelectedReservation(reservation);
+        setIsEditing(true); // Edit mode
+        setModalOpen(true);
+    };
+    
+    const statusMap = {
+        "rejected": "거절",
+        "approved": "승인",
+        "cancelled": "취소", 
+    }
+
     return (
         <div className="reservation-list-container">
             <div className="reservation-list-header">
@@ -106,11 +136,11 @@ export function ReservationHistory({ reservationHistory, tenant }) {
                         <th>예약 코드</th>
                         <th>요청 병실</th>
                         <th>요청 병상 개수</th>
-                        <th>잔여 병상 수</th>
                         <th>신청자</th>
                         <th>처리 날짜</th>
                         <th>처리 결과</th>
-                        <th></th>
+                        <th>사유</th>
+                        <th></th> 
                     </tr>
                 </thead>
                 <tbody>
@@ -121,24 +151,19 @@ export function ReservationHistory({ reservationHistory, tenant }) {
                                 <td className="reservation-row">{reservation.bed_code}</td>
                                 <td className="reservation-row">{reservation.reserved_beds}</td>
                                 <td className="reservation-row">
-                                    {reservation.remaining_beds ?? "N/A"}
-                                </td>
-                                <td className="reservation-row">
                                     {reservation.requester_name ?? "Unknown"}
                                 </td>
                                 <td className="reservation-row">
                                     {new Date(reservation.updated_at).toLocaleString()}
                                 </td>
                                 <td className={`reservation-row status-${reservation.status.toLowerCase()}`}>
-                                    {reservation.status}
+                                    {statusMap[reservation.status]}
                                 </td>
-                                <td>
-                                    <div className="action-icons">
-                                        <FaTrash
-                                            className="delete-icon"
-                                            onClick={() => handleAction(reservation.id, "delete")}
-                                        />
-                                    </div>
+                                <td className="reservation-row">
+                                    <FaStickyNote className="note-icon" onClick={() => handleOpenViewModal(reservation)} />
+                                </td>
+                                <td className="reservation-row">
+                                    <FaEdit className="edit-icon" onClick={() => handleOpenEditModal(reservation)} />
                                 </td>
                             </tr>
                         ))
@@ -151,6 +176,8 @@ export function ReservationHistory({ reservationHistory, tenant }) {
                     )}
                 </tbody>
             </table>
+
+            {modalOpen && <ReasonModal reservation={selectedReservation} onClose={() => setModalOpen(false)} isEditing={isEditing} />}
         </div>
     );
 }

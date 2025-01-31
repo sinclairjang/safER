@@ -3,16 +3,24 @@
 
 import "@/styles/reservation-list.css";
 import { useState, useEffect } from "react";
-import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 import { urlPath } from "@/utils/url-helpers";
 import { getSupabaseBrowserClient } from "@/supabase-utils/browserClient";
+import { getHospitalByTenant } from "@/utils/getHospitalByTenant";
+import { FaCheckCircle, FaTimesCircle, FaUserMd } from "react-icons/fa";
+import PatientDetailsModal from "./PatientDetailsModal";
 
 export function ReservationList({ reservationReqs, tenant }) {
     const [reservations, setReservations] = useState(reservationReqs);
-
+    const [selectedPatient, setSelectedPatient] = useState(null);
+    const [modalOpen, setModalOpen] = useState(false);
     const supabase = getSupabaseBrowserClient();
 
     useEffect(() => {
+        const hpid = getHospitalByTenant(tenant)
+        if (!hpid) {
+            console.log("다음 작업을 위해서는 hpid가 필요합니다.");
+            return null;
+        }
         const fetchReservations = async () => {
             try {
                 const { data, error } = await supabase.rpc("fetch_pending_reservations_with_beds");
@@ -58,10 +66,11 @@ export function ReservationList({ reservationReqs, tenant }) {
                 {
                     event: "UPDATE",
                     schema: "public",
-                    table: "hospital_bed_availability"
+                    table: "hospital_bed_availability",
+                    filter: `hpid=eq.${hpid}`
                 },
                 async (payload) => {
-                    console.log("Bed availability change detected:", payload);
+                    console.log(`Bed availability for ${hpid} change detected:`, payload);
     
                     // Always re-fetch from RPC to ensure accurate remaining_beds
                     await fetchReservations();
@@ -109,6 +118,22 @@ export function ReservationList({ reservationReqs, tenant }) {
         }
     };
 
+    const handleShowPatient = async (reservationId) => {
+        const { data, error } = await supabase
+            .from("patient_assessments")
+            .select("*")
+            .eq("reservation_id", reservationId)
+            .single();
+
+        if (error) {
+            console.error("Error fetching patient details:", error);
+            return;
+        }
+
+        setSelectedPatient(data);
+        setModalOpen(true);
+    };
+
     return (
         <div className="reservation-list-container">
             <div className="reservation-list-header">
@@ -124,6 +149,7 @@ export function ReservationList({ reservationReqs, tenant }) {
                         <th>잔여 병상 수</th>
                         <th>신청자</th>
                         <th>대기 시간</th>
+                        <th>환자 상태</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -142,6 +168,9 @@ export function ReservationList({ reservationReqs, tenant }) {
                                 </td>
                                 <td className="reservation-row">
                                     {calculateElapsedTime(reservation.requested_at)}
+                                </td>
+                                <td>
+                                    <FaUserMd className="patient-icon" onClick={() => handleShowPatient(reservation.id)} />
                                 </td>
                                 <td>
                                     <div className="action-icons">
@@ -166,6 +195,9 @@ export function ReservationList({ reservationReqs, tenant }) {
                     )}
                 </tbody>
             </table>
+
+            {modalOpen && <PatientDetailsModal patient={selectedPatient} onClose={() => setModalOpen(false)} />}
+
         </div>
     );
 }

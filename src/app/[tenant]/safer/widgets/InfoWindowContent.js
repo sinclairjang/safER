@@ -117,7 +117,7 @@ export default function InfoWindowContent({
                             },
                           }}
                         onClick={() => handleUnitSelect(unit)}
-                        >
+                      >
                         {bedCodeMap[unit] 
                             ? `${bedCodeMap[unit]}: ${typeof hospitalData[unit] === "boolean"
                                 ? (hospitalData[unit] ? "가능" : "불가능")
@@ -149,7 +149,7 @@ export default function InfoWindowContent({
             open={snackbarOpen} 
             autoHideDuration={6000} 
             onClose={() => setSnackbarOpen(false)}
-            anchorOrigin={{ vertical: "top", horizontal: "center" }}
+            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
             sx={{ position: "fixed", zIndex: 9999 }} // 🔥 Ensures Snackbar is on top
         >
             <Alert onClose={() => setSnackbarOpen(false)} severity="warning" sx={{ width: "100%" }}>
