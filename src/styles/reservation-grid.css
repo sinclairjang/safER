@@ -1,0 +1,53 @@
+.reservation-container {
+    width: 100%;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    padding: 10px;
+  }
+  
+  /* Header Grid: Fixed Column Widths */
+  .reservation-grid-header {
+    display: grid;
+    grid-template-columns: 250px 250px 150px 100px; /* Fixed header widths */
+    font-weight: bold;
+    background: #f8f8f8;
+    padding: 12px;
+    border-bottom: 2px solid #ccc;
+    text-align: left;
+  }
+  
+  /* Body Grid: Dynamic Column Widths */
+  .reservation-grid-body {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr; /* Different row widths */
+    gap: 5px;
+    border: 1px solid #ddd;
+    min-width: 600px; /* Prevents excessive shrinking */
+  }
+  
+  /* Header & Row Cells */
+  .reservation-grid-header div,
+  .reservation-grid-row div {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  /* Scrollable UUID & Bed Code */
+  .uuid-cell, .bed-code-cell {
+    overflow-x: auto;
+    display: block;
+    max-width: 200px;
+  }
+  
+  /* Smooth Scrollbar */
+  .uuid-cell::-webkit-scrollbar, .bed-code-cell::-webkit-scrollbar {
+    height: 5px;
+  }
+  
+  .uuid-cell::-webkit-scrollbar-thumb, .bed-code-cell::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 10px;
+  }
+  

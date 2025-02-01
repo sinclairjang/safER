@@ -10,6 +10,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: auto;
     width: 90%; /* Default to 90% width */
+    min-width: fit-content;
     max-width: 1200px; /* Optional: To limit how wide the container can get */
 }
 
@@ -65,7 +66,7 @@
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
-    
+    table-layout: auto;
 }
 
 .reservation-table thead {
@@ -78,8 +79,7 @@
     padding: 12px 15px;
     text-align: left;
     border-bottom: 1px solid #e0e0e0;
-    word-wrap: break-word; /* ✅ Ensures long text wraps properly */
-    white-space: normal; /* ✅ Allows text to wrap instead of overflowing */
+    white-space: nowrap; /* ✅ Allows text to wrap instead of overflowing */
 }
 
 .reservation-table th {
@@ -87,43 +87,42 @@
     font-weight: 600;
 }
 
-/* Adjust specific column widths */
-.reservation-table th:nth-child(1), /* 예약 코드 */
+.reservation-table th:nth-child(1),
 .reservation-table td:nth-child(1) {
-    min-width: 100px;
-    max-width: 200px;
-    white-space: nowrap; /* ✅ Prevents reservation IDs from breaking */
+    width: min-content;
     overflow: scroll;
-    text-overflow: scroll;
 }
 
 .reservation-table th:nth-child(2), /* 요청 병실 */
 .reservation-table td:nth-child(2) {
-    min-width: 120px;
-    max-width: 250px;
+    width: min-content;
+    overflow: auto;
 }
 
 .reservation-table th:nth-child(3), /* 요청 병상 개수 */
 .reservation-table td:nth-child(3) {
-    min-width: 150px;
-    max-width: 250px;
+    width: min-content;
+}
+
+.reservation-table th:nth-child(4), /* 요청 병상 개수 */
+.reservation-table td:nth-child(4) {
+    width: min-content;
 }
 
 .reservation-table th:nth-child(5), /* 신청자 */
 .reservation-table td:nth-child(5) {
-    min-width: 80px;
-    max-width: 300px;
+    width: min-content;
 }
 
 .reservation-table th:nth-child(6), /* 대기 시간 */
 .reservation-table td:nth-child(6) {
-    min-width: 100px;
+    width: min-content;
     text-align: center;
 }
 
 .reservation-table th:nth-child(7), /* Actions */
 .reservation-table td:nth-child(7) {
-    width: 120px;
+    width: min-content;
     text-align: center;
 }
 

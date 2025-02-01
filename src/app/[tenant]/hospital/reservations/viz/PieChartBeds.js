@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Box, Typography } from "@mui/material";
+import { bedCodeMap } from "@/bedcode-map";
 
 // Register Chart.js components
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -43,14 +44,31 @@ export default function PieChartBeds({ data }) {
         setChartData(datasets);
     };
 
+    const options = {
+        plugins: {
+          legend: {
+            labels: {
+              color: "rgb(217, 217, 7)", // bright yellow for the legend labels
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
+      };
+
     if (!chartData) return <Typography>Loading chart...</Typography>;
 
     return (
         <Box sx={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "20px", margin: "auto", width: "90%" }}>
             {chartData.map((chart, index) => (
                 <Box key={index} sx={{ textAlign: "center" }}>
-                    <Typography variant="h6" sx={{ marginBottom: "10px" }}>{chart.label} (Beds Occupied %)</Typography>
-                    <Pie data={{ labels: ["Available Beds", "Occupied Beds"], datasets: [chart] }} />
+                    <Typography variant="h6" color="white" sx={{ marginBottom: "10px" }}>{bedCodeMap[chart.label.toLowerCase()] ? `${bedCodeMap[chart.label.toLowerCase()]}(${chart.label.toLowerCase()})` : chart.label}</Typography>
+                    <Pie 
+                        data={{ labels: ["가용 병상", "사용중인 병상"], datasets: [chart] }}
+                        options={options} 
+                    />
                 </Box>
             ))}
         </Box>

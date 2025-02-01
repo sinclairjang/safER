@@ -283,11 +283,13 @@ export default function ReservationPage() {
                 console.log("Nearby Hospitals:", data);
                 showHospitals(data, availabilityUnits);
               } else {
-                setSnackbarMessage(`현재 ${searchRadius}km내 조건에 맞는 전원 가능한 병원이 없습니다.`);
+                setSnackbarMessage(`현재 ${searchRadius}km 내 조건에 맞는 전원 가능한 병원이 없습니다.`);
                 setSnackbarOpen(true);
               }
           })
         } else {
+          setSnackbarMessage(`현재 ${searchRadius}km 내 조건에 맞는 전원 가능한 병원이 없습니다.`);
+          setSnackbarOpen(true);
           console.log("Filter combination not found!");
         }
       } else {
@@ -498,6 +500,7 @@ export default function ReservationPage() {
             open={showDiagnosisModal}
             onClose={handleDiagnosisModalClose}
             onSubmit={handleDiagnosisModalSumbit}
+            disableEnforceFocus
           />
         </Fragment>
       </div>

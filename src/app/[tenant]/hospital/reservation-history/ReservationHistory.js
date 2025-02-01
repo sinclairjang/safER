@@ -7,6 +7,7 @@ import { getSupabaseBrowserClient } from "@/supabase-utils/browserClient";
 import { getHospitalByTenant } from "@/utils/getHospitalByTenant";
 import { FaStickyNote, FaEdit } from "react-icons/fa"; // ✅ Note icon
 import ReasonModal from "./ReasonModal"; // ✅ Import new modal
+import { bedCodeMap } from "@/bedcode-map";
 
 export function ReservationHistory({ reservationHistory, tenant }) {
     const [reservations, setReservations] = useState(reservationHistory);
@@ -148,7 +149,7 @@ export function ReservationHistory({ reservationHistory, tenant }) {
                         reservations.map((reservation) => (
                             <tr key={reservation.id}>
                                 <td className="reservation-row">{reservation.id}</td>
-                                <td className="reservation-row">{reservation.bed_code}</td>
+                                <td className="reservation-row">{bedCodeMap[reservation.bed_code] ? `${bedCodeMap[reservation.bed_code]} (${reservation.bed_code})` : reservation.bed_code}</td>
                                 <td className="reservation-row">{reservation.reserved_beds}</td>
                                 <td className="reservation-row">
                                     {reservation.requester_name ?? "Unknown"}

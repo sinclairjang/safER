@@ -64,7 +64,7 @@ export default function RootLayout({ children }) {
         <AppRouterCacheProvider>
           <ThemeProvider theme={muiTheme}>
             <CssBaseline /> {/* Normalize styles */}
-            <main style={{ paddingTop: "0px", paddingBottom: "5px", ariaHidden: "false" }}>{children}</main>
+            <main style={{ paddingTop: "0px", paddingBottom: "5px" }}>{children}</main>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
