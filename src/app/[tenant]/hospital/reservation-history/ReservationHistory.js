@@ -23,7 +23,7 @@ export function ReservationHistory({ reservationHistory, tenant }) {
             console.log("다음 작업을 위해서는 hpid가 필요합니다.");
             return null;
         }
-
+        console.log(hpid);
         const fetchReservations = async () => {
             try {
                 const { data, error } = await supabase.rpc("fetch_processed_reservations_with_beds");
@@ -80,7 +80,7 @@ export function ReservationHistory({ reservationHistory, tenant }) {
                 }
             )
             .subscribe();
-    
+        console.log(hpid);
         // Cleanup subscriptions on unmount
         return () => {
             supabase.removeChannel(reservationSubscription);

@@ -81,7 +81,7 @@ export function ReservationList({ reservationReqs, tenant }) {
       supabase.removeChannel(reservationSubscription);
       supabase.removeChannel(bedAvailabilitySubscription);
     };
-  }, [tenant]);
+  }, []);
 
   const handleAction = async (id, action) => {
     try {
