@@ -52,7 +52,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={roboto.variable}>
       <head>
-        {/* External styles */}
+        {tenant === "safer" && (
+          <link
+            rel="preload"
+            href={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NCP_CLIENT_ID}`}
+            as="script"
+          />
+        )}
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
@@ -65,11 +71,12 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body style={{ backgroundColor: "inherit"}}>
-        {/* Naver Maps Script */}
-        <Script
-          strategy="beforeInteractive"
-          src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NCP_CLIENT_ID}`}
-        />
+        {tenant === "safer" && (
+          <Script
+            strategy="beforeInteractive"
+            src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NCP_CLIENT_ID}`}
+          />
+        )}
         {/* Material UI Providers */}
         <AppRouterCacheProvider>
           <ThemeProvider theme={muiTheme}>
