@@ -27,14 +27,13 @@ const getTenantFromHostname = () => {
 
 export default function RootLayout({ children }) {
   const [muiTheme, setMuiTheme] = useState(createTheme());
-  const [tenant, setTenant] = useState("default");
 
   useEffect(() => {
-    const _tenant = getTenantFromHostname();
-    console.log(_tenant);
-    setTenant(_tenant);
+    const tenant = getTenantFromHostname();
+    console.log("Changing theme based on ", tenant);
+
     // Set theme dynamically
-    const appliedTheme = _tenant === "safer" ? "light" : "dark";
+    const appliedTheme = tenant === "safer" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", appliedTheme);
 
     // Update Material UI theme
@@ -54,12 +53,6 @@ export default function RootLayout({ children }) {
     <html lang="en" className={roboto.variable}>
       <head>
         {/* External styles */}
-        {tenant === "safer" && (
-          <Script
-            strategy="beforeInteractive"
-            src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NCP_CLIENT_ID}`}
-          />
-        )}
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
@@ -72,6 +65,11 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body style={{ backgroundColor: "inherit"}}>
+        {/* Naver Maps Script */}
+        <Script
+          strategy="beforeInteractive"
+          src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NCP_CLIENT_ID}`}
+        />
         {/* Material UI Providers */}
         <AppRouterCacheProvider>
           <ThemeProvider theme={muiTheme}>
