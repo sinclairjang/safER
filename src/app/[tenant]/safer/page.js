@@ -57,28 +57,28 @@ export default function ReservationPage() {
 
       addMapModeControls(newMap);
 
-      trackUserPosition(newMap);
+      const cleanup = trackUserPosition(newMap);
+      return cleanup;
     }
   }, [map]);
 
   /**
    * Continuously track and update the user's position on the map. 
    */
-  const trackUserPosition = (map) => {
+  const trackUserPosition = (map, setUserLocation) => {
     if (navigator.geolocation) {
       const watchId = navigator.geolocation.watchPosition(
         (position) => {
           const { latitude, longitude } = position.coords;
-          const userLantLng = { lat: latitude, lng: longitude };
-
-          setUserLocation(userLantLng);
-
-          map.setCenter(new naver.maps.LatLng(lat, lng));
-
-          return () => navigator.geolocation.clearWatch(watchId);
+          const userLatLng = { lat: latitude, lng: longitude };
+  
+          setUserLocation(userLatLng);
+  
+          // Use correct variable names
+          map.setCenter(new naver.maps.LatLng(latitude, longitude));
         },
         (error) => {
-          alert("실제 사용자 위치를 수신하기 위해서는 HTTPS 프로토콜을 사용해야합니다.");
+          alert("실제 사용자 위치를 수신하기 위해서는 HTTPS 프로토콜을 사용해야 합니다.");
           // Mocked user location
           const mockLocation = { lat: 37.487340, lng: 127.015288 };
           console.log("Mocked user location:", mockLocation);
@@ -94,10 +94,14 @@ export default function ReservationPage() {
           timeout: 10000,           // Timeout after 10 seconds
         }
       );
+  
+      // Cleanup function
+      return () => navigator.geolocation.clearWatch(watchId);
     } else {
-      alert("Geoloation is not supported by this browser.");
+      alert("Geolocation is not supported by this browser.");
     }
   };
+  
 
   /**
    * Creates and attaches a custom control (HTML button).
