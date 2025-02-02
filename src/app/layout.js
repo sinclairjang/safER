@@ -53,13 +53,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={roboto.variable}>
       <head>
-        {tenant === "safer" && (
-          <link
-            rel="preload"
-            href={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NCP_CLIENT_ID}`}
-            as="script"
-          />
-        )}
         {/* External styles */}
         <link
           rel="stylesheet"
