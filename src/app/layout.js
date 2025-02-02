@@ -27,11 +27,13 @@ const getTenantFromHostname = () => {
 
 export default function RootLayout({ children }) {
   const [muiTheme, setMuiTheme] = useState(createTheme());
+  const [tenant, setTenant] = useState("default");
 
   useEffect(() => {
-    const tenant = getTenantFromHostname();
-    console.log("Changing theme based on ", tenant);
-
+    const detectedTenant = getTenantFromHostname();
+    setTenant(detectedTenant);
+    console.log("Changing theme based on ", detectedTenant);
+    
     // Set theme dynamically
     const appliedTheme = tenant === "safer" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", appliedTheme);
