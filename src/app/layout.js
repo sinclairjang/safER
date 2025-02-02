@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
 
   useEffect(() => {
     const _tenant = getTenantFromHostname();
-    console.log("Changing theme based on ", _tenant);
+    console.log(_tenant);
     setTenant(_tenant);
     // Set theme dynamically
     const appliedTheme = _tenant === "safer" ? "light" : "dark";
@@ -54,6 +54,12 @@ export default function RootLayout({ children }) {
     <html lang="en" className={roboto.variable}>
       <head>
         {/* External styles */}
+        {tenant === "safer" && (
+          <Script
+            strategy="beforeInteractive"
+            src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NCP_CLIENT_ID}`}
+          />
+        )}
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
@@ -66,12 +72,6 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body style={{ backgroundColor: "inherit"}}>
-        {tenant === "safer" && (
-          <Script
-            strategy="beforeInteractive"
-            src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NCP_CLIENT_ID}`}
-          />
-        )}
         {/* Material UI Providers */}
         <AppRouterCacheProvider>
           <ThemeProvider theme={muiTheme}>
