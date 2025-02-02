@@ -15,15 +15,25 @@ const roboto = Roboto({
   variable: "--font-roboto", // Creates a CSS variable for the font
 });
 
+const getTenantFromHostname = () => {
+  if (typeof window === "undefined") return null;
+  const hostname = window.location.hostname;
+  const parts = hostname.split(".");
+  if (parts.length >= 3) {
+    return parts[0]; // e.g., "hyumc" from "hyumc.saf-er.com"
+  }
+  return "default";
+}
+
 export default function RootLayout({ children }) {
   const [muiTheme, setMuiTheme] = useState(createTheme());
 
   useEffect(() => {
-    const currentDomain = window.location.hostname; // Get the domain
-    const isRescuerDomain = currentDomain === "safer.com"; // Check if it's a rescuer's domain
+    const tenant = getTenantFromHostname();
+    console.log("Changing theme based on ", tenant);
 
     // Set theme dynamically
-    const appliedTheme = isRescuerDomain ? "light" : "dark";
+    const appliedTheme = tenant === "safer" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", appliedTheme);
 
     // Update Material UI theme
