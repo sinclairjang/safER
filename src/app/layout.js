@@ -30,12 +30,11 @@ export default function RootLayout({ children }) {
   const [tenant, setTenant] = useState("default");
 
   useEffect(() => {
-    const detectedTenant = getTenantFromHostname();
-    setTenant(detectedTenant);
-    console.log("Changing theme based on ", detectedTenant);
-    
+    const _tenant = getTenantFromHostname();
+    console.log("Changing theme based on ", _tenant);
+    setTenant(_tenant);
     // Set theme dynamically
-    const appliedTheme = tenant === "safer" ? "light" : "dark";
+    const appliedTheme = _tenant === "safer" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", appliedTheme);
 
     // Update Material UI theme
@@ -61,6 +60,7 @@ export default function RootLayout({ children }) {
             as="script"
           />
         )}
+        {/* External styles */}
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
