@@ -68,7 +68,7 @@ export default function RootLayout({ children }) {
         {/* Naver Maps Script */}
         <Script
           strategy="beforeInteractive"
-          src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_NCP_CLIENT_ID}`}
+          src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NCP_CLIENT_ID}`}
         />
         {/* Material UI Providers */}
         <AppRouterCacheProvider>
