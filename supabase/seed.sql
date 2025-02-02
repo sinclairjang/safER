@@ -1194,7 +1194,7 @@ SELECT pg_catalog.setval('"public"."tenant_permissions_id_seq"', 14, true);
 -- Name: hooks_id_seq; Type: SEQUENCE SET; Schema: supabase_functions; Owner: supabase_functions_admin
 --
 
-SELECT pg_catalog.setval('"supabase_functions"."hooks_id_seq"', 1, false);
+-- SELECT pg_catalog.setval('"supabase_functions"."hooks_id_seq"', 1, false);
 
 
 --
