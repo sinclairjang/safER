@@ -61,16 +61,31 @@ export default function ReservationPage() {
   useEffect(() => {
     if (map) {
       let cleanupGeo;
-      naver.maps.Event.once(map, "init", () => {
-        cleanupGeo = trackUserPosition(map);
-      });
+      
+      // Check if the map appears to be initialized.
+      // One crude check: if we can get the center immediately, assume it's initialized.
+      try {
+        const center = map.getCenter();
+        if (center) {
+          // Map seems ready, so call trackUserPosition immediately.
+          cleanupGeo = trackUserPosition(map);
+        }
+      } catch (err) {
+        // If getCenter() fails, fall back to waiting for the "init" event.
+        naver.maps.Event.once(map, "init", () => {
+          cleanupGeo = trackUserPosition(map);
+        });
+      }
+      
+      // Cleanup function.
       return () => {
         console.log("clean up geolocation");
-        cleanupGeo()
+        if (cleanupGeo) {
+          cleanupGeo();
+        }
       };
     }
   }, [map]);
-
   /**
  * Poll user position every 5 seconds.
  */
