@@ -31,7 +31,7 @@ export default function ReservationPage() {
   const userMarkerRef = useRef(null);
   const circleRef = useRef(null);
   const intervalIdRef = useRef(null);
-
+  const cleanupGeo = useRef(null);
   const handleCloseSnackbar = () => {
     setSnackbarOpen(false);
   };
@@ -58,32 +58,16 @@ export default function ReservationPage() {
 
       addMapModeControls(newMap);
 
-      // Variables to store the cleanup function and cancellation flag.
-      let cleanupGeolocation = null;
-      let isCancelled = false;
-
-      // Define a callback for when the map is fully initialized.
-      const onMapInit = () => {
-        // Only start tracking if the component is still mounted.
-        if (!isCancelled) {
-          // trackUserPosition returns a cleanup function for geolocation watch
-          cleanupGeolocation = trackUserPosition(newMap);
-        }
-      };
-
-      // Wait for the map to fully initialize.
-      naver.maps.Event.once(newMap, "init", onMapInit);
-
-      // Cleanup function for the useEffect.
+       // Wait until the map fires its "init" event.
+       naver.maps.Event.once(newMap, "init", () => {
+        // Now that the map is fully initialized, start tracking the user position.
+        cleanupGeo.current = trackUserPosition(newMap);
+      });
+       // Cleanup function: this will be called when the component unmounts or the effect re-runs.
       return () => {
-        console.log("cleaning up geolocation");
-
-        // Mark as cancelled to avoid calling trackUserPosition if the init event fires later.
-        isCancelled = true;
-
-        // If geolocation tracking was started, clean it up.
-        if (cleanupGeolocation) {
-          cleanupGeolocation();
+        if (cleanupGeo.current) {
+          console.log("clean up geolocation");
+          cleanupGeo.current();
         }
       };
     }
