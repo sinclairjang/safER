@@ -58,57 +58,52 @@ export default function ReservationPage() {
 
       addMapModeControls(newMap);
 
-      pollUserPosition(newMap, intervalIdRef);
-
-      return () => {
-        if (intervalIdRef.current) {
-          clearInterval(intervalIdRef.current);
-        }
-      }
+      const cleanup = trackUserPosition(newMap);
+      return cleanup;
     }
   }, [map]);
 
   /**
  * Poll user position every 5 seconds.
  */
-const pollUserPosition = (map, setIntervalIdRef) => {
-  if (!navigator.geolocation) {
-    alert("Geolocation is not supported by this browser.");
-    return;
-  }
+  const pollUserPosition = (map, setIntervalIdRef) => {
+    if (!navigator.geolocation) {
+      alert("Geolocation is not supported by this browser.");
+      return;
+    }
 
-  // Example: Poll every 5 seconds
-  const POLL_INTERVAL_MS = 5000;
+    // Example: Poll every 5 seconds
+    const POLL_INTERVAL_MS = 5000;
 
-  // Store the interval ID in a ref so we can clear it later (cleanup)
-  setIntervalIdRef.current = setInterval(() => {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const { latitude, longitude } = position.coords;
-        console.log("Polled location:", latitude, longitude);
+    // Store the interval ID in a ref so we can clear it later (cleanup)
+    setIntervalIdRef.current = setInterval(() => {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          console.log("Polled location:", latitude, longitude);
 
-        // Update your state
-        setUserLocation({ lat: latitude, lng: longitude });
-        
-        // Optionally re-center the map if desired
-        map.setCenter(new naver.maps.LatLng(latitude, longitude));
-      },
-      (error) => {
-        console.error("Geolocation error:", error);
-        alert("실제 사용자 위치를 수신하기 위해서는 HTTPS 프로토콜을 사용해야 합니다.");
+          // Update your state
+          setUserLocation({ lat: latitude, lng: longitude });
+          
+          // Optionally re-center the map if desired
+          map.setCenter(new naver.maps.LatLng(latitude, longitude));
+        },
+        (error) => {
+          console.error("Geolocation error:", error);
+          alert("실제 사용자 위치를 수신하기 위해서는 HTTPS 프로토콜을 사용해야 합니다.");
 
-        // Optional fallback (mock location)
-        const mockLocation = { lat: 37.487340, lng: 127.015288 };
-        setUserLocation(mockLocation);
-      },
-      {
-        enableHighAccuracy: true,
-        maximumAge: 0,
-        timeout: 10000,
-      }
-    );
-  }, POLL_INTERVAL_MS);
-};
+          // Optional fallback (mock location)
+          const mockLocation = { lat: 37.487340, lng: 127.015288 };
+          setUserLocation(mockLocation);
+        },
+        {
+          enableHighAccuracy: true,
+          maximumAge: 0,
+          timeout: 10000,
+        }
+      );
+    }, POLL_INTERVAL_MS);
+  };
 
   /**
    * Continuously track and update the user's position on the map. 
