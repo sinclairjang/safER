@@ -70,6 +70,7 @@ export default function ReservationPage() {
       const watchId = navigator.geolocation.watchPosition(
         (position) => {
           const { latitude, longitude } = position.coords;
+          console.log("New coordinates:", latitude, longitude);
           const userLatLng = { lat: latitude, lng: longitude };
   
           setUserLocation(userLatLng);
