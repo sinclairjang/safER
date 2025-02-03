@@ -133,7 +133,7 @@ export default function ReservationPage() {
           map.setCenter(userLatLng); // Update the map center
         },
         {
-          enableHighAccuracy: true, // Use GPS if available
+          enableHighAccuracy: false, // Use GPS if available
           maximumAge: 0,            // Prevent caching
           timeout: 10000,           // Timeout after 10 seconds
         }
