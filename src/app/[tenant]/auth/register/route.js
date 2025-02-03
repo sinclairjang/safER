@@ -54,6 +54,9 @@ export async function POST(request, { params }) {
         const { data: signUpData, error: signUpError } = await supabaseAdmin.auth.signUp({
             email,
             password,
+            options: {
+                emailRedirectTo: `https://${tenant}.saf-er.com/auth/callback`, // 👈 Set correct subdomain!
+            },
         });
 
         if (signUpError) {
