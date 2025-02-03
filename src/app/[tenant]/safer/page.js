@@ -327,6 +327,7 @@ export default function ReservationPage() {
     // Place or update the user marker whenever map or userLocation changes
   useEffect(() => {
     if (map) {
+      console.log("User Location: ", userLocation);
       if (!userMarkerRef.current) {
         const markerContainer = document.createElement("div");
         const root = createRoot(markerContainer);
