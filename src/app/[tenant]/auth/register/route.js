@@ -57,6 +57,7 @@ export async function POST(request, { params }) {
         });
 
         if (signUpError) {
+            console.log(signUpError);
             const userExists = signUpError.message.includes("already been registered");
             return NextResponse.redirect(
                 buildUrl(
