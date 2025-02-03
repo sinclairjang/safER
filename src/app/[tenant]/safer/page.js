@@ -57,13 +57,14 @@ export default function ReservationPage() {
       addLogoControl(newMap);
 
       addMapModeControls(newMap);
+    }
+  }, [map]);
 
-       // Wait until the map fires its "init" event.
-       naver.maps.Event.once(newMap, "init", () => {
-        // Now that the map is fully initialized, start tracking the user position.
-        cleanupGeo.current = trackUserPosition(newMap);
+  useEffect(() => {
+    if (map) {
+      naver.maps.Event.once(map, "init", () => {
+        cleanupGeo.current = trackUserPosition(map);
       });
-       // Cleanup function: this will be called when the component unmounts or the effect re-runs.
       return () => {
         if (cleanupGeo.current) {
           console.log("clean up geolocation");
