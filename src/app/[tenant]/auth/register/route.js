@@ -55,7 +55,7 @@ export async function POST(request, { params }) {
             email,
             password,
             options: {
-                emailRedirectTo: `https://${tenant}.saf-er.com/auth/callback`, // 👈 Set correct subdomain!
+                emailRedirectTo: `https://${tenant}.saf-er.com`, // 👈 Set correct subdomain!
             },
         });
 
