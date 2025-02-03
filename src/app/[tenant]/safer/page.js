@@ -65,7 +65,7 @@ export default function ReservationPage() {
   /**
    * Continuously track and update the user's position on the map. 
    */
-  const trackUserPosition = (map, setUserLocation) => {
+  const trackUserPosition = (map) => {
     if (navigator.geolocation) {
       const watchId = navigator.geolocation.watchPosition(
         (position) => {
