@@ -58,8 +58,8 @@ export default function ReservationPage() {
 
       addMapModeControls(newMap);
 
-      const cleanup = trackUserPosition(newMap);
-      return cleanup;
+      //const cleanup = trackUserPosition(newMap);
+      //return cleanup;
     }
   }, [map]);
 
@@ -105,6 +105,31 @@ export default function ReservationPage() {
     }, POLL_INTERVAL_MS);
   };
 
+  useEffect(() => {
+    if (!map) return;
+  
+    let cleanupFn = null; // We'll capture the cleanup function here
+  
+    // Wait a couple of seconds after the map is created
+    const timerId = setTimeout(() => {
+      // trackUserPosition returns a cleanup function
+      // (which calls navigator.geolocation.clearWatch internally)
+      cleanupFn = trackUserPosition(map);
+    }, 5000);
+  
+    // The effect’s cleanup
+    return () => {
+      // 1. Clear the timer so we don’t call trackUserPosition if it hasn’t fired yet
+      clearTimeout(timerId);
+  
+      // 2. If trackUserPosition() has already run, we call its cleanup
+      if (cleanupFn) {
+        cleanupFn();
+      }
+    };
+  }, [map]);
+  
+
   /**
    * Continuously track and update the user's position on the map. 
    */
@@ -133,7 +158,7 @@ export default function ReservationPage() {
           map.setCenter(userLatLng); // Update the map center
         },
         {
-          enableHighAccuracy: false, // Use GPS if available
+          enableHighAccuracy: true, // Use GPS if available
           maximumAge: 0,            // Prevent caching
           timeout: 10000,           // Timeout after 10 seconds
         }
