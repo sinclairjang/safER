@@ -76,6 +76,8 @@ export default function ReservationPage() {
 
       // Cleanup function for the useEffect.
       return () => {
+        console.log("cleaning up geolocation");
+
         // Mark as cancelled to avoid calling trackUserPosition if the init event fires later.
         isCancelled = true;
 

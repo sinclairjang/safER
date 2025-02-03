@@ -22,7 +22,7 @@ const getTenantFromHostname = () => {
   if (parts.length >= 3) {
     return parts[0]; // e.g., "hyumc" from "hyumc.saf-er.com"
   }
-  return "default";
+  return "safer";
 }
 
 export default function RootLayout({ children }) {
