@@ -21,8 +21,19 @@ export async function middleware(request) {
         console.error("Error authenticating user:", error);
     }
 
-    const hostname = new URL(request.url).hostname;
-    const subdomain = hostname.split(".")[0];
+    const urlObj = new URL(request.url);
+    const hostname = urlObj.hostname;
+    const parts = hostname.split(".");
+  
+    // If the hostname has only two parts (e.g. "saf-er.com") then no subdomain was provided.
+    // In that case, we assume the default tenant subdomain "safer".
+    let subdomain;
+    if (parts.length === 2) {
+      subdomain = "safer";
+    } else {
+      subdomain = parts[0];
+    }
+
     console.log("Extracted Subdomain:", subdomain);
 
     if (subdomain in TENANT_MAP === false) {
