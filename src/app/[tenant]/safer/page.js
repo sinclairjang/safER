@@ -30,8 +30,6 @@ export default function ReservationPage() {
   const [activateSearch, setActivateSearch] = useState(false);
   const userMarkerRef = useRef(null);
   const circleRef = useRef(null);
-  const intervalIdRef = useRef(null);
-  const cleanupGeo = useRef(null);
   const handleCloseSnackbar = () => {
     setSnackbarOpen(false);
   };
@@ -62,14 +60,13 @@ export default function ReservationPage() {
 
   useEffect(() => {
     if (map) {
+      let cleanupGeo;
       naver.maps.Event.once(map, "init", () => {
-        cleanupGeo.current = trackUserPosition(map);
+        cleanupGeo = trackUserPosition(map);
       });
       return () => {
-        if (cleanupGeo.current) {
-          console.log("clean up geolocation");
-          cleanupGeo.current();
-        }
+        console.log("clean up geolocation");
+        cleanupGeo()
       };
     }
   }, [map]);
