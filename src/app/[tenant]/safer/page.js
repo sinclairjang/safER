@@ -139,6 +139,8 @@ export default function ReservationPage() {
         }
       );
   
+      console.log("Watch Id: ", watchId);
+
       // Cleanup function
       return () => navigator.geolocation.clearWatch(watchId);
     } else {
