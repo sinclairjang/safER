@@ -58,6 +58,11 @@ export default function ReservationPage() {
 
       addMapModeControls(newMap);
 
+      // Wait until the map fires its "init" event
+      naver.maps.Event.once(newMap, "init", () => {
+        // Now that the map is fully initialized, start tracking the user position
+        trackUserPosition(newMap);
+      });
       //const cleanup = trackUserPosition(newMap);
       //return cleanup;
     }
@@ -105,29 +110,30 @@ export default function ReservationPage() {
     }, POLL_INTERVAL_MS);
   };
 
-  useEffect(() => {
-    if (!map) return;
+  // useEffect(() => {
+  //   if (!map) return;
   
-    let cleanupFn = null; // We'll capture the cleanup function here
+  //   let cleanupFn = null; // We'll capture the cleanup function here
   
-    // Wait a couple of seconds after the map is created
-    const timerId = setTimeout(() => {
-      // trackUserPosition returns a cleanup function
-      // (which calls navigator.geolocation.clearWatch internally)
-      cleanupFn = trackUserPosition(map);
-    }, 5000);
+  //   // Wait a couple of seconds after the map is created
+  //   const timerId = setTimeout(() => {
+  //     // trackUserPosition returns a cleanup function
+  //     // (which calls navigator.geolocation.clearWatch internally)
+  //     console.log("tracking started!");
+  //     cleanupFn = trackUserPosition(map);
+  //   }, 5000);
   
-    // The effect’s cleanup
-    return () => {
-      // 1. Clear the timer so we don’t call trackUserPosition if it hasn’t fired yet
-      clearTimeout(timerId);
+  //   // The effect’s cleanup
+  //   return () => {
+  //     // 1. Clear the timer so we don’t call trackUserPosition if it hasn’t fired yet
+  //     clearTimeout(timerId);
   
-      // 2. If trackUserPosition() has already run, we call its cleanup
-      if (cleanupFn) {
-        cleanupFn();
-      }
-    };
-  }, [map]);
+  //     // 2. If trackUserPosition() has already run, we call its cleanup
+  //     if (cleanupFn) {
+  //       cleanupFn();
+  //     }
+  //   };
+  // }, [map]);
   
 
   /**
