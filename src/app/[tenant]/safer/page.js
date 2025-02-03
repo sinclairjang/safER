@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, Fragment } from "react";
+import { useEffect, useState, useRef, Fragment } from "react";
 import { createRoot } from 'react-dom/client';
 import "@/styles/naver-map.css";
 import DiagnosisModal from "./widgets/DiagnosisModal";
@@ -16,12 +16,10 @@ export default function ReservationPage() {
   const [map, setMap] = useState(null);        // Reference to the Naver map
   const [userLocation, setUserLocation] = useState({ lat: 37.487340, lng: 127.015288 });
   const [markers, setMarkers] = useState([]);  // Track markers to remove or update
-  const [userMarker, setUserMarker] = useState(null);
   const [showSearchModeModal, setShowSearchModeModal] = useState(false);
   const [emergencyModalOpen, setEmergencyModalOpen] = useState(false); 
   const [showTransferFilterPanel, setShowTransferFilterPanel] = useState(false);
   const [searchRadius, setSearchRadius] = useState(null);
-  const [circle, setCircle] = useState(null);
   const [showDiagnosisModal, setShowDiagnosisModal] = useState(false);
   const [availabilityUnits, setAvailabilityUnits] = useState([]);
   const [equipments, setEquipments] = useState([]);
@@ -30,6 +28,8 @@ export default function ReservationPage() {
   const [snackbarSuccessFlag, setSnackbarSuccessFlag] = useState(false);
   const [selectedReservation, setSelectedReservation] = useState(null);
   const [activateSearch, setActivateSearch] = useState(false);
+  const userMarkerRef = useRef(null);
+  const circleRef = useRef(null);
 
   const handleCloseSnackbar = () => {
     setSnackbarOpen(false);
@@ -43,7 +43,7 @@ export default function ReservationPage() {
   useEffect(() => {
     if (!map && window?.naver?.maps) {
       const mapOptions = {
-        center: new naver.maps.LatLng(37.5665, 126.978), // Seoul
+        center: new naver.maps.LatLng(userLocation.lat, userLocation.lng), // Seoul
         zoom: 13,
         mapTypeId: naver.maps.MapTypeId.HYBRID,
       };
@@ -327,13 +327,9 @@ export default function ReservationPage() {
     // Place or update the user marker whenever map or userLocation changes
   useEffect(() => {
     if (map) {
-      // If marker doesn’t exist yet, create it
-      if (!userMarker) {
-         // Create a container for the marker
+      if (!userMarkerRef.current) {
         const markerContainer = document.createElement("div");
         const root = createRoot(markerContainer);
-
-        // Render the Material UI icon into the container
         root.render(
           <MyLocationIcon
             style={{
@@ -346,33 +342,29 @@ export default function ReservationPage() {
             }}
           />
         );
-        
-        // Create the marker with the rendered container
-        const userMarker = new naver.maps.Marker({
+        userMarkerRef.current = new naver.maps.Marker({
           position: new naver.maps.LatLng(userLocation.lat, userLocation.lng),
           map,
           icon: {
-            content: markerContainer, // Attach the React-rendered container
-            anchor: new naver.maps.Point(18, 18), // Adjust the anchor to center the marker
+            content: markerContainer,
+            anchor: new naver.maps.Point(18, 18),
           },
         });
+      } else {
+        userMarkerRef.current.setPosition(new naver.maps.LatLng(userLocation.lat, userLocation.lng));
+      }
 
-        setUserMarker(userMarker);
-
-        const circle = new naver.maps.Circle({
-          map: map,
+      if (!circleRef.current) {
+        circleRef.current = new naver.maps.Circle({
+          map,
           center: new naver.maps.LatLng(userLocation.lat, userLocation.lng),
           radius: searchRadius * 1000,
           fillColor: "#E0FFFF",
-          fillOpacity: 0.4
-      });
-      
-        setCircle(circle);
+          fillOpacity: 0.4,
+        });
       } else {
-        // If marker already exists, just move it
-        userMarker.setPosition(new naver.maps.LatLng(userLocation.lat, userLocation.lng));
-        circle.setCenter(new naver.maps.LatLng(userLocation.lat, userLocation.lng));
-        circle.setRadius(searchRadius * 1000);
+        circleRef.current.setCenter(new naver.maps.LatLng(userLocation.lat, userLocation.lng));
+        circleRef.current.setRadius(searchRadius * 1000);
       }
     }
   }, [searchRadius, map, userLocation]);
